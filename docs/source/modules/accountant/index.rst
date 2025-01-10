@@ -4,6 +4,7 @@ Comptabilité
 ============
 
 Le module comptabilité comprend les interactions disponible pour les comptables telles que :
+
 Opérations sur les comptes internes
 ===================================
 

@@ -26,9 +26,9 @@ Nouvelles fonctionnalités
 3. Recherche ciblée
 -------------------
 - Permet de retrouver une transaction spécifique à l’aide de différents critères
-  (montant, nom de l’agence, date, référence, etc.).
+  (montant, nom de l’agence, date, etc.).
 - **Exemple :** Rechercher toutes les transactions effectuées par l’agence
-  *« Dibida »* durant le mois de décembre 2024.
+  «**Dibida**» durant le mois de décembre 2024.
 - **Bénéfices :**
   - Gagne du temps lors d’audits ou de vérifications.
   - Facilite la détection et la résolution d’anomalies.
