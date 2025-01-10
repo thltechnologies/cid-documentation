@@ -17,3 +17,4 @@ Modules principaux
    :caption: Liste des modules
 
    loan/index
+   accountant/index
