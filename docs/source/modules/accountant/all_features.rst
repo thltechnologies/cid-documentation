@@ -48,5 +48,4 @@ la centralisation des opérations et une traçabilité complète.
   - Évite les manipulations non autorisées des capitaux.
 - **Conditions :**
   - Chaque rôle est associé à un ensemble précis d’actions autorisées.
-  - Des vérifications ou validations supplémentaires peuvent être nécessaires pour
-    certains transferts importants.
+  - Des vérifications ou validations supplémentaires peuvent être nécessaires pour certains transferts importants.
