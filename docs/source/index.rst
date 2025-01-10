@@ -1,10 +1,13 @@
 .. _index:
 
-=================================
-Documentation du CID Core Banking
-=================================
+================
+CID Core Banking
+================
 
 Bienvenue sur la documentation de CID Core Banking.
+.. image:: _static/images/introduction.png
+    :alt: Interface de CID Core Banking
+    :align: center
 
 .. toctree::
    :maxdepth: 2
