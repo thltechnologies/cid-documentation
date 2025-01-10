@@ -1,2 +1,4 @@
-Toutes les fonctionnalités du module **Prêt**
-=============================================
+.. _all_features:
+
+Liste des fonctionnalités
+=========================
