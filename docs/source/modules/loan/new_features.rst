@@ -1,2 +1,5 @@
-Nouvelles fonctionnalités du module **Prêt**
-============================================
+.. _new_features:
+
+Nouvelles fonctionnalités
+=========================
+
