@@ -15,7 +15,7 @@ Opérations sur les comptes internes
 Prélèvement des capitaux
 ========================
 
-.. image:: _static/images/accountant/accountant.gif
+.. image:: _static/images/accountant/shares.gif
    :alt: Opérations sur les comptes internes
    :align: center
 
