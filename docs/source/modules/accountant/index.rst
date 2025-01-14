@@ -3,19 +3,19 @@
 Comptabilité
 ============
 
-Le module comptabilité comprend les interactions disponible pour les comptables telles que :
+Le module comptabilité comprend les options disponibles pour les comptables telles que :
 
 Opérations sur les comptes internes
-===================================
+-----------------------------------
 
-.. image:: _static/images/accountant/accountant.gif
+.. image:: ../../_static/images/accountant/accountant.gif
    :alt: Opérations sur les comptes internes
    :align: center
 
 Prélèvement des capitaux
-========================
+------------------------
 
-.. image:: _static/images/accountant/shares.gif
+.. image:: ../../_static/images/accountant/shares.gif
    :alt: Opérations sur les comptes internes
    :align: center
 
