@@ -14,10 +14,9 @@ la centralisation des opérations et une traçabilité complète.
   de capitaux internes.
 - **Exemple :** Le caissier veut prélever 32 000 FCFA au compte 00002-01142-10350561-73 du client John Doe
 
-.. image:: ../../_static/images/accountant/hint_capital_withdrawal.gif
-   :alt: Opérations sur les comptes internes
-   :align: center
-
+.. video:: ../../_static/images/accountant/hint_capital_withdrawal.mp4
+   :autoplay:
+   :controls:
 
 2. Historique des transactions
 ------------------------------
