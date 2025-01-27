@@ -3,28 +3,32 @@
 Comptabilité
 ============
 
-Le module comptabilité comprend les options disponibles pour les comptables telles que :
+Le module **Comptabilité** regroupe les différentes options destinées aux comptables, notamment :
 
 1. Opérations sur les comptes internes
 --------------------------------------
 
-Cette option permet de gérer les transactions liées aux comptes internes de CID,
-telles que les transferts entre comptes, le suivi des soldes, ....
-Elle offre aux comptables les outils nécessaires pour assurer une gestion efficace des flux financiers internes.
+Cette section permet de gérer les transactions liées aux comptes internes de CID, telles que les transferts entre comptes ou le suivi des soldes. Elle offre aux comptables les outils nécessaires pour une gestion efficace des flux financiers internes.
 
 Procédure
 ~~~~~~~~~
 
-- Se connecter au logiciel
-- Cliquer sur le module **Comptabilité** vous serez rediriger directement sur l'option
-Opérations sur les comptes internes :
-\a. **Transfert d'argent entre deux comptes internes : **
-Dans le formulaire en haut de la page sélectionnez le compte interne source depuis lequel
-l'argent va être débiter, ensuite le compte client cîble puis le montant à transférer.
-Vous pouvez ajouté une description(facultative) à la transaction puis valider.
-\b. **Historique des transactions**
-Sur la page des opérations sur les comptes internes se trouve l'historique des transactions sur les comptes internes :
-avec possibilité de trier par intervalle de date et de rechercher par montant de la transaction, le nom de l’agence ...
+1. Connectez-vous au logiciel.
+2. Cliquez sur le module **Comptabilité** : vous serez automatiquement redirigé vers l’option **Opérations sur les comptes internes**.
+
+   \a. **Transfert d’argent entre deux comptes internes**
+
+      Dans le formulaire en haut de la page, sélectionnez :
+        - Le compte interne source (depuis lequel l’argent sera débité)
+        - Le compte interne cible (vers lequel l’argent sera transféré)
+        - Le montant à transférer
+        - Vous pouvez ajouter une description (optionnelle) à la transaction, puis cliquez sur **Valider**.
+
+   \b. **Historique des transactions**
+
+      Sur la page des opérations sur les comptes internes, vous trouverez l’historique des transactions. Il est possible de :
+        - Trier les transactions par intervalle de dates
+        - Rechercher une transaction par montant, nom de l’agence, etc.
 
 Démo
 ~~~~
@@ -33,28 +37,46 @@ Démo
    :alt: Opérations sur les comptes internes
    :align: center
 
+
 2. Prélèvement des capitaux
 ---------------------------
 
-Cette fonctionnalité est dédiée à la gestion des opérations de prélèvement et d'investissement de capitaux.
-Elle permet de suivre et d'enregistrer les mouvements financiers liés aux parts sociales,
-aux actions ou à tout autre type de capital détenu par les parties prenantes de CID.
+Cette fonctionnalité est dédiée à la gestion des opérations de prélèvement et d’investissement de capitaux. Elle permet de suivre et d’enregistrer les mouvements financiers liés aux parts sociales, aux actions ou à tout autre type de capital détenu par les parties prenantes de CID.
 
 Procédure
 ~~~~~~~~~
 
-- Se connecter au logiciel
-- Cliquer sur le module **Comptabilité**
-- Cliquer sur le menu Prélèvement des capitaux :
-\a. **Transfert de capitaux : **
-Cliquer sur le bouton **Prélever** en haut et à gauche de la page. Un formulaire de prélèvement des capitaux
-s'affiche, saisissez le code kyc du client, choisissez le compte interne des capitaux puis choisissez le montant à prélever
-puis une description de la transaction si nécessaire puis prélever.
-\b. **Historique des transactions**
-Sur la page des prélèvements des capitaux se trouve l'historique des transactions sur les prélèvements :
-avec possibilité de trier par intervalle de date et de rechercher par montant de la transaction, le nom de l’agence ...
+1. Connectez-vous au logiciel.
+2. Cliquez sur le module **Comptabilité**.
+3. Cliquez sur le menu **Prélèvement des capitaux**.
+
+   \a. **Transfert de capitaux**
+
+      Cliquez sur le bouton **Prélever** (en haut, à gauche de la page). Dans le formulaire qui s’affiche, saisissez :
+         - Le code KYC du client
+         - Le compte interne des capitaux concerné
+         - Le montant à prélever
+         - Une description de la transaction (optionnelle)
+         - Cliquez sur **Valider** pour finaliser l’opération de prélèvement.
+
+   \b. **Historique des transactions**
+
+      Sur la page **Prélèvements des capitaux**, vous trouverez l’historique des transactions. Il est possible de :
+         - Trier les transactions par intervalle de dates
+         - Rechercher une transaction par montant, nom de l’agence, etc.
 
 Démo
 ~~~~
 
-.. video:: ../../_static/images/accountant/hint_capital_withdrawal.mp4
+1. Le comptable John Comptable veut prélever 200 000 FCFA au compte client (kyc: 00001-01234-01234567-08) pour le compte des capitaux 01 de l'agence 01.
+
+.. video:: ../../_static/videos/accountant/capital_withdrawal_demo.mp4
+    :autoplay:
+    :caption: Prélèvement des capitaux
+
+2. Le comptable John Comptable veut afficher l'historique des transactions de prélèvement de capitaux du mois de Janvier 2025 dont le montant est 200 000  FCFA.
+
+.. video:: ../../_static/videos/accountant/history_capital_withdrawal.mp4
+    :autoplay:
+    :caption: Historiques des prélèvements de capitaux
+
