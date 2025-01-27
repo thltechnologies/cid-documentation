@@ -68,5 +68,15 @@ Procédure
 Démo
 ~~~~
 
-.. video:: ../../_static/images/accountant/hint_capital_withdrawal.mp4
-   :autoplay:
+1. Le comptable John Comptable veut prélever 200 000 FCFA au compte client (kyc: 00001-01234-01234567-08) pour le compte des capitaux 01 de l'agence 01.
+
+.. video:: ../../_static/videos/accountant/capital_withdrawal_demo.mp4
+    :autoplay:
+    :caption: Prélèvement des capitaux
+
+2. Le comptable John Comptable veut afficher l'historique des transactions de prélèvement de capitaux du mois de Janvier 2025 dont le montant est 200 000  FCFA.
+
+.. video:: ../../_static/videos/accountant/history_capital_withdrawal.mp4
+    :autoplay:
+    :caption: Historiques des prélèvements de capitaux
+
