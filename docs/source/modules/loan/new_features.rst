@@ -1,2 +1,3 @@
-Nouvelles fonctionnalités du module **Prêt**
-============================================
+Nouvelles fonctionnalités
+=========================
+
