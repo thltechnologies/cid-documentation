@@ -22,7 +22,7 @@ Procédure
         - Le compte interne source (depuis lequel l’argent sera débité)
         - Le compte interne cible (vers lequel l’argent sera transféré)
         - Le montant à transférer
-        - Vous pouvez ajouter une description (optionnelle) à la transaction, puis cliquez sur **Valider**.
+        - Vous pouvez ajouter une description (optionnelle) à la transaction, puis cliquez sur le bouton **Enregistrer**.
 
    \b. **Historique des transactions**
 
@@ -33,9 +33,17 @@ Procédure
 Démo
 ~~~~
 
-.. image:: ../../_static/images/accountant/accountant.gif
-   :alt: Opérations sur les comptes internes
-   :align: center
+1. Le comptable John Comptable veut transférer 2 500 FCFA du compte interne des frais de l'agence 02 vers le compte interne des frais de l'agence 01.
+
+.. video:: ../../_static/videos/accountant/accountant_demo.mp4
+    :autoplay:
+    :caption: Opérations sur les comptes internes
+
+2. Le comptable John Comptable veut afficher l'historique des transactions des comptes internes qui ont lieu le mois de Janvier 2025.
+
+.. video:: ../../_static/videos/accountant/accountant_history.mp4
+    :autoplay:
+    :caption: Historiques des opérations sur les comptes internes
 
 
 2. Prélèvement des capitaux
@@ -57,7 +65,7 @@ Procédure
          - Le compte interne des capitaux concerné
          - Le montant à prélever
          - Une description de la transaction (optionnelle)
-         - Cliquez sur **Valider** pour finaliser l’opération de prélèvement.
+         - Cliquez sur le bouton **Prélever** pour finaliser l’opération de prélèvement.
 
    \b. **Historique des transactions**
 
@@ -76,7 +84,7 @@ Démo
 
 2. Le comptable John Comptable veut afficher l'historique des transactions de prélèvement de capitaux du mois de Janvier 2025 dont le montant est 200 000  FCFA.
 
-.. video:: ../../_static/videos/accountant/history_capital_withdrawal.mp4
+.. video:: ../../_static/videos/accountant/capital_withdrawal_history.mp4
     :autoplay:
     :caption: Historiques des prélèvements de capitaux
 
