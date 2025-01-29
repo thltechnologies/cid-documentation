@@ -1,6 +1,13 @@
 .. _loan-index:
 
-Prêt
-====
+Prêts
+=====
 
 Description générale du module **prêt**, son rôle et ses interactions.
+
+Procédure
+~~~~~~~~~
+
+
+Démo
+~~~~
