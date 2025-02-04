@@ -233,14 +233,54 @@ Procédure
 
    Notez bien que le fichier respecte bien cet format :
       - Les clients sont enregistré sur la première feuille du document
-      - Cette contient uniquement une entête :
+      - Cette feuille contient uniquement une entête :
             .. list-table:: Structure du fichier excel à importer
                :header-rows: 1
 
                * - Entête
                  - Signification
 
-               * -
+               * - N
+                 - Le numéro de la ligne
+
+               * - ACC_NUM
+                 - La structure des comptes clients: 14 positions de gauche à droite:
+                    * 1 positions: agence
+                    * 8 positions: numéro CIF
+                    * 5 positions: numéro non utilisé actuellement
+
+               * - NOM_ACC
+                 - Le nom du titulaire(client) du compte.
+
+               * - Solde sur le relevé (a)
+                 - Le solde inscrit sur le relevé.
+
+               * - Solde confirmé par le client (b)
+                 - Le solde confirmé par le client
+
+               * - Ecart (a) - (b)
+                 - Différence entre le solde du relevé et le solde confirmé par le client.
+
+               * - SOLDE CORRIGE
+                 - Le solde corrigé après résolution des écarts.
+
+               * - EXPLICATION ECART
+                 - Une explication de l'écart.
+
+               * - TELEPHONE
+                 - Numéro de téléphone du client.
+
+               * - TYPE DE COMPTE
+                 - Type de compte (ex. : Compte Courant, Compte Épargne).
+
+               * - ETAT
+                 - Statut du compte (ex. : Activé/Désactivé).
+
+               * - NOUVEAU CIF
+                 - Nouveau numéro de dossier d’information client (CIF) correspondant aux 8 positions de la deuxième colonne de la feuille après la prémiere position.
+
+               * - CODE PRODUIT
+                 - Code produit associé au compte (correspondant au Type de compte dans la 10ème colonne de la feuille).
 
 Démo
 ~~~~
