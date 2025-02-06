@@ -45,6 +45,67 @@ Procédure
 Démo
 ~~~~
 
+Le chef d'agence John Chef Agence veut ajouter un nouveau client :
+
+.. list-table:: Informations du client
+   :header-rows: 1
+
+   * - Attribut
+     - Valeur
+
+   * - Prénom
+     - Kélan
+
+   * - Nom
+     - Dembassy
+
+   * - Date de naissance
+     - 31/12/1995
+
+   * - Lieu de naissance
+     - Baco-Djicoroni
+
+   * - Genre
+     - Homme
+
+   * - Numéro de téléphone
+     - +223 01234567
+
+   * - Adresse email
+     - kelandembassy@gmail.com
+
+   * - Nom et le prénom du père
+     - Fadigué Dembassy
+
+   * - Nom et le prénom de la mère
+     - Sira Kourouma
+
+   * - Statut matrimonial
+     - Marié
+
+   * - Numéro Fax
+     - 91091
+
+   * - Résident
+     - Oui
+
+   * - Pays de résidence
+     - Mali
+
+   * - Nationalité
+     - Malienne
+
+   * - Adresse
+     -
+         * Pays : Mali
+         * Ville : Bamako
+         * Quartier : Baco-djicoroni
+         * Code postal : 91091
+
+.. video:: ../../_static/videos/client/add_menu_demo.mp4
+    :autoplay:
+    :caption: Ajout d'un compte via le menu Ajouter
+
 
 2. Le menu 'Clients de l'agence'
 --------------------------------
@@ -162,6 +223,9 @@ Procédure
 Démo
 ~~~~
 
+Le super administrateur John SuperAdmin veut afficher la liste de tous les clients de CID :
+
+
 4. Le bouton 'Ajouter un(e) client(e)'
 --------------------------------------
 
@@ -217,6 +281,12 @@ Procédure
 
 Démo
 ~~~~
+
+Le super administrateur John SuperAdmin veut exporter la liste de tous les comptes des client de CID
+
+.. video:: ../../_static/videos/client/export_button_demo.mkv
+    :autoplay:
+    :caption: Exportation des comptes clients
 
 6. Le bouton 'Importer'
 --------------------------------------
@@ -282,5 +352,16 @@ Procédure
                * - CODE PRODUIT
                  - Code produit associé au compte (correspondant au Type de compte dans la 10ème colonne de la feuille).
 
+5. Après l'importation, un bouton 'Télécharger' apparaît à gauche du bouton 'Importer' qui permet de télécharger le RIB(relevé d'identification bancaire) des comptes qui viennent d'être migrés.
+
 Démo
 ~~~~
+
+Le super administrateur John SuperAdmin veut importer une liste (télécharger la liste `ici`_) de 20 comptes clients
+
+.. _ici: ../../_static/excel/client/accounts_to_be_migrated.xlsx
+
+
+.. video:: ../../_static/videos/client/import_button_demo.mkv
+    :autoplay:
+    :caption: Migration des comptes clients
