@@ -165,6 +165,12 @@ Procédure
 Démo
 ~~~~
 
+Le chef d'agence John Chef Agence veut afficher la liste de tous les clients de son agence.
+
+.. video:: ../../_static/videos/client/branch_clients_menu_demo.mp4
+    :autoplay:
+    :caption: Listes des clients d'un chef d'agence spécifique
+
 3. Le menu 'Clients'
 --------------------
 
@@ -218,13 +224,14 @@ Procédure
        * - ACTION
          - Comprend les boutons "Modifier" (pour mettre à jour les informations du client) et "Supprimer" (pour supprimer le client).
 
-
-
 Démo
 ~~~~
 
-Le super administrateur John SuperAdmin veut afficher la liste de tous les clients de CID :
+Le super administrateur John SuperAdmin veut afficher la liste de tous les clients de CID.
 
+.. video:: ../../_static/videos/client/clients_menu_demo.mp4
+    :autoplay:
+    :caption: Listes de tous les clients de CID
 
 4. Le bouton 'Ajouter un(e) client(e)'
 --------------------------------------
@@ -266,8 +273,69 @@ Procédure
 Démo
 ~~~~
 
+Le chef d'agence John Chef Agence veut ajouter un nouveau client :
+
+.. list-table:: Informations du client
+   :header-rows: 1
+
+   * - Attribut
+     - Valeur
+
+   * - Prénom
+     - Nohan
+
+   * - Nom
+     - Falessi
+
+   * - Date de naissance
+     - 22/11/1998
+
+   * - Lieu de naissance
+     - Sikasso, Mali
+
+   * - Genre
+     - Homme
+
+   * - Numéro de téléphone
+     - +22303456789
+
+   * - Adresse email
+     - nohanfalessi@mail.com
+
+   * - Nom et le prénom du père
+     - Makan Falessi
+
+   * - Nom et le prénom de la mère
+     - Djeneba Konaté
+
+   * - Statut matrimonial
+     - Célibataire
+
+   * - Numéro Fax
+     - 22307
+
+   * - Résident
+     - Oui
+
+   * - Pays de résidence
+     - Mali
+
+   * - Nationalité
+     - Malienne
+
+   * - Adresse
+     -
+         * Pays : Mali
+         * Ville : Bamako
+         * Quartier : Faladié
+         * Code postal : 22307
+
+.. video:: ../../_static/videos/client/add_button_demo.mp4
+    :autoplay:
+    :caption: Ajout d'un compte via le bouton Ajouter
+
 5. Le bouton 'Exporter'
---------------------------------------
+-----------------------
 
 Ce bouton permet d'exporter (en excel) la liste des comptes des clients.
 
