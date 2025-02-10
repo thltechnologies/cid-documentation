@@ -103,7 +103,6 @@ Le chef d'agence John Chef Agence veut ajouter un nouveau client :
          * Code postal : 91091
 
 .. video:: ../../_static/videos/client/add_menu_demo.mp4
-    :autoplay:
     :caption: Ajout d'un compte via le menu Ajouter
 
 
@@ -168,7 +167,6 @@ Démo
 Le chef d'agence John Chef Agence veut afficher la liste de tous les clients de son agence.
 
 .. video:: ../../_static/videos/client/branch_clients_menu_demo.mp4
-    :autoplay:
     :caption: Listes des clients d'un chef d'agence spécifique
 
 3. Le menu 'Clients'
@@ -230,7 +228,6 @@ Démo
 Le super administrateur John SuperAdmin veut afficher la liste de tous les clients de CID.
 
 .. video:: ../../_static/videos/client/clients_menu_demo.mp4
-    :autoplay:
     :caption: Listes de tous les clients de CID
 
 4. Le bouton 'Ajouter un(e) client(e)'
@@ -331,7 +328,6 @@ Le chef d'agence John Chef Agence veut ajouter un nouveau client :
          * Code postal : 22307
 
 .. video:: ../../_static/videos/client/add_button_demo.mp4
-    :autoplay:
     :caption: Ajout d'un compte via le bouton Ajouter
 
 5. Le bouton 'Exporter'
@@ -353,7 +349,6 @@ Démo
 Le super administrateur John SuperAdmin veut exporter la liste de tous les comptes des client de CID
 
 .. video:: ../../_static/videos/client/export_button_demo.mkv
-    :autoplay:
     :caption: Exportation des comptes clients
 
 6. Le bouton 'Importer'
@@ -431,5 +426,4 @@ Le super administrateur John SuperAdmin veut importer une liste (télécharger l
 
 
 .. video:: ../../_static/videos/client/import_button_demo.mkv
-    :autoplay:
     :caption: Migration des comptes clients
