@@ -362,7 +362,10 @@ Procédure
 1. Connectez-vous au logiciel.
 2. Cliquez sur le module **Clients**
 3. Cliquer sur le menu *Clients de l'agence* ou *Clients*,
-4. Cliquer sur le bouton 'Importer' en haut de la page et à gauche du bouton 'Exporter', vous serez invité à choisir le fichier excel depuis votre explorateur de fichier :
+4. Cliquer sur le bouton 'Importer' en haut de la page et à gauche du bouton 'Exporter', vous serez invité à choisir le fichier excel depuis votre explorateur de fichier.
+   Cliquer `ici pour télécharger 📥 un exemplaire`_ de liste à remplir et importer
+
+   .. _ici pour télécharger 📥 un exemplaire: ../../_static/excel/client/example_list_to_migrate.xlsx
 
    Notez bien que le fichier respecte bien cet format :
       - Les clients sont enregistré sur la première feuille du document
@@ -420,9 +423,10 @@ Procédure
 Démo
 ~~~~
 
-Le super administrateur John SuperAdmin veut importer une liste (télécharger la liste `ici`_) de 20 comptes clients
+Le super administrateur John SuperAdmin veut importer une liste ( `📥 télécharger la liste ici`_) de 20 comptes clients
 
-.. _ici: ../../_static/excel/client/accounts_to_be_migrated.xlsx
+
+.. _📥 télécharger la liste ici: ../../_static/excel/client/accounts_to_be_migrated.xlsx
 
 
 .. video:: ../../_static/videos/client/import_button_demo.mkv
