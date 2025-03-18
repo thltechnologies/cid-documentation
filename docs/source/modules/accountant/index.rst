@@ -36,13 +36,11 @@ Démo
 1. Le comptable John Comptable veut transférer 2 500 FCFA du compte interne des frais de l'agence 02 vers le compte interne des frais de l'agence 01.
 
 .. video:: ../../_static/videos/accountant/accountant_demo.mp4
-    :autoplay:
     :caption: Opérations sur les comptes internes
 
 2. Le comptable John Comptable veut afficher l'historique des transactions des comptes internes qui ont lieu le mois de Janvier 2025.
 
 .. video:: ../../_static/videos/accountant/accountant_history.mp4
-    :autoplay:
     :caption: Historiques des opérations sur les comptes internes
 
 
@@ -79,12 +77,10 @@ Démo
 1. Le comptable John Comptable veut prélever 200 000 FCFA au compte client (kyc: 00001-01234-01234567-08) pour le compte des capitaux 01 de l'agence 01.
 
 .. video:: ../../_static/videos/accountant/capital_withdrawal_demo.mp4
-    :autoplay:
     :caption: Prélèvement des capitaux
 
 2. Le comptable John Comptable veut afficher l'historique des transactions de prélèvement de capitaux du mois de Janvier 2025 dont le montant est 200 000  FCFA.
 
 .. video:: ../../_static/videos/accountant/capital_withdrawal_history.mp4
-    :autoplay:
     :caption: Historiques des prélèvements de capitaux
 
