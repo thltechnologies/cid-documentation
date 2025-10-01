@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../../" lang="fr" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Clients | Documentation CID CoreBanking 0.0.1</title>
+<meta content="Clients | Documentation CID CoreBanking 0.0.1" property="og:title"/>
+<meta content="Clients | Documentation CID CoreBanking 0.0.1" name="twitter:title"/>
+<link href="../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css?v=2d6ac7df" rel="stylesheet" type="text/css"/>
+<link href="../../search.html" rel="search" title="Recherche"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../client_account/index.html" rel="next" title="Comptes clients"/>
+<link href="../branch/new_features.html" rel="prev" title="Nouvelles fonctionnalités - Module Agence"/>
+<script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" @scroll.window="showScrollTop = pageYOffset &gt; 100" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="24" src="../../_static/logo-dark.png" width="24"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="24" src="../../_static/logo-light.png" width="24"/><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Documentation CID CoreBanking 0.0.1</span>
+</a><nav class="flex items-center space-x-6 text-sm font-medium">
+<a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow">GitHub</a>
+</nav></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center space-x-1">
+<a href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow" title="Visit GitHub">
+<div class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9">
+            fa-brands fa-github
+          </div>
+</a>
+<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" aria-label="Color theme switcher" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="!justify-start text-sm md:!hidden bg-background" href="../../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="16" src="../../_static/logo-dark.png" width="16"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="16" src="../../_static/logo-light.png" width="16"/><span class="font-bold text-clip whitespace-nowrap">Documentation CID CoreBanking 0.0.1</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+<div class="overflow-y-auto h-full w-full relative pr-6"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<p class="caption" role="heading"><span class="caption-text">📚 Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#cid-core-banking"><strong>CID Core Banking</strong></a></li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../index.html">Modules<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#statistiques-de-documentation">📊 <strong>Statistiques de Documentation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#guide-de-navigation">📋 <strong>Guide de Navigation</strong></a></li>
+</ul>
+</li>
+</ul>
+<div>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<ul>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#creation-et-enregistrement-des-clients">1. Création et enregistrement des clients<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#procedure">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-documents-d-identite">2. Gestion des documents d’identité<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id1">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-conjoints">3. Gestion des conjoints<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id2">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-informations-professionnelles">4. Gestion des informations professionnelles<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id3">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#recherche-et-consultation-des-clients">5. Recherche et consultation des clients<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id4">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-comptes-clients">6. Gestion des comptes clients<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id5">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-prets-clients">7. Gestion des prêts clients<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id6">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#authentification-et-securite">8. Authentification et sécurité<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id7">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#rapports-et-exports">9. Rapports et exports<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id8">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#etats-et-statuts-des-clients">10. États et statuts des clients<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id9">Procédure</a></li>
+<li><a class="reference internal" href="#demo">Démo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<h4>Sujet précédent</h4>
+<p class="topless"><a href="../branch/new_features.html" title="Chapitre précédent">Nouvelles fonctionnalités - Module Agence</a></p>
+</div>
+<div>
+<h4>Sujet suivant</h4>
+<p class="topless"><a href="../client_account/index.html" title="Chapitre suivant">Comptes clients</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>Cette page</h3>
+<ul class="this-page-menu">
+<li><a href="../../_sources/modules/client/index.rst.txt" rel="nofollow">Montrer le code source</a></li>
+</ul>
+</div>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
+<span class="hidden md:inline">Documentation CID CoreBanking 0.0.1</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="../index.html">Modules</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Clients</span>
+</nav>
+<div id="content" role="main">
+<section id="clients">
+<span id="client-index"></span><h1>Clients<a class="headerlink" href="#clients" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Le module <strong>Clients</strong> est le système central de gestion des clients qui permet l’enregistrement, la mise à jour et le suivi de tous les clients de la banque. Il intègre la gestion des informations personnelles, des documents d’identité, des comptes et des prêts associés.</p>
+<section id="creation-et-enregistrement-des-clients">
+<h2>1. Création et enregistrement des clients<a class="headerlink" href="#creation-et-enregistrement-des-clients" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#creation-et-enregistrement-des-clients'"><span>#</span></a></h2>
+<p>Cette section permet d’enregistrer de nouveaux clients dans le système.</p>
+<section id="procedure">
+<h3>Procédure<a class="headerlink" href="#procedure" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#procedure'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Clients</strong>.</p></li>
+<li><p>Cliquez sur <strong>Nouveau client</strong> pour créer un client.</p>
+<p>a. <strong>Informations personnelles</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Dans le formulaire de création, renseignez :</dt><dd><ul class="simple">
+<li><p>Le CIF (Customer Identification File) - identifiant unique</p></li>
+<li><p>Le prénom et nom de famille</p></li>
+<li><p>La date et le lieu de naissance</p></li>
+<li><p>Le sexe (Masculin/Féminin)</p></li>
+<li><p>Le nom du père et de la mère</p></li>
+<li><p>La signature du client</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>b. <strong>Informations de contact</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Numéro de téléphone (unique)</p></li>
+<li><p>Adresse email (unique)</p></li>
+<li><p>Numéro de fax (optionnel)</p></li>
+<li><p>Adresse de résidence</p></li>
+<li><p>Quartier de résidence</p></li>
+<li><p>Pays de résidence</p></li>
+<li><p>Nationalité</p></li>
+</ul>
+</div></blockquote>
+<p>c. <strong>Informations complémentaires</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Statut matrimonial</p></li>
+<li><p>Niveau d’instruction (lettré/analphabète)</p></li>
+<li><p>Statut de résident</p></li>
+<li><p>Photo du client (optionnelle)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="gestion-des-documents-d-identite">
+<h2>2. Gestion des documents d’identité<a class="headerlink" href="#gestion-des-documents-d-identite" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-documents-d-identite'"><span>#</span></a></h2>
+<p>Cette fonctionnalité permet de gérer les documents d’identité des clients.</p>
+<section id="id1">
+<h3>Procédure<a class="headerlink" href="#id1" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id1'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Clients</strong>.</p></li>
+<li><p>Sélectionnez le client concerné.</p>
+<p>a. <strong>Ajout de pièce d’identité</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Type de pièce (CNI, Passeport, etc.)</p></li>
+<li><p>Numéro de la pièce</p></li>
+<li><p>Date d’émission</p></li>
+<li><p>Date d’expiration</p></li>
+<li><p>Autorité émettrice</p></li>
+<li><p>Scan de la pièce (optionnel)</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Mise à jour des documents</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Modification des informations</p></li>
+<li><p>Renouvellement des documents</p></li>
+<li><p>Archivage des anciens documents</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="gestion-des-conjoints">
+<h2>3. Gestion des conjoints<a class="headerlink" href="#gestion-des-conjoints" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-conjoints'"><span>#</span></a></h2>
+<p>Cette section permet de gérer les informations des conjoints.</p>
+<section id="id2">
+<h3>Procédure<a class="headerlink" href="#id2" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Clients</strong>.</p></li>
+<li><p>Sélectionnez le client concerné.</p>
+<p>a. <strong>Ajout d’un conjoint</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Informations personnelles du conjoint</p></li>
+<li><p>Documents d’identité</p></li>
+<li><p>Statut matrimonial</p></li>
+<li><p>Date de mariage</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Modification des informations</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Mise à jour des données</p></li>
+<li><p>Changement de statut</p></li>
+<li><p>Suppression du conjoint</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="gestion-des-informations-professionnelles">
+<h2>4. Gestion des informations professionnelles<a class="headerlink" href="#gestion-des-informations-professionnelles" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-informations-professionnelles'"><span>#</span></a></h2>
+<p>Cette fonctionnalité gère les informations professionnelles des clients.</p>
+<section id="id3">
+<h3>Procédure<a class="headerlink" href="#id3" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Clients</strong>.</p></li>
+<li><p>Sélectionnez le client concerné.</p>
+<p>a. <strong>Informations d’emploi</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Nom de l’employeur</p></li>
+<li><p>Poste occupé</p></li>
+<li><p>Secteur d’activité</p></li>
+<li><p>Salaire mensuel</p></li>
+<li><p>Date d’embauche</p></li>
+<li><p>Adresse de l’employeur</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Informations financières</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Revenus mensuels</p></li>
+<li><p>Sources de revenus</p></li>
+<li><p>Charges mensuelles</p></li>
+<li><p>Patrimoine</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="recherche-et-consultation-des-clients">
+<h2>5. Recherche et consultation des clients<a class="headerlink" href="#recherche-et-consultation-des-clients" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#recherche-et-consultation-des-clients'"><span>#</span></a></h2>
+<p>Cette section permet de rechercher et consulter les informations des clients.</p>
+<section id="id4">
+<h3>Procédure<a class="headerlink" href="#id4" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Clients</strong>.</p></li>
+<li><p>Utilisez les outils de recherche.</p>
+<p>a. <strong>Recherche par critères</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Recherche par nom et prénom</p></li>
+<li><p>Recherche par CIF</p></li>
+<li><p>Recherche par numéro de téléphone</p></li>
+<li><p>Recherche par email</p></li>
+<li><p>Recherche par sexe</p></li>
+<li><p>Recherche par statut</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Recherche avancée</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Combinaison de plusieurs critères</p></li>
+<li><p>Filtrage par période</p></li>
+<li><p>Filtrage par agence</p></li>
+<li><p>Filtrage par état</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="gestion-des-comptes-clients">
+<h2>6. Gestion des comptes clients<a class="headerlink" href="#gestion-des-comptes-clients" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-comptes-clients'"><span>#</span></a></h2>
+<p>Cette fonctionnalité permet de gérer les comptes associés aux clients.</p>
+<section id="id5">
+<h3>Procédure<a class="headerlink" href="#id5" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Clients</strong>.</p></li>
+<li><p>Sélectionnez le client concerné.</p>
+<p>a. <strong>Consultation des comptes</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Liste des comptes du client</p></li>
+<li><p>Détail de chaque compte</p></li>
+<li><p>Historique des mouvements</p></li>
+<li><p>Soldes actuels</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Gestion des propriétaires</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Ajout de co-propriétaires</p></li>
+<li><p>Suppression de propriétaires</p></li>
+<li><p>Gestion des droits d’accès</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="gestion-des-prets-clients">
+<h2>7. Gestion des prêts clients<a class="headerlink" href="#gestion-des-prets-clients" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-prets-clients'"><span>#</span></a></h2>
+<p>Cette section gère les prêts accordés aux clients.</p>
+<section id="id6">
+<h3>Procédure<a class="headerlink" href="#id6" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Clients</strong>.</p></li>
+<li><p>Sélectionnez le client concerné.</p>
+<p>a. <strong>Consultation des prêts</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Liste des prêts du client</p></li>
+<li><p>Détail de chaque prêt</p></li>
+<li><p>Échéanciers de remboursement</p></li>
+<li><p>Historique des paiements</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Suivi des remboursements</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Échéances à venir</p></li>
+<li><p>Retards de paiement</p></li>
+<li><p>Remboursements anticipés</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="authentification-et-securite">
+<h2>8. Authentification et sécurité<a class="headerlink" href="#authentification-et-securite" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#authentification-et-securite'"><span>#</span></a></h2>
+<p>Cette fonctionnalité gère l’authentification des clients.</p>
+<section id="id7">
+<h3>Procédure<a class="headerlink" href="#id7" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id7'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Configuration de l’accès</strong></p>
+<ul class="simple">
+<li><p>Activation/désactivation du compte</p></li>
+<li><p>Définition du mot de passe</p></li>
+<li><p>Configuration des rôles</p></li>
+<li><p>Gestion des permissions</p></li>
+</ul>
+</li>
+<li><p><strong>Sécurité du compte</strong></p>
+<ul class="simple">
+<li><p>Expiration du compte</p></li>
+<li><p>Verrouillage du compte</p></li>
+<li><p>Expiration des identifiants</p></li>
+<li><p>Activation de l’accès à l’application</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="rapports-et-exports">
+<h2>9. Rapports et exports<a class="headerlink" href="#rapports-et-exports" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#rapports-et-exports'"><span>#</span></a></h2>
+<p>Cette section permet de générer des rapports sur les clients.</p>
+<section id="id8">
+<h3>Procédure<a class="headerlink" href="#id8" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id8'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Clients</strong>.</p></li>
+<li><p>Sélectionnez l’option <strong>Rapports</strong>.</p>
+<p>a. <strong>Rapport par client</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Détail complet d’un client</p></li>
+<li><p>Historique des opérations</p></li>
+<li><p>État des comptes et prêts</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Rapport par agence</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Liste des clients d’une agence</p></li>
+<li><p>Statistiques de performance</p></li>
+<li><p>Analyse des tendances</p></li>
+</ul>
+</div></blockquote>
+<p>c. <strong>Export des données</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Export au format Excel</p></li>
+<li><p>Filtrage par critères</p></li>
+<li><p>Données personnalisables</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="etats-et-statuts-des-clients">
+<h2>10. États et statuts des clients<a class="headerlink" href="#etats-et-statuts-des-clients" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#etats-et-statuts-des-clients'"><span>#</span></a></h2>
+<p>Cette fonctionnalité gère les différents états des clients.</p>
+<section id="id9">
+<h3>Procédure<a class="headerlink" href="#id9" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id9'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Clients</strong>.</p></li>
+<li><p>Consultez la liste des clients par état.</p>
+<p>a. <strong>États des clients</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>ACTIVATED</strong> : Client actif et opérationnel</p></li>
+<li><p><strong>SUSPENDED</strong> : Client suspendu temporairement</p></li>
+<li><p><strong>CLOSED</strong> : Client fermé définitivement</p></li>
+<li><p><strong>DELETED</strong> : Client supprimé du système</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Changement d’état</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Suspension temporaire d’un client</p></li>
+<li><p>Réactivation d’un client suspendu</p></li>
+<li><p>Fermeture définitive d’un client</p></li>
+<li><p>Justification obligatoire des changements</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="demo">
+<h3>Démo<a class="headerlink" href="#demo" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#demo'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p>L’employé veut enregistrer un nouveau client John Doe avec toutes ses informations personnelles.</p></li>
+<li><p>Le gestionnaire veut rechercher un client par son numéro de téléphone 0123456789.</p></li>
+<li><p>Le conseiller veut consulter tous les comptes et prêts du client #12345.</p></li>
+<li><p>Le système génère automatiquement un rapport des clients de l’agence 01 pour le mois de janvier 2025.</p></li>
+</ol>
+</section>
+</section>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../branch/new_features.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        Nouvelles fonctionnalités - Module Agence
+      </a>
+</div>
+<div class="ml-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../client_account/index.html">
+        Comptes clients
+        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</div>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#creation-et-enregistrement-des-clients'" class="reference internal" href="#creation-et-enregistrement-des-clients">1. Création et enregistrement des clients</a><ul>
+<li><a :data-current="activeSection === '#procedure'" class="reference internal" href="#procedure">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-documents-d-identite'" class="reference internal" href="#gestion-des-documents-d-identite">2. Gestion des documents d’identité</a><ul>
+<li><a :data-current="activeSection === '#id1'" class="reference internal" href="#id1">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-conjoints'" class="reference internal" href="#gestion-des-conjoints">3. Gestion des conjoints</a><ul>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-informations-professionnelles'" class="reference internal" href="#gestion-des-informations-professionnelles">4. Gestion des informations professionnelles</a><ul>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#recherche-et-consultation-des-clients'" class="reference internal" href="#recherche-et-consultation-des-clients">5. Recherche et consultation des clients</a><ul>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-comptes-clients'" class="reference internal" href="#gestion-des-comptes-clients">6. Gestion des comptes clients</a><ul>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-prets-clients'" class="reference internal" href="#gestion-des-prets-clients">7. Gestion des prêts clients</a><ul>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#authentification-et-securite'" class="reference internal" href="#authentification-et-securite">8. Authentification et sécurité</a><ul>
+<li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#rapports-et-exports'" class="reference internal" href="#rapports-et-exports">9. Rapports et exports</a><ul>
+<li><a :data-current="activeSection === '#id8'" class="reference internal" href="#id8">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#etats-et-statuts-des-clients'" class="reference internal" href="#etats-et-statuts-des-clients">10. États et statuts des clients</a><ul>
+<li><a :data-current="activeSection === '#id9'" class="reference internal" href="#id9">Procédure</a></li>
+<li><a :data-current="activeSection === '#demo'" class="reference internal" href="#demo">Démo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, THL Technologies Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.2.3</a></p>
+</div>
+</div>
+</footer>
+</div><button :class="{'opacity-0 invisible' : !showScrollTop}" @click="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 p-2 z-10 rounded-sm bg-gray-700 text-xs text-white transition-all duration-1000 hover:bg-gray-950 focus:bg-gray-950" id="scrolltop" x-cloak="">
+<svg aria-hidden="true" class="inline fill-current mb-[2px]" height="14" viewbox="0 96 960 960" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M450 896V370L202 618l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
+</svg>
+  Back to top
+</button>
+<script src="../../_static/documentation_options.js?v=5cd26065"></script>
+<script src="../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/js/target-blank.js?v=4e58104d"></script>
+<script defer="defer" src="../../_static/theme.js?v=073f68d9"></script>
+<script src="../../_static/translations.js?v=e6b791cb"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

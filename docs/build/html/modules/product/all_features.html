@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../../" lang="fr" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Toutes les fonctionnalités - Module Produits | Documentation CID CoreBanking 0.0.1</title>
+<meta content="Toutes les fonctionnalités - Module Produits | Documentation CID CoreBanking 0.0.1" property="og:title"/>
+<meta content="Toutes les fonctionnalités - Module Produits | Documentation CID CoreBanking 0.0.1" name="twitter:title"/>
+<link href="../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css?v=2d6ac7df" rel="stylesheet" type="text/css"/>
+<link href="../../search.html" rel="search" title="Recherche"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="new_features.html" rel="next" title="Nouvelles fonctionnalités - Module Produits"/>
+<link href="index.html" rel="prev" title="Module Produits"/>
+<script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" @scroll.window="showScrollTop = pageYOffset &gt; 100" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="24" src="../../_static/logo-dark.png" width="24"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="24" src="../../_static/logo-light.png" width="24"/><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Documentation CID CoreBanking 0.0.1</span>
+</a><nav class="flex items-center space-x-6 text-sm font-medium">
+<a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow">GitHub</a>
+</nav></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center space-x-1">
+<a href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow" title="Visit GitHub">
+<div class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9">
+            fa-brands fa-github
+          </div>
+</a>
+<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" aria-label="Color theme switcher" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="!justify-start text-sm md:!hidden bg-background" href="../../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="16" src="../../_static/logo-dark.png" width="16"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="16" src="../../_static/logo-light.png" width="16"/><span class="font-bold text-clip whitespace-nowrap">Documentation CID CoreBanking 0.0.1</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+<div class="overflow-y-auto h-full w-full relative pr-6"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<p class="caption" role="heading"><span class="caption-text">📚 Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#cid-core-banking"><strong>CID Core Banking</strong></a></li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../index.html">Modules<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#statistiques-de-documentation">📊 <strong>Statistiques de Documentation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#guide-de-navigation">📋 <strong>Guide de Navigation</strong></a></li>
+</ul>
+</li>
+</ul>
+<div>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<ul>
+<li></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#creation-et-gestion-des-produits-bancaires">1. Création et gestion des produits bancaires<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#creation-de-produits">1.1. Création de produits</a></li>
+<li><a class="reference internal" href="#gestion-des-informations">1.2. Gestion des informations</a></li>
+<li><a class="reference internal" href="#gestion-des-statuts">1.3. Gestion des statuts</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-categories-de-produits">2. Gestion des catégories de produits<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#creation-de-categories">2.1. Création de catégories</a></li>
+<li><a class="reference internal" href="#types-de-categories">2.2. Types de catégories</a></li>
+<li><a class="reference internal" href="#gestion-des-frais-par-categorie">2.3. Gestion des frais par catégorie</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#configuration-des-parametres-financiers">3. Configuration des paramètres financiers<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#limites-de-depot">3.1. Limites de dépôt</a></li>
+<li><a class="reference internal" href="#limites-de-retrait">3.2. Limites de retrait</a></li>
+<li><a class="reference internal" href="#frais-et-commissions">3.3. Frais et commissions</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-comptes-associes">4. Gestion des comptes associés<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#consultation-des-comptes">4.1. Consultation des comptes</a></li>
+<li><a class="reference internal" href="#statistiques-detaillees">4.2. Statistiques détaillées</a></li>
+<li><a class="reference internal" href="#analyse-des-performances">4.3. Analyse des performances</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#controle-de-la-disponibilite">5. Contrôle de la disponibilité<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id1">5.1. Gestion des statuts</a></li>
+<li><a class="reference internal" href="#controles-de-coherence">5.2. Contrôles de cohérence</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#import-et-export-de-donnees">6. Import et export de données<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#import-de-produits">6.1. Import de produits</a></li>
+<li><a class="reference internal" href="#export-de-produits">6.2. Export de produits</a></li>
+<li><a class="reference internal" href="#rapports-de-produits">6.3. Rapports de produits</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#integration-avec-les-autres-modules">7. Intégration avec les autres modules<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#module-comptes">7.1. Module Comptes</a></li>
+<li><a class="reference internal" href="#module-comptabilite">7.2. Module Comptabilité</a></li>
+<li><a class="reference internal" href="#module-clients">7.3. Module Clients</a></li>
+<li><a class="reference internal" href="#module-transactions">7.4. Module Transactions</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#rapports-et-analytics">8. Rapports et analytics<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#rapports-standard">8.1. Rapports standard</a></li>
+<li><a class="reference internal" href="#analytics-avances">8.2. Analytics avancés</a></li>
+<li><a class="reference internal" href="#comparaisons-et-benchmarking">8.3. Comparaisons et benchmarking</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#securite-et-controles">9. Sécurité et contrôles<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#controles-d-acces">9.1. Contrôles d’accès</a></li>
+<li><a class="reference internal" href="#securite-des-donnees">9.2. Sécurité des données</a></li>
+<li><a class="reference internal" href="#conformite-reglementaire">9.3. Conformité réglementaire</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#interface-utilisateur">10. Interface utilisateur<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#design-responsive">10.1. Design responsive</a></li>
+<li><a class="reference internal" href="#experience-utilisateur">10.2. Expérience utilisateur</a></li>
+<li><a class="reference internal" href="#fonctionnalites-avancees">10.3. Fonctionnalités avancées</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<h4>Sujet précédent</h4>
+<p class="topless"><a href="index.html" title="Chapitre précédent">Module Produits</a></p>
+</div>
+<div>
+<h4>Sujet suivant</h4>
+<p class="topless"><a href="new_features.html" title="Chapitre suivant">Nouvelles fonctionnalités - Module Produits</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>Cette page</h3>
+<ul class="this-page-menu">
+<li><a href="../../_sources/modules/product/all_features.rst.txt" rel="nofollow">Montrer le code source</a></li>
+</ul>
+</div>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
+<span class="hidden md:inline">Documentation CID CoreBanking 0.0.1</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="../index.html">Modules</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="index.html">Module Produits</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Toutes les fonctionnalités - Module Produits</span>
+</nav>
+<div id="content" role="main">
+<section id="toutes-les-fonctionnalites-module-produits">
+<h1>Toutes les fonctionnalités - Module Produits<a class="headerlink" href="#toutes-les-fonctionnalites-module-produits" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Cette page répertorie toutes les fonctionnalités disponibles dans le module Produits du système CID Core Banking.</p>
+</section>
+<section id="creation-et-gestion-des-produits-bancaires">
+<h1>1. Création et gestion des produits bancaires<a class="headerlink" href="#creation-et-gestion-des-produits-bancaires" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="creation-de-produits">
+<h2>1.1. Création de produits<a class="headerlink" href="#creation-de-produits" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#creation-de-produits'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Création d’un nouveau produit</strong> : Enregistrement avec informations complètes</p></li>
+<li><p><strong>Génération automatique du code</strong> : Code unique formaté automatiquement</p></li>
+<li><p><strong>Validation des données</strong> : Vérification de l’unicité du code et du nom</p></li>
+<li><p><strong>Journalisation des actions</strong> : Traçabilité complète des créations</p></li>
+<li><p><strong>Attribution du statut ACTIVATED</strong> : Activation automatique par défaut</p></li>
+</ul>
+</section>
+<section id="gestion-des-informations">
+<h2>1.2. Gestion des informations<a class="headerlink" href="#gestion-des-informations" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-informations'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Consultation des détails</strong> : Affichage complet des informations de produit</p></li>
+<li><p><strong>Modification des paramètres</strong> : Mise à jour des paramètres financiers</p></li>
+<li><p><strong>Gestion des catégories</strong> : Association à des catégories de produits</p></li>
+<li><p><strong>Description détaillée</strong> : Documentation complète du produit</p></li>
+<li><p><strong>Mise à jour des conditions</strong> : Modification des conditions spéciales</p></li>
+</ul>
+</section>
+<section id="gestion-des-statuts">
+<h2>1.3. Gestion des statuts<a class="headerlink" href="#gestion-des-statuts" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-statuts'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Activation de produit</strong> : Mise en service d’un produit</p></li>
+<li><p><strong>Désactivation de produit</strong> : Suspension temporaire des nouveaux comptes</p></li>
+<li><p><strong>Suppression logique</strong> : Suppression réversible (soft delete)</p></li>
+<li><p><strong>Suppression définitive</strong> : Suppression irréversible (hard delete)</p></li>
+<li><p><strong>Restauration de produit</strong> : Récupération de produits supprimés</p></li>
+</ul>
+</section>
+</section>
+<section id="gestion-des-categories-de-produits">
+<h1>2. Gestion des catégories de produits<a class="headerlink" href="#gestion-des-categories-de-produits" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="creation-de-categories">
+<h2>2.1. Création de catégories<a class="headerlink" href="#creation-de-categories" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#creation-de-categories'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Création de catégories</strong> : Enregistrement de nouvelles catégories</p></li>
+<li><p><strong>Code unique de catégorie</strong> : Identification unique par code</p></li>
+<li><p><strong>Nom de catégorie</strong> : Libellé descriptif de la catégorie</p></li>
+<li><p><strong>Description détaillée</strong> : Documentation de la catégorie</p></li>
+<li><p><strong>Configuration des frais</strong> : Frais par table (feeFromTable)</p></li>
+</ul>
+</section>
+<section id="types-de-categories">
+<h2>2.2. Types de catégories<a class="headerlink" href="#types-de-categories" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#types-de-categories'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Comptes d’épargne</strong> : Épargne classique, épargne logement</p></li>
+<li><p><strong>Comptes courants</strong> : Comptes de transaction</p></li>
+<li><p><strong>Comptes professionnels</strong> : Comptes pour entreprises</p></li>
+<li><p><strong>Comptes spécialisés</strong> : Comptes avec conditions particulières</p></li>
+<li><p><strong>Comptes étudiants</strong> : Comptes avec conditions préférentielles</p></li>
+</ul>
+</section>
+<section id="gestion-des-frais-par-categorie">
+<h2>2.3. Gestion des frais par catégorie<a class="headerlink" href="#gestion-des-frais-par-categorie" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-frais-par-categorie'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Frais standardisés</strong> : Configuration des frais par type</p></li>
+<li><p><strong>Table de frais</strong> : Application automatique des frais</p></li>
+<li><p><strong>Personnalisation</strong> : Adaptation des frais par produit</p></li>
+<li><p><strong>Calcul automatique</strong> : Application des frais lors des opérations</p></li>
+</ul>
+</section>
+</section>
+<section id="configuration-des-parametres-financiers">
+<h1>3. Configuration des paramètres financiers<a class="headerlink" href="#configuration-des-parametres-financiers" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="limites-de-depot">
+<h2>3.1. Limites de dépôt<a class="headerlink" href="#limites-de-depot" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#limites-de-depot'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Dépôt minimum</strong> : Montant minimum pour ouvrir un compte</p></li>
+<li><p><strong>Dépôt maximum</strong> : Limite supérieure des dépôts</p></li>
+<li><p><strong>Contrôles automatiques</strong> : Vérification lors des opérations</p></li>
+<li><p><strong>Alertes de dépassement</strong> : Notifications pour les limites</p></li>
+<li><p><strong>Validation en temps réel</strong> : Contrôle immédiat des montants</p></li>
+</ul>
+</section>
+<section id="limites-de-retrait">
+<h2>3.2. Limites de retrait<a class="headerlink" href="#limites-de-retrait" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#limites-de-retrait'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Retrait minimum</strong> : Montant minimum par retrait</p></li>
+<li><p><strong>Retrait maximum</strong> : Limite supérieure des retraits</p></li>
+<li><p><strong>Retrait mensuel</strong> : Limite mensuelle de retrait</p></li>
+<li><p><strong>Condition de retrait</strong> : Pourcentage maximum (max 100%)</p></li>
+<li><p><strong>Contrôles de cohérence</strong> : Vérification des conditions</p></li>
+</ul>
+</section>
+<section id="frais-et-commissions">
+<h2>3.3. Frais et commissions<a class="headerlink" href="#frais-et-commissions" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#frais-et-commissions'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Frais de gestion</strong> : Frais mensuels de gestion du compte</p></li>
+<li><p><strong>Frais d’ouverture</strong> : Frais uniques à l’ouverture</p></li>
+<li><p><strong>Frais par catégorie</strong> : Frais standardisés par type</p></li>
+<li><p><strong>Calcul automatique</strong> : Déduction automatique des frais</p></li>
+<li><p><strong>Personnalisation</strong> : Adaptation des frais par produit</p></li>
+</ul>
+</section>
+</section>
+<section id="gestion-des-comptes-associes">
+<h1>4. Gestion des comptes associés<a class="headerlink" href="#gestion-des-comptes-associes" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="consultation-des-comptes">
+<h2>4.1. Consultation des comptes<a class="headerlink" href="#consultation-des-comptes" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#consultation-des-comptes'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Liste des comptes</strong> : Tous les comptes utilisant le produit</p></li>
+<li><p><strong>Filtrage par statut</strong> : ACTIVATED, SUSPENDED, CLOSED, DELETED</p></li>
+<li><p><strong>Recherche avancée</strong> : Par numéro de compte ou nom du client</p></li>
+<li><p><strong>Tri multicritères</strong> : Par date, solde, client, statut</p></li>
+<li><p><strong>Pagination</strong> : Navigation dans de grandes listes</p></li>
+</ul>
+</section>
+<section id="statistiques-detaillees">
+<h2>4.2. Statistiques détaillées<a class="headerlink" href="#statistiques-detaillees" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#statistiques-detaillees'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Nombre total de comptes</strong> : Comptes utilisant le produit</p></li>
+<li><p><strong>Comptes activés</strong> : Comptes en service</p></li>
+<li><p><strong>Comptes désactivés</strong> : Comptes suspendus</p></li>
+<li><p><strong>Comptes supprimés</strong> : Comptes fermés définitivement</p></li>
+<li><p><strong>Évolution temporelle</strong> : Tendances d’utilisation</p></li>
+</ul>
+</section>
+<section id="analyse-des-performances">
+<h2>4.3. Analyse des performances<a class="headerlink" href="#analyse-des-performances" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#analyse-des-performances'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Volume des transactions</strong> : Montant des opérations par produit</p></li>
+<li><p><strong>Évolution du nombre de comptes</strong> : Croissance des comptes</p></li>
+<li><p><strong>Taux d’utilisation</strong> : Pourcentage d’utilisation du produit</p></li>
+<li><p><strong>Rentabilité par produit</strong> : Revenus générés par produit</p></li>
+<li><p><strong>Analyse comparative</strong> : Comparaison entre produits</p></li>
+</ul>
+</section>
+</section>
+<section id="controle-de-la-disponibilite">
+<h1>5. Contrôle de la disponibilité<a class="headerlink" href="#controle-de-la-disponibilite" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="id1">
+<h2>5.1. Gestion des statuts<a class="headerlink" href="#id1" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id1'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Activation de produits</strong> : Mise en service d’un nouveau produit</p></li>
+<li><p><strong>Désactivation de produits</strong> : Suspension des nouveaux comptes</p></li>
+<li><p><strong>Suppression de produits</strong> : Retrait définitif du catalogue</p></li>
+<li><p><strong>Restauration de produits</strong> : Remise en service d’un produit</p></li>
+<li><p><strong>Changement de statut</strong> : Transition entre différents états</p></li>
+</ul>
+</section>
+<section id="controles-de-coherence">
+<h2>5.2. Contrôles de cohérence<a class="headerlink" href="#controles-de-coherence" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#controles-de-coherence'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Vérifications préalables</strong> : Contrôles avant changement de statut</p></li>
+<li><p><strong>Absence de comptes actifs</strong> : Vérification pour la suppression</p></li>
+<li><p><strong>Validation des paramètres</strong> : Contrôle de cohérence des données</p></li>
+<li><p><strong>Contrôle des dépendances</strong> : Vérification des relations</p></li>
+<li><p><strong>Notifications automatiques</strong> : Alertes lors des changements</p></li>
+</ul>
+</section>
+</section>
+<section id="import-et-export-de-donnees">
+<h1>6. Import et export de données<a class="headerlink" href="#import-et-export-de-donnees" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="import-de-produits">
+<h2>6.1. Import de produits<a class="headerlink" href="#import-de-produits" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#import-de-produits'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Import en masse</strong> : Fichiers Excel/CSV</p></li>
+<li><p><strong>Validation des données</strong> : Contrôles préalables</p></li>
+<li><p><strong>Gestion des erreurs</strong> : Rapport des rejets</p></li>
+<li><p><strong>Format standardisé</strong> : Structure prédéfinie</p></li>
+<li><p><strong>Rapport d’import</strong> : Résumé des opérations</p></li>
+</ul>
+</section>
+<section id="export-de-produits">
+<h2>6.2. Export de produits<a class="headerlink" href="#export-de-produits" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#export-de-produits'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Export des produits</strong> : Liste complète ou filtrée</p></li>
+<li><p><strong>Formats multiples</strong> : Excel, CSV, PDF</p></li>
+<li><p><strong>Filtrage avancé</strong> : Par statut, catégorie, paramètres</p></li>
+<li><p><strong>Données sélectionnées</strong> : Champs personnalisables</p></li>
+<li><p><strong>Planification</strong> : Exports automatiques programmés</p></li>
+</ul>
+</section>
+<section id="rapports-de-produits">
+<h2>6.3. Rapports de produits<a class="headerlink" href="#rapports-de-produits" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#rapports-de-produits'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Rapport de performance</strong> : Métriques des produits</p></li>
+<li><p><strong>Statistiques d’utilisation</strong> : Données d’usage</p></li>
+<li><p><strong>Analyse des revenus</strong> : Revenus par produit</p></li>
+<li><p><strong>Métriques de rentabilité</strong> : Profitabilité détaillée</p></li>
+<li><p><strong>Projections futures</strong> : Prévisions d’évolution</p></li>
+</ul>
+</section>
+</section>
+<section id="integration-avec-les-autres-modules">
+<h1>7. Intégration avec les autres modules<a class="headerlink" href="#integration-avec-les-autres-modules" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="module-comptes">
+<h2>7.1. Module Comptes<a class="headerlink" href="#module-comptes" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-comptes'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Association des comptes</strong> : Liaison comptes-produits</p></li>
+<li><p><strong>Application des paramètres</strong> : Utilisation des limites et frais</p></li>
+<li><p><strong>Contrôles automatiques</strong> : Vérification des conditions</p></li>
+<li><p><strong>Mise à jour en temps réel</strong> : Synchronisation des données</p></li>
+<li><p><strong>Historique des changements</strong> : Traçabilité des modifications</p></li>
+</ul>
+</section>
+<section id="module-comptabilite">
+<h2>7.2. Module Comptabilité<a class="headerlink" href="#module-comptabilite" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-comptabilite'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Écritures comptables</strong> : Génération automatique des écritures</p></li>
+<li><p><strong>Calcul des revenus</strong> : Revenus générés par produit</p></li>
+<li><p><strong>Intégration grand livre</strong> : Inscription dans le grand livre</p></li>
+<li><p><strong>Rapports financiers</strong> : Bilan par produit</p></li>
+<li><p><strong>Analytics comptables</strong> : Analyse des performances</p></li>
+</ul>
+</section>
+<section id="module-clients">
+<h2>7.3. Module Clients<a class="headerlink" href="#module-clients" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-clients'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Sélection de produits</strong> : Choix lors de l’ouverture</p></li>
+<li><p><strong>Historique des produits</strong> : Suivi des produits utilisés</p></li>
+<li><p><strong>Recommandations</strong> : Suggestions personnalisées</p></li>
+<li><p><strong>Préférences clients</strong> : Adaptation de l’offre</p></li>
+<li><p><strong>Communication</strong> : Information sur les produits</p></li>
+</ul>
+</section>
+<section id="module-transactions">
+<h2>7.4. Module Transactions<a class="headerlink" href="#module-transactions" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-transactions'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Application des limites</strong> : Contrôle des montants</p></li>
+<li><p><strong>Calcul des frais</strong> : Déduction automatique</p></li>
+<li><p><strong>Contrôles de cohérence</strong> : Vérification des conditions</p></li>
+<li><p><strong>Validation des opérations</strong> : Contrôle des paramètres</p></li>
+<li><p><strong>Journalisation</strong> : Traçabilité des transactions</p></li>
+</ul>
+</section>
+</section>
+<section id="rapports-et-analytics">
+<h1>8. Rapports et analytics<a class="headerlink" href="#rapports-et-analytics" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="rapports-standard">
+<h2>8.1. Rapports standard<a class="headerlink" href="#rapports-standard" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#rapports-standard'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Performance des produits</strong> : Métriques de base</p></li>
+<li><p><strong>Statistiques d’utilisation</strong> : Données d’usage</p></li>
+<li><p><strong>Revenus par produit</strong> : Rentabilité détaillée</p></li>
+<li><p><strong>Analyse des catégories</strong> : Performance par type</p></li>
+<li><p><strong>Tendances du marché</strong> : Évolution de la demande</p></li>
+</ul>
+</section>
+<section id="analytics-avances">
+<h2>8.2. Analytics avancés<a class="headerlink" href="#analytics-avances" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#analytics-avances'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Tableaux de bord interactifs</strong> : Métriques en temps réel</p></li>
+<li><p><strong>Visualisations</strong> : Graphiques et diagrammes</p></li>
+<li><p><strong>KPI personnalisés</strong> : Indicateurs sur mesure</p></li>
+<li><p><strong>Alertes intelligentes</strong> : Notifications automatiques</p></li>
+<li><p><strong>Analyse prédictive</strong> : Prévisions et tendances</p></li>
+</ul>
+</section>
+<section id="comparaisons-et-benchmarking">
+<h2>8.3. Comparaisons et benchmarking<a class="headerlink" href="#comparaisons-et-benchmarking" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#comparaisons-et-benchmarking'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Performance relative</strong> : Comparaison entre produits</p></li>
+<li><p><strong>Analyse concurrentielle</strong> : Positionnement marché</p></li>
+<li><p><strong>Identification d’opportunités</strong> : Nouvelles possibilités</p></li>
+<li><p><strong>Optimisation des paramètres</strong> : Amélioration continue</p></li>
+<li><p><strong>Recommandations stratégiques</strong> : Conseils d’évolution</p></li>
+</ul>
+</section>
+</section>
+<section id="securite-et-controles">
+<h1>9. Sécurité et contrôles<a class="headerlink" href="#securite-et-controles" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="controles-d-acces">
+<h2>9.1. Contrôles d’accès<a class="headerlink" href="#controles-d-acces" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#controles-d-acces'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Authentification</strong> : Connexion obligatoire</p></li>
+<li><p><strong>Autorisations granulaires</strong> : Droits détaillés par fonction</p></li>
+<li><p><strong>Journalisation des accès</strong> : Traçabilité des connexions</p></li>
+<li><p><strong>Gestion des sessions</strong> : Contrôle des sessions utilisateur</p></li>
+<li><p><strong>Audit de sécurité</strong> : Rapports d’audit</p></li>
+</ul>
+</section>
+<section id="securite-des-donnees">
+<h2>9.2. Sécurité des données<a class="headerlink" href="#securite-des-donnees" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#securite-des-donnees'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Chiffrement</strong> : Protection des données sensibles</p></li>
+<li><p><strong>Masquage</strong> : Dissimulation des informations confidentielles</p></li>
+<li><p><strong>Validation</strong> : Contrôles d’intégrité</p></li>
+<li><p><strong>Sauvegarde</strong> : Protection contre la perte</p></li>
+<li><p><strong>Récupération</strong> : Restauration des données</p></li>
+</ul>
+</section>
+<section id="conformite-reglementaire">
+<h2>9.3. Conformité réglementaire<a class="headerlink" href="#conformite-reglementaire" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#conformite-reglementaire'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Traçabilité complète</strong> : Suivi de toutes les opérations</p></li>
+<li><p><strong>Rapports de conformité</strong> : Génération automatique</p></li>
+<li><p><strong>Archivage sécurisé</strong> : Conservation des données</p></li>
+<li><p><strong>Contrôles internes</strong> : Vérifications automatiques</p></li>
+<li><p><strong>Alertes réglementaires</strong> : Notifications légales</p></li>
+</ul>
+</section>
+</section>
+<section id="interface-utilisateur">
+<h1>10. Interface utilisateur<a class="headerlink" href="#interface-utilisateur" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="design-responsive">
+<h2>10.1. Design responsive<a class="headerlink" href="#design-responsive" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#design-responsive'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Adaptation mobile</strong> : Interface optimisée pour tous les écrans</p></li>
+<li><p><strong>Navigation intuitive</strong> : Menu et navigation simplifiés</p></li>
+<li><p><strong>Thèmes personnalisables</strong> : Personnalisation de l’apparence</p></li>
+<li><p><strong>Accessibilité</strong> : Conformité aux standards d’accessibilité</p></li>
+<li><p><strong>Performance</strong> : Chargement rapide et fluide</p></li>
+</ul>
+</section>
+<section id="experience-utilisateur">
+<h2>10.2. Expérience utilisateur<a class="headerlink" href="#experience-utilisateur" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#experience-utilisateur'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Workflow optimisé</strong> : Processus simplifiés et efficaces</p></li>
+<li><p><strong>Aide contextuelle</strong> : Assistance intégrée dans l’interface</p></li>
+<li><p><strong>Raccourcis clavier</strong> : Navigation rapide au clavier</p></li>
+<li><p><strong>Recherche globale</strong> : Recherche dans tous les modules</p></li>
+<li><p><strong>Notifications intelligentes</strong> : Alertes pertinentes et non intrusives</p></li>
+</ul>
+</section>
+<section id="fonctionnalites-avancees">
+<h2>10.3. Fonctionnalités avancées<a class="headerlink" href="#fonctionnalites-avancees" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#fonctionnalites-avancees'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Filtres dynamiques</strong> : Filtrage en temps réel</p></li>
+<li><p><strong>Tri multicritères</strong> : Organisation flexible des données</p></li>
+<li><p><strong>Export personnalisé</strong> : Sélection des champs à exporter</p></li>
+<li><p><strong>Import intelligent</strong> : Détection automatique des formats</p></li>
+<li><p><strong>Validation en temps réel</strong> : Contrôles instantanés</p></li>
+</ul>
+</section>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="index.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        Module Produits
+      </a>
+</div>
+<div class="ml-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="new_features.html">
+        Nouvelles fonctionnalités - Module Produits
+        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</div>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li></li>
+<li><a :data-current="activeSection === '#creation-et-gestion-des-produits-bancaires'" class="reference internal" href="#creation-et-gestion-des-produits-bancaires">1. Création et gestion des produits bancaires</a><ul>
+<li><a :data-current="activeSection === '#creation-de-produits'" class="reference internal" href="#creation-de-produits">1.1. Création de produits</a></li>
+<li><a :data-current="activeSection === '#gestion-des-informations'" class="reference internal" href="#gestion-des-informations">1.2. Gestion des informations</a></li>
+<li><a :data-current="activeSection === '#gestion-des-statuts'" class="reference internal" href="#gestion-des-statuts">1.3. Gestion des statuts</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-categories-de-produits'" class="reference internal" href="#gestion-des-categories-de-produits">2. Gestion des catégories de produits</a><ul>
+<li><a :data-current="activeSection === '#creation-de-categories'" class="reference internal" href="#creation-de-categories">2.1. Création de catégories</a></li>
+<li><a :data-current="activeSection === '#types-de-categories'" class="reference internal" href="#types-de-categories">2.2. Types de catégories</a></li>
+<li><a :data-current="activeSection === '#gestion-des-frais-par-categorie'" class="reference internal" href="#gestion-des-frais-par-categorie">2.3. Gestion des frais par catégorie</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#configuration-des-parametres-financiers'" class="reference internal" href="#configuration-des-parametres-financiers">3. Configuration des paramètres financiers</a><ul>
+<li><a :data-current="activeSection === '#limites-de-depot'" class="reference internal" href="#limites-de-depot">3.1. Limites de dépôt</a></li>
+<li><a :data-current="activeSection === '#limites-de-retrait'" class="reference internal" href="#limites-de-retrait">3.2. Limites de retrait</a></li>
+<li><a :data-current="activeSection === '#frais-et-commissions'" class="reference internal" href="#frais-et-commissions">3.3. Frais et commissions</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-comptes-associes'" class="reference internal" href="#gestion-des-comptes-associes">4. Gestion des comptes associés</a><ul>
+<li><a :data-current="activeSection === '#consultation-des-comptes'" class="reference internal" href="#consultation-des-comptes">4.1. Consultation des comptes</a></li>
+<li><a :data-current="activeSection === '#statistiques-detaillees'" class="reference internal" href="#statistiques-detaillees">4.2. Statistiques détaillées</a></li>
+<li><a :data-current="activeSection === '#analyse-des-performances'" class="reference internal" href="#analyse-des-performances">4.3. Analyse des performances</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#controle-de-la-disponibilite'" class="reference internal" href="#controle-de-la-disponibilite">5. Contrôle de la disponibilité</a><ul>
+<li><a :data-current="activeSection === '#id1'" class="reference internal" href="#id1">5.1. Gestion des statuts</a></li>
+<li><a :data-current="activeSection === '#controles-de-coherence'" class="reference internal" href="#controles-de-coherence">5.2. Contrôles de cohérence</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#import-et-export-de-donnees'" class="reference internal" href="#import-et-export-de-donnees">6. Import et export de données</a><ul>
+<li><a :data-current="activeSection === '#import-de-produits'" class="reference internal" href="#import-de-produits">6.1. Import de produits</a></li>
+<li><a :data-current="activeSection === '#export-de-produits'" class="reference internal" href="#export-de-produits">6.2. Export de produits</a></li>
+<li><a :data-current="activeSection === '#rapports-de-produits'" class="reference internal" href="#rapports-de-produits">6.3. Rapports de produits</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#integration-avec-les-autres-modules'" class="reference internal" href="#integration-avec-les-autres-modules">7. Intégration avec les autres modules</a><ul>
+<li><a :data-current="activeSection === '#module-comptes'" class="reference internal" href="#module-comptes">7.1. Module Comptes</a></li>
+<li><a :data-current="activeSection === '#module-comptabilite'" class="reference internal" href="#module-comptabilite">7.2. Module Comptabilité</a></li>
+<li><a :data-current="activeSection === '#module-clients'" class="reference internal" href="#module-clients">7.3. Module Clients</a></li>
+<li><a :data-current="activeSection === '#module-transactions'" class="reference internal" href="#module-transactions">7.4. Module Transactions</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#rapports-et-analytics'" class="reference internal" href="#rapports-et-analytics">8. Rapports et analytics</a><ul>
+<li><a :data-current="activeSection === '#rapports-standard'" class="reference internal" href="#rapports-standard">8.1. Rapports standard</a></li>
+<li><a :data-current="activeSection === '#analytics-avances'" class="reference internal" href="#analytics-avances">8.2. Analytics avancés</a></li>
+<li><a :data-current="activeSection === '#comparaisons-et-benchmarking'" class="reference internal" href="#comparaisons-et-benchmarking">8.3. Comparaisons et benchmarking</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#securite-et-controles'" class="reference internal" href="#securite-et-controles">9. Sécurité et contrôles</a><ul>
+<li><a :data-current="activeSection === '#controles-d-acces'" class="reference internal" href="#controles-d-acces">9.1. Contrôles d’accès</a></li>
+<li><a :data-current="activeSection === '#securite-des-donnees'" class="reference internal" href="#securite-des-donnees">9.2. Sécurité des données</a></li>
+<li><a :data-current="activeSection === '#conformite-reglementaire'" class="reference internal" href="#conformite-reglementaire">9.3. Conformité réglementaire</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#interface-utilisateur'" class="reference internal" href="#interface-utilisateur">10. Interface utilisateur</a><ul>
+<li><a :data-current="activeSection === '#design-responsive'" class="reference internal" href="#design-responsive">10.1. Design responsive</a></li>
+<li><a :data-current="activeSection === '#experience-utilisateur'" class="reference internal" href="#experience-utilisateur">10.2. Expérience utilisateur</a></li>
+<li><a :data-current="activeSection === '#fonctionnalites-avancees'" class="reference internal" href="#fonctionnalites-avancees">10.3. Fonctionnalités avancées</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, THL Technologies Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.2.3</a></p>
+</div>
+</div>
+</footer>
+</div><button :class="{'opacity-0 invisible' : !showScrollTop}" @click="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 p-2 z-10 rounded-sm bg-gray-700 text-xs text-white transition-all duration-1000 hover:bg-gray-950 focus:bg-gray-950" id="scrolltop" x-cloak="">
+<svg aria-hidden="true" class="inline fill-current mb-[2px]" height="14" viewbox="0 96 960 960" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M450 896V370L202 618l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
+</svg>
+  Back to top
+</button>
+<script src="../../_static/documentation_options.js?v=5cd26065"></script>
+<script src="../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/js/target-blank.js?v=4e58104d"></script>
+<script defer="defer" src="../../_static/theme.js?v=073f68d9"></script>
+<script src="../../_static/translations.js?v=e6b791cb"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

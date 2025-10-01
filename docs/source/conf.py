@@ -37,3 +37,50 @@ language = 'fr'
 html_permalinks_icon = '<span>#</span>'
 html_theme = 'sphinxawesome_theme'
 html_static_path = ['_static']
+
+# Fichiers CSS personnalisés
+html_css_files = [
+    'css/custom.css',
+]
+
+# Configuration pour les icônes Font Awesome
+html_js_files = [
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js',
+]
+
+# Configuration du thème sphinxawesome_theme
+html_theme_options = {
+    'show_prev_next': True,
+    'show_breadcrumbs': True,
+    'show_scrolltop': True,
+    'main_nav_links': {
+        'GitHub': 'https://github.com/THLTechnologies/CID-CoreBanking',
+    },
+    'extra_header_link_icons': {
+        'GitHub': {
+            'link': 'https://github.com/THLTechnologies/CID-CoreBanking',
+            'icon': 'fa-brands fa-github',
+        },
+    },
+    'logo_light': '_static/images/logo-light.png',
+    'logo_dark': '_static/images/logo-dark.png',
+    'show_navbar_depth': 2,
+    'navbar_align': 'left',
+    'navbar_center': False,
+    'navbar_end': ['navbar-icon-links'],
+    'navbar_persistent': ['search-field'],
+    'primary_color': '#2E8B57',  # Teal vert
+    'accent_color': '#20B2AA',   # Teal clair
+    'secondary_color': '#F0F8FF', # Bleu très clair
+}
+
+# Configuration de la navigation
+html_sidebars = {
+    '**': [
+        'searchbox.html',
+        'globaltoc.html',
+        'localtoc.html',
+        'relations.html',
+        'sourcelink.html',
+    ]
+}
