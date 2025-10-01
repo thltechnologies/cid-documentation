@@ -12,6 +12,28 @@
     --warning-color: #ffc107;      /* Jaune avertissement */
     --info-color: #17a2b8;         /* Bleu info */
     --danger-color: #dc3545;       /* Rouge danger */
+    --text-color: #333333;         /* Texte sombre */
+    --background-color: #ffffff;   /* Fond clair */
+    --card-background: #f8f9fa;    /* Fond des cartes */
+    --border-color: #dee2e6;       /* Couleur des bordures */
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #ffffff;         /* Texte blanc */
+        --background-color: #1a1a1a;   /* Fond sombre */
+        --card-background: #2a2a2a;    /* Fond des cartes */
+        --border-color: #444444;       /* Couleur des bordures */
+    }
+}
+
+/* Amélioration générale */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
 }
 
 /* Amélioration des titres */
@@ -34,18 +56,19 @@ h2 {
 
 /* Cards pour les modules */
 .module-card {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .module-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
 }
 
 .module-card.complete {

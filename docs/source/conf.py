@@ -62,16 +62,7 @@ html_theme_options = {
             'icon': 'fa-brands fa-github',
         },
     },
-    'logo_light': '_static/images/logo-light.png',
-    'logo_dark': '_static/images/logo-dark.png',
-    'show_navbar_depth': 2,
-    'navbar_align': 'left',
-    'navbar_center': False,
-    'navbar_end': ['navbar-icon-links'],
-    'navbar_persistent': ['search-field'],
-    'primary_color': '#2E8B57',  # Teal vert
-    'accent_color': '#20B2AA',   # Teal clair
-    'secondary_color': '#F0F8FF', # Bleu très clair
+    'navigation_with_keys': True,
 }
 
 # Configuration de la navigation

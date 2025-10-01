@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-
-<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../../" lang="fr" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<html lang="fr"
+      data-content_root="../../"
+      x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }"
+      x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
+      class="scroll-smooth"
+      :class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
+>
 <head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta charset="utf-8"/>
-<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
-<meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Caissier et Billetage | Documentation CID CoreBanking 0.0.1</title>
-<meta content="Caissier et Billetage | Documentation CID CoreBanking 0.0.1" property="og:title"/>
-<meta content="Caissier et Billetage | Documentation CID CoreBanking 0.0.1" name="twitter:title"/>
-<link href="../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
-<link href="../../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
-<link href="../../_static/css/custom.css?v=2d6ac7df" rel="stylesheet" type="text/css"/>
-<link href="../../search.html" rel="search" title="Recherche"/>
-<link href="../../genindex.html" rel="index" title="Index"/>
-<link href="all_features.html" rel="next" title="Toutes les fonctionnalités - Caissier et Billetage"/>
-<link href="../loan/index.html" rel="prev" title="Prêts"/>
-<script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Caissier et Billetage | Documentation CID CoreBanking 0.0.1</title>
+    <meta property="og:title" content="Caissier et Billetage | Documentation CID CoreBanking 0.0.1" />
+    <meta name="twitter:title" content="Caissier et Billetage | Documentation CID CoreBanking 0.0.1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e72c8e07" />
+      <link rel="stylesheet" type="text/css" href="../../_static/theme.css?v=42baaae4" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=3890f9ab" />
+        <link rel="search" title="Recherche" href="../../search.html" />
+        <link rel="index" title="Index" href="../../genindex.html" />
+          <link rel="next" title="Toutes les fonctionnalités - Caissier et Billetage" href="all_features.html" />
+          <link rel="prev" title="Prêts" href="../loan/index.html" />
+
+    <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
       let mode;
@@ -30,59 +37,94 @@
       if (!userPreference) {localStorage.setItem('darkMode', mode)}
     </script>
 </head>
-<body :class="{ 'overflow-hidden': showSidebar }" @scroll.window="showScrollTop = pageYOffset &gt; 100" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
-<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+  <body x-data="{ showSidebar: false, showScrollTop: false }" class="min-h-screen font-sans antialiased bg-background text-foreground" :class="{ 'overflow-hidden': showSidebar }"@scroll.window="showScrollTop = pageYOffset > 100">
+    <div x-cloak x-show="showSidebar" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" @click.self="showSidebar = false"></div><div id="page" class="relative flex flex-col min-h-screen"><a href="#content" class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100">
       Skip to content
-    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
-<div class="hidden mr-4 md:flex">
-<a class="flex items-center mr-6" href="../../index.html">
-<img alt="Logo" class="mr-2 hidden dark:block" height="24" src="../../_static/logo-dark.png" width="24"/>
-<img alt="Logo" class="mr-2 dark:hidden" height="24" src="../../_static/logo-light.png" width="24"/><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Documentation CID CoreBanking 0.0.1</span>
-</a><nav class="flex items-center space-x-6 text-sm font-medium">
-<a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow">GitHub</a>
-</nav></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
-<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
-</svg>
-<span class="sr-only">Toggle navigation menu</span>
-</button>
-<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
-<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
-<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
-<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
-<span class="text-xs">⌘</span>
+    </a><header
+  class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+    <div class="hidden mr-4 md:flex">
+      <a href="../../index.html" class="flex items-center mr-6"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Documentation CID CoreBanking 0.0.1</span>
+      </a><nav class="flex items-center space-x-6 text-sm font-medium">
+        <a href="https://github.com/THLTechnologies/CID-CoreBanking" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">GitHub</a>
+      </nav></div><button
+      class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden"
+      type="button" @click="showSidebar = true">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" aria-hidden="true"
+        fill="currentColor">
+        <path
+          d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z" />
+      </svg>
+      <span class="sr-only">Toggle navigation menu</span>
+    </button>
+    <div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+      <div class="flex-1 w-full md:w-auto md:flex-none"><form id="searchbox"
+      action="../../search.html"
+      method="get"
+      class="relative flex items-center group"
+      @keydown.k.window.meta="$refs.search.focus()">
+  <input x-ref="search"
+          name="q"
+          id="search-input"
+          type="search"
+          aria-label="Search the docs"
+          placeholder="Search ..."
+          class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" />
+  <kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+    <span class="text-xs">⌘</span>
     K
   </kbd>
 </form>
-</div>
-<nav class="flex items-center space-x-1">
-<a href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow" title="Visit GitHub">
-<div class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9">
+      </div>
+      <nav class="flex items-center space-x-1">
+        <a href="https://github.com/THLTechnologies/CID-CoreBanking" title="Visit GitHub" rel="noopener nofollow">
+          <div
+            class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9">
             fa-brands fa-github
           </div>
-</a>
-<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" aria-label="Color theme switcher" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
-<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
-</svg>
-<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
-</svg>
-</button>
-</nav>
-</div>
-</div>
+        </a>
+        
+        <button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'"
+          class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9"
+          type="button"
+          aria-label="Color theme switcher">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
+            class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0">
+            <path
+              d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
+            class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100">
+            <path
+              d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </div>
 </header>
-<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
-<a class="!justify-start text-sm md:!hidden bg-background" href="../../index.html">
-<img alt="Logo" class="mr-2 hidden dark:block" height="16" src="../../_static/logo-dark.png" width="16"/>
-<img alt="Logo" class="mr-2 dark:hidden" height="16" src="../../_static/logo-light.png" width="16"/><span class="font-bold text-clip whitespace-nowrap">Documentation CID CoreBanking 0.0.1</span>
-</a>
-<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
-<div class="overflow-y-auto h-full w-full relative pr-6"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
-<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
-<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
-<span class="text-xs">⌘</span>
+
+    <div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside id="left-sidebar"
+  class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky"
+  :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }">
+
+    <a href="../../index.html" class="!justify-start text-sm md:!hidden bg-background"><span class="font-bold text-clip whitespace-nowrap">Documentation CID CoreBanking 0.0.1</span>
+    </a>
+
+    <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+      <div class="overflow-y-auto h-full w-full relative pr-6"><form id="searchbox"
+      action="../../search.html"
+      method="get"
+      class="relative flex items-center group"
+      @keydown.k.window.meta="$refs.search.focus()">
+  <input x-ref="search"
+          name="q"
+          id="search-input"
+          type="search"
+          aria-label="Search the docs"
+          placeholder="Search ..."
+          class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" />
+  <kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+    <span class="text-xs">⌘</span>
     K
   </kbd>
 </form>
@@ -91,103 +133,125 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html#cid-core-banking"><strong>CID Core Banking</strong></a></li>
-<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../index.html">Modules<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Modules</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#statistiques-de-documentation">📊 <strong>Statistiques de Documentation</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#guide-de-navigation">📋 <strong>Guide de Navigation</strong></a></li>
 </ul>
 </li>
 </ul>
-<div>
-<h3><a href="../../index.html">Table des matières</a></h3>
-<ul>
-<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#ouverture-de-caisse">1. Ouverture de caisse<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+
+  <div>
+    <h3><a href="../../index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#ouverture-de-caisse">1. Ouverture de caisse</a><ul>
 <li><a class="reference internal" href="#procedure">Procédure</a></li>
 </ul>
 </li>
-<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-billets-et-especes">2. Gestion des billets et espèces<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#gestion-des-billets-et-especes">2. Gestion des billets et espèces</a><ul>
 <li><a class="reference internal" href="#id1">Procédure</a></li>
 </ul>
 </li>
-<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#operations-de-transaction">3. Opérations de transaction<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#operations-de-transaction">3. Opérations de transaction</a><ul>
 <li><a class="reference internal" href="#procedure-de-depot">Procédure de dépôt</a></li>
 <li><a class="reference internal" href="#procedure-de-retrait">Procédure de retrait</a></li>
 </ul>
 </li>
-<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#fermeture-de-caisse">4. Fermeture de caisse<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#fermeture-de-caisse">4. Fermeture de caisse</a><ul>
 <li><a class="reference internal" href="#id2">Procédure</a></li>
 </ul>
 </li>
-<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#rapports-et-controles">5. Rapports et contrôles<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#rapports-et-controles">5. Rapports et contrôles</a><ul>
 <li><a class="reference internal" href="#rapports-disponibles">Rapports disponibles</a></li>
 <li><a class="reference internal" href="#controles-de-securite">Contrôles de sécurité</a></li>
 </ul>
 </li>
-<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-autorisations">6. Gestion des autorisations<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#gestion-des-autorisations">6. Gestion des autorisations</a><ul>
 <li><a class="reference internal" href="#roles-et-permissions">Rôles et permissions</a></li>
 <li><a class="reference internal" href="#securite-des-operations">Sécurité des opérations</a></li>
 </ul>
 </li>
-<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#integration-avec-les-autres-modules">7. Intégration avec les autres modules<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#integration-avec-les-autres-modules">7. Intégration avec les autres modules</a><ul>
 <li><a class="reference internal" href="#modules-integres">Modules intégrés</a></li>
 </ul>
 </li>
-<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#cas-d-usage-et-exemples">8. Cas d’usage et exemples<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#cas-d-usage-et-exemples">8. Cas d’usage et exemples</a><ul>
 <li><a class="reference internal" href="#scenario-1-ouverture-de-caisse">Scénario 1 : Ouverture de caisse</a></li>
 <li><a class="reference internal" href="#scenario-2-depot-client">Scénario 2 : Dépôt client</a></li>
 <li><a class="reference internal" href="#scenario-3-retrait-client">Scénario 3 : Retrait client</a></li>
 <li><a class="reference internal" href="#scenario-4-fermeture-de-caisse">Scénario 4 : Fermeture de caisse</a></li>
 </ul>
 </li>
-<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#depannage-et-support">9. Dépannage et support<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#depannage-et-support">9. Dépannage et support</a><ul>
 <li><a class="reference internal" href="#problemes-frequents">Problèmes fréquents</a></li>
 <li><a class="reference internal" href="#contact-support">Contact support</a></li>
 </ul>
 </li>
 </ul>
-</div>
-<div>
-<h4>Sujet précédent</h4>
-<p class="topless"><a href="../loan/index.html" title="Chapitre précédent">Prêts</a></p>
-</div>
-<div>
-<h4>Sujet suivant</h4>
-<p class="topless"><a href="all_features.html" title="Chapitre suivant">Toutes les fonctionnalités - Caissier et Billetage</a></p>
-</div>
-<div aria-label="source link" role="note">
-<h3>Cette page</h3>
-<ul class="this-page-menu">
-<li><a href="../../_sources/modules/cashier/index.rst.txt" rel="nofollow">Montrer le code source</a></li>
-</ul>
-</div>
-</div>
-</div>
-<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
-<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
-</svg>
-</button>
-</aside>
-<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="../loan/index.html"
+                          title="Chapitre précédent">Prêts</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="all_features.html"
+                          title="Chapitre suivant">Toutes les fonctionnalités - Caissier et Billetage</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/modules/cashier/index.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+      </div>
+    </div>
+    <button type="button" @click="showSidebar = false"
+      class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
+        stroke="none" class="h-4 w-4">
+        <path
+          d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z" />
+      </svg>
+    </button>
+  </aside>
+        <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
 <div class="w-full min-w-0 mx-auto">
-<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
-<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
-<span class="hidden md:inline">Documentation CID CoreBanking 0.0.1</span>
-<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
-<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
-</svg>
-</a>
-<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="../index.html">Modules</a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Caissier et Billetage</span>
+<nav aria-label="breadcrumbs"
+     class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+  <a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground"
+     href="../../index.html">
+    <span class="hidden md:inline">Documentation CID CoreBanking 0.0.1</span>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         height="18"
+         width="18"
+         viewBox="0 96 960 960"
+         aria-label="Home"
+         fill="currentColor"
+         stroke="none"
+         class="md:hidden">
+      <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z" />
+    </svg>
+  </a>
+  
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap"
+       href="../index.html">Modules</a>
+    
+<div class="mr-1">/</div><span aria-current="page"
+        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Caissier et Billetage</span>
 </nav>
-<div id="content" role="main">
-<section id="caissier-et-billetage">
+
+    <div id="content" role="main">
+      <section id="caissier-et-billetage">
 <span id="cashier-index"></span><h1>Caissier et Billetage<a class="headerlink" href="#caissier-et-billetage" title="Lien vers cette rubrique"><span>#</span></a></h1>
 <p>Le module <strong>Caissier et Billetage</strong> gère toutes les opérations de caisse et de gestion des espèces. Il permet aux caissiers d’ouvrir leur caisse, d’effectuer des opérations de dépôt et retrait, de gérer les billets et pièces, et de fermer leur caisse en fin de journée avec les contrôles de conformité appropriés.</p>
 <section id="ouverture-de-caisse">
-<h2>1. Ouverture de caisse<a class="headerlink" href="#ouverture-de-caisse" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ouverture-de-caisse'"><span>#</span></a></h2>
+<h2>1. Ouverture de caisse<a class="headerlink" href="#ouverture-de-caisse" title="Lien vers cette rubrique"><span>#</span></a></h2>
 <p>Cette procédure permet au caissier d’ouvrir sa caisse au début de la journée de travail.</p>
 <section id="procedure">
-<h3>Procédure<a class="headerlink" href="#procedure" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#procedure'"><span>#</span></a></h3>
+<h3>Procédure<a class="headerlink" href="#procedure" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <ol class="arabic simple">
 <li><p>Connectez-vous au système avec vos identifiants de caissier.</p></li>
 <li><p>Accédez au module <strong>Caissier et Billetage</strong>.</p></li>
@@ -200,10 +264,10 @@
 </section>
 </section>
 <section id="gestion-des-billets-et-especes">
-<h2>2. Gestion des billets et espèces<a class="headerlink" href="#gestion-des-billets-et-especes" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-billets-et-especes'"><span>#</span></a></h2>
+<h2>2. Gestion des billets et espèces<a class="headerlink" href="#gestion-des-billets-et-especes" title="Lien vers cette rubrique"><span>#</span></a></h2>
 <p>Cette fonctionnalité permet de gérer l’inventaire des billets et pièces en caisse.</p>
 <section id="id1">
-<h3>Procédure<a class="headerlink" href="#id1" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id1'"><span>#</span></a></h3>
+<h3>Procédure<a class="headerlink" href="#id1" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <ol class="arabic">
 <li><p>Accédez à la section <strong>Gestion des billets</strong>.</p></li>
 <li><p>Consultez l’inventaire actuel des espèces :</p>
@@ -239,10 +303,10 @@
 </section>
 </section>
 <section id="operations-de-transaction">
-<h2>3. Opérations de transaction<a class="headerlink" href="#operations-de-transaction" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#operations-de-transaction'"><span>#</span></a></h2>
+<h2>3. Opérations de transaction<a class="headerlink" href="#operations-de-transaction" title="Lien vers cette rubrique"><span>#</span></a></h2>
 <p>Cette section permet d’effectuer les opérations de dépôt et retrait avec gestion automatique des espèces.</p>
 <section id="procedure-de-depot">
-<h3>Procédure de dépôt<a class="headerlink" href="#procedure-de-depot" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#procedure-de-depot'"><span>#</span></a></h3>
+<h3>Procédure de dépôt<a class="headerlink" href="#procedure-de-depot" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <ol class="arabic">
 <li><p>Cliquez sur <strong>Dépôt à l’agence</strong>.</p></li>
 <li><p>Sélectionnez le compte client destinataire.</p></li>
@@ -262,7 +326,7 @@
 </ol>
 </section>
 <section id="procedure-de-retrait">
-<h3>Procédure de retrait<a class="headerlink" href="#procedure-de-retrait" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#procedure-de-retrait'"><span>#</span></a></h3>
+<h3>Procédure de retrait<a class="headerlink" href="#procedure-de-retrait" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <ol class="arabic simple">
 <li><p>Cliquez sur <strong>Retrait à l’agence</strong>.</p></li>
 <li><p>Sélectionnez le compte client.</p></li>
@@ -284,10 +348,10 @@
 </section>
 </section>
 <section id="fermeture-de-caisse">
-<h2>4. Fermeture de caisse<a class="headerlink" href="#fermeture-de-caisse" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#fermeture-de-caisse'"><span>#</span></a></h2>
+<h2>4. Fermeture de caisse<a class="headerlink" href="#fermeture-de-caisse" title="Lien vers cette rubrique"><span>#</span></a></h2>
 <p>Cette procédure permet de fermer la caisse en fin de journée avec les contrôles de conformité.</p>
 <section id="id2">
-<h3>Procédure<a class="headerlink" href="#id2" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h3>
+<h3>Procédure<a class="headerlink" href="#id2" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <ol class="arabic">
 <li><p>Accédez à la section <strong>Fermeture de caisse</strong>.</p></li>
 <li><p>Le système affiche le récapitulatif de la journée :</p>
@@ -328,10 +392,10 @@
 </section>
 </section>
 <section id="rapports-et-controles">
-<h2>5. Rapports et contrôles<a class="headerlink" href="#rapports-et-controles" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#rapports-et-controles'"><span>#</span></a></h2>
+<h2>5. Rapports et contrôles<a class="headerlink" href="#rapports-et-controles" title="Lien vers cette rubrique"><span>#</span></a></h2>
 <p>Cette section fournit les rapports et outils de contrôle pour la gestion de caisse.</p>
 <section id="rapports-disponibles">
-<h3>Rapports disponibles<a class="headerlink" href="#rapports-disponibles" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#rapports-disponibles'"><span>#</span></a></h3>
+<h3>Rapports disponibles<a class="headerlink" href="#rapports-disponibles" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Rapport de caisse quotidien :</strong>
 - Résumé des opérations de la journée
 - Détail des dépôts et retraits
@@ -347,7 +411,7 @@
 - Export en Excel/PDF</p>
 </section>
 <section id="controles-de-securite">
-<h3>Contrôles de sécurité<a class="headerlink" href="#controles-de-securite" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#controles-de-securite'"><span>#</span></a></h3>
+<h3>Contrôles de sécurité<a class="headerlink" href="#controles-de-securite" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Contrôles automatiques :</strong>
 - Vérification des autorisations caissier
 - Validation des montants et limites
@@ -361,10 +425,10 @@
 </section>
 </section>
 <section id="gestion-des-autorisations">
-<h2>6. Gestion des autorisations<a class="headerlink" href="#gestion-des-autorisations" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-autorisations'"><span>#</span></a></h2>
+<h2>6. Gestion des autorisations<a class="headerlink" href="#gestion-des-autorisations" title="Lien vers cette rubrique"><span>#</span></a></h2>
 <p>Cette section couvre la gestion des droits d’accès pour les opérations de caisse.</p>
 <section id="roles-et-permissions">
-<h3>Rôles et permissions<a class="headerlink" href="#roles-et-permissions" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#roles-et-permissions'"><span>#</span></a></h3>
+<h3>Rôles et permissions<a class="headerlink" href="#roles-et-permissions" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Caissier (CASHIER) :</strong>
 - Ouverture/fermeture de caisse
 - Opérations de dépôt et retrait
@@ -382,7 +446,7 @@
 - Accès à tous les rapports</p>
 </section>
 <section id="securite-des-operations">
-<h3>Sécurité des opérations<a class="headerlink" href="#securite-des-operations" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#securite-des-operations'"><span>#</span></a></h3>
+<h3>Sécurité des opérations<a class="headerlink" href="#securite-des-operations" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Authentification :</strong>
 - Connexion obligatoire avec identifiants
 - Session limitée dans le temps
@@ -399,10 +463,10 @@
 </section>
 </section>
 <section id="integration-avec-les-autres-modules">
-<h2>7. Intégration avec les autres modules<a class="headerlink" href="#integration-avec-les-autres-modules" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#integration-avec-les-autres-modules'"><span>#</span></a></h2>
+<h2>7. Intégration avec les autres modules<a class="headerlink" href="#integration-avec-les-autres-modules" title="Lien vers cette rubrique"><span>#</span></a></h2>
 <p>Le module Caissier s’intègre parfaitement avec les autres modules du système.</p>
 <section id="modules-integres">
-<h3>Modules intégrés<a class="headerlink" href="#modules-integres" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#modules-integres'"><span>#</span></a></h3>
+<h3>Modules intégrés<a class="headerlink" href="#modules-integres" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Module Comptabilité :</strong>
 - Génération automatique des écritures
 - Intégration au grand livre
@@ -422,10 +486,10 @@
 </section>
 </section>
 <section id="cas-d-usage-et-exemples">
-<h2>8. Cas d’usage et exemples<a class="headerlink" href="#cas-d-usage-et-exemples" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#cas-d-usage-et-exemples'"><span>#</span></a></h2>
+<h2>8. Cas d’usage et exemples<a class="headerlink" href="#cas-d-usage-et-exemples" title="Lien vers cette rubrique"><span>#</span></a></h2>
 <p>Cette section présente des exemples concrets d’utilisation du module.</p>
 <section id="scenario-1-ouverture-de-caisse">
-<h3>Scénario 1 : Ouverture de caisse<a class="headerlink" href="#scenario-1-ouverture-de-caisse" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#scenario-1-ouverture-de-caisse'"><span>#</span></a></h3>
+<h3>Scénario 1 : Ouverture de caisse<a class="headerlink" href="#scenario-1-ouverture-de-caisse" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Contexte :</strong> Caissier débutant sa journée de travail.</p>
 <p><strong>Étapes :</strong></p>
 <ol class="arabic simple">
@@ -439,7 +503,7 @@
 </ol>
 </section>
 <section id="scenario-2-depot-client">
-<h3>Scénario 2 : Dépôt client<a class="headerlink" href="#scenario-2-depot-client" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#scenario-2-depot-client'"><span>#</span></a></h3>
+<h3>Scénario 2 : Dépôt client<a class="headerlink" href="#scenario-2-depot-client" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Contexte :</strong> Client effectuant un dépôt de 75 000 FCFA.</p>
 <p><strong>Étapes :</strong></p>
 <ol class="arabic simple">
@@ -456,7 +520,7 @@
 </ol>
 </section>
 <section id="scenario-3-retrait-client">
-<h3>Scénario 3 : Retrait client<a class="headerlink" href="#scenario-3-retrait-client" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#scenario-3-retrait-client'"><span>#</span></a></h3>
+<h3>Scénario 3 : Retrait client<a class="headerlink" href="#scenario-3-retrait-client" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Contexte :</strong> Client effectuant un retrait de 30 000 FCFA.</p>
 <p><strong>Étapes :</strong></p>
 <ol class="arabic simple">
@@ -474,7 +538,7 @@
 </ol>
 </section>
 <section id="scenario-4-fermeture-de-caisse">
-<h3>Scénario 4 : Fermeture de caisse<a class="headerlink" href="#scenario-4-fermeture-de-caisse" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#scenario-4-fermeture-de-caisse'"><span>#</span></a></h3>
+<h3>Scénario 4 : Fermeture de caisse<a class="headerlink" href="#scenario-4-fermeture-de-caisse" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Contexte :</strong> Fin de journée, fermeture de caisse.</p>
 <p><strong>Étapes :</strong></p>
 <ol class="arabic simple">
@@ -492,10 +556,10 @@
 </section>
 </section>
 <section id="depannage-et-support">
-<h2>9. Dépannage et support<a class="headerlink" href="#depannage-et-support" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#depannage-et-support'"><span>#</span></a></h2>
+<h2>9. Dépannage et support<a class="headerlink" href="#depannage-et-support" title="Lien vers cette rubrique"><span>#</span></a></h2>
 <p>Cette section aide à résoudre les problèmes courants.</p>
 <section id="problemes-frequents">
-<h3>Problèmes fréquents<a class="headerlink" href="#problemes-frequents" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#problemes-frequents'"><span>#</span></a></h3>
+<h3>Problèmes fréquents<a class="headerlink" href="#problemes-frequents" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Erreur : « Aucun billetage trouvé »</strong>
 - <strong>Cause :</strong> Caisse non ouverte
 - <strong>Solution :</strong> Ouvrir la caisse avant les opérations</p>
@@ -510,9 +574,9 @@
 - <strong>Solution :</strong> Contacter l’administrateur pour l’affectation</p>
 </section>
 <section id="contact-support">
-<h3>Contact support<a class="headerlink" href="#contact-support" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#contact-support'"><span>#</span></a></h3>
+<h3>Contact support<a class="headerlink" href="#contact-support" title="Lien vers cette rubrique"><span>#</span></a></h3>
 <p><strong>Support technique :</strong>
-- Email : <a class="reference external" href="mailto:support%40thltechnologies.com">support<span>@</span>thltechnologies<span>.</span>com</a>
+- Email : <a class="reference external" href="mailto:support&#37;&#52;&#48;thltechnologies&#46;com">support<span>&#64;</span>thltechnologies<span>&#46;</span>com</a>
 - Téléphone : +237 XXX XX XX XX
 - Horaires : 8h00 - 18h00 (Lun-Ven)</p>
 <p><strong>Documentation :</strong>
@@ -542,93 +606,128 @@
 </section>
 </section>
 </section>
-</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
-<div class="mr-auto">
-<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../loan/index.html">
-<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<polyline points="15 18 9 12 15 6"></polyline>
-</svg>
+
+    </div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+    <div class="mr-auto">
+      <a href="../loan/index.html"
+         class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             class="mr-2 h-4 w-4">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
         Prêts
       </a>
-</div>
-<div class="ml-auto">
-<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="all_features.html">
+    </div>
+    <div class="ml-auto">
+      <a href="all_features.html"
+         class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4">
         Toutes les fonctionnalités - Caissier et Billetage
-        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<polyline points="9 18 15 12 9 6"></polyline>
-</svg>
-</a>
-</div>
-</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
-<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
-<ul>
-<li><a :data-current="activeSection === '#ouverture-de-caisse'" class="reference internal" href="#ouverture-de-caisse">1. Ouverture de caisse</a><ul>
-<li><a :data-current="activeSection === '#procedure'" class="reference internal" href="#procedure">Procédure</a></li>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             class="ml-2 h-4 w-4">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+    </div>
+</div></div><aside id="right-sidebar" class="hidden text-sm xl:block">
+  <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+    <ul>
+<li><a class="reference internal" href="#ouverture-de-caisse">1. Ouverture de caisse</a><ul>
+<li><a class="reference internal" href="#procedure">Procédure</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#gestion-des-billets-et-especes'" class="reference internal" href="#gestion-des-billets-et-especes">2. Gestion des billets et espèces</a><ul>
-<li><a :data-current="activeSection === '#id1'" class="reference internal" href="#id1">Procédure</a></li>
+<li><a class="reference internal" href="#gestion-des-billets-et-especes">2. Gestion des billets et espèces</a><ul>
+<li><a class="reference internal" href="#id1">Procédure</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#operations-de-transaction'" class="reference internal" href="#operations-de-transaction">3. Opérations de transaction</a><ul>
-<li><a :data-current="activeSection === '#procedure-de-depot'" class="reference internal" href="#procedure-de-depot">Procédure de dépôt</a></li>
-<li><a :data-current="activeSection === '#procedure-de-retrait'" class="reference internal" href="#procedure-de-retrait">Procédure de retrait</a></li>
+<li><a class="reference internal" href="#operations-de-transaction">3. Opérations de transaction</a><ul>
+<li><a class="reference internal" href="#procedure-de-depot">Procédure de dépôt</a></li>
+<li><a class="reference internal" href="#procedure-de-retrait">Procédure de retrait</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#fermeture-de-caisse'" class="reference internal" href="#fermeture-de-caisse">4. Fermeture de caisse</a><ul>
-<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">Procédure</a></li>
+<li><a class="reference internal" href="#fermeture-de-caisse">4. Fermeture de caisse</a><ul>
+<li><a class="reference internal" href="#id2">Procédure</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#rapports-et-controles'" class="reference internal" href="#rapports-et-controles">5. Rapports et contrôles</a><ul>
-<li><a :data-current="activeSection === '#rapports-disponibles'" class="reference internal" href="#rapports-disponibles">Rapports disponibles</a></li>
-<li><a :data-current="activeSection === '#controles-de-securite'" class="reference internal" href="#controles-de-securite">Contrôles de sécurité</a></li>
+<li><a class="reference internal" href="#rapports-et-controles">5. Rapports et contrôles</a><ul>
+<li><a class="reference internal" href="#rapports-disponibles">Rapports disponibles</a></li>
+<li><a class="reference internal" href="#controles-de-securite">Contrôles de sécurité</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#gestion-des-autorisations'" class="reference internal" href="#gestion-des-autorisations">6. Gestion des autorisations</a><ul>
-<li><a :data-current="activeSection === '#roles-et-permissions'" class="reference internal" href="#roles-et-permissions">Rôles et permissions</a></li>
-<li><a :data-current="activeSection === '#securite-des-operations'" class="reference internal" href="#securite-des-operations">Sécurité des opérations</a></li>
+<li><a class="reference internal" href="#gestion-des-autorisations">6. Gestion des autorisations</a><ul>
+<li><a class="reference internal" href="#roles-et-permissions">Rôles et permissions</a></li>
+<li><a class="reference internal" href="#securite-des-operations">Sécurité des opérations</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#integration-avec-les-autres-modules'" class="reference internal" href="#integration-avec-les-autres-modules">7. Intégration avec les autres modules</a><ul>
-<li><a :data-current="activeSection === '#modules-integres'" class="reference internal" href="#modules-integres">Modules intégrés</a></li>
+<li><a class="reference internal" href="#integration-avec-les-autres-modules">7. Intégration avec les autres modules</a><ul>
+<li><a class="reference internal" href="#modules-integres">Modules intégrés</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#cas-d-usage-et-exemples'" class="reference internal" href="#cas-d-usage-et-exemples">8. Cas d’usage et exemples</a><ul>
-<li><a :data-current="activeSection === '#scenario-1-ouverture-de-caisse'" class="reference internal" href="#scenario-1-ouverture-de-caisse">Scénario 1 : Ouverture de caisse</a></li>
-<li><a :data-current="activeSection === '#scenario-2-depot-client'" class="reference internal" href="#scenario-2-depot-client">Scénario 2 : Dépôt client</a></li>
-<li><a :data-current="activeSection === '#scenario-3-retrait-client'" class="reference internal" href="#scenario-3-retrait-client">Scénario 3 : Retrait client</a></li>
-<li><a :data-current="activeSection === '#scenario-4-fermeture-de-caisse'" class="reference internal" href="#scenario-4-fermeture-de-caisse">Scénario 4 : Fermeture de caisse</a></li>
+<li><a class="reference internal" href="#cas-d-usage-et-exemples">8. Cas d’usage et exemples</a><ul>
+<li><a class="reference internal" href="#scenario-1-ouverture-de-caisse">Scénario 1 : Ouverture de caisse</a></li>
+<li><a class="reference internal" href="#scenario-2-depot-client">Scénario 2 : Dépôt client</a></li>
+<li><a class="reference internal" href="#scenario-3-retrait-client">Scénario 3 : Retrait client</a></li>
+<li><a class="reference internal" href="#scenario-4-fermeture-de-caisse">Scénario 4 : Fermeture de caisse</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#depannage-et-support'" class="reference internal" href="#depannage-et-support">9. Dépannage et support</a><ul>
-<li><a :data-current="activeSection === '#problemes-frequents'" class="reference internal" href="#problemes-frequents">Problèmes fréquents</a></li>
-<li><a :data-current="activeSection === '#contact-support'" class="reference internal" href="#contact-support">Contact support</a></li>
+<li><a class="reference internal" href="#depannage-et-support">9. Dépannage et support</a><ul>
+<li><a class="reference internal" href="#problemes-frequents">Problèmes fréquents</a></li>
+<li><a class="reference internal" href="#contact-support">Contact support</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </aside>
-</main>
-</div>
-</div><footer class="py-6 border-t border-border md:py-0">
-<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, THL Technologies Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.2.3</a></p>
+        </main>
+      </div>
+    </div><footer class="py-6 border-t border-border md:py-0">
+    <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+      <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+        <p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, THL Technologies&nbsp;Built with <a class="font-medium underline underline-offset-4"
+    href="https://www.sphinx-doc.org"
+    rel="noreferrer">Sphinx 8.2.3</a></p>
 </div>
 </div>
 </footer>
-</div><button :class="{'opacity-0 invisible' : !showScrollTop}" @click="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 p-2 z-10 rounded-sm bg-gray-700 text-xs text-white transition-all duration-1000 hover:bg-gray-950 focus:bg-gray-950" id="scrolltop" x-cloak="">
-<svg aria-hidden="true" class="inline fill-current mb-[2px]" height="14" viewbox="0 96 960 960" width="14" xmlns="http://www.w3.org/2000/svg">
-<path d="M450 896V370L202 618l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
-</svg>
+  </div><button id="scrolltop"
+        x-cloak
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-8 right-8 p-2 z-10 rounded-sm bg-gray-700 text-xs text-white transition-all duration-1000 hover:bg-gray-950 focus:bg-gray-950"
+        :class="{'opacity-0 invisible' : !showScrollTop}"
+>
+  <svg xmlns="http://www.w3.org/2000/svg"
+       height="14"
+       viewBox="0 96 960 960"
+       width="14"
+       class="inline fill-current mb-[2px]"
+       aria-hidden="true">
+    <path d="M450 896V370L202 618l-42-42 320-320 320 320-42 42-248-248v526h-60Z" />
+  </svg>
   Back to top
 </button>
-<script src="../../_static/documentation_options.js?v=5cd26065"></script>
-<script src="../../_static/doctools.js?v=9bcbadda"></script>
-<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-<script src="../../_static/js/target-blank.js?v=4e58104d"></script>
-<script defer="defer" src="../../_static/theme.js?v=073f68d9"></script>
-<script src="../../_static/translations.js?v=e6b791cb"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  
+    <script src="../../_static/documentation_options.js?v=718f2d82"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/target-blank.js?v=4e58104d"></script>
+    <script defer="defer" src="../../_static/theme.js?v=073f68d9"></script>
+    <script src="../../_static/translations.js?v=e6b791cb"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  
 </body>
 </html>
