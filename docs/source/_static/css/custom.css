@@ -1,0 +1,297 @@
+/* CSS personnalisé pour CID Core Banking Documentation */
+
+/* Import Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Variables de couleurs cohérentes */
+:root {
+    --primary-color: #2E8B57;      /* Teal vert */
+    --accent-color: #20B2AA;       /* Teal clair */
+    --secondary-color: #F0F8FF;    /* Bleu très clair */
+    --success-color: #28a745;      /* Vert succès */
+    --warning-color: #ffc107;      /* Jaune avertissement */
+    --info-color: #17a2b8;         /* Bleu info */
+    --danger-color: #dc3545;       /* Rouge danger */
+    --text-color: #333333;         /* Texte sombre */
+    --background-color: #ffffff;   /* Fond clair */
+    --card-background: #f8f9fa;    /* Fond des cartes */
+    --border-color: #dee2e6;       /* Couleur des bordures */
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #ffffff;         /* Texte blanc */
+        --background-color: #1a1a1a;   /* Fond sombre */
+        --card-background: #2a2a2a;    /* Fond des cartes */
+        --border-color: #444444;       /* Couleur des bordures */
+    }
+}
+
+/* Amélioration générale */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Amélioration des titres */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.3rem;
+}
+
+/* Cards pour les modules */
+.module-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
+}
+
+.module-card.complete {
+    border-left: 4px solid var(--success-color);
+}
+
+.module-card.in-progress {
+    border-left: 4px solid var(--warning-color);
+}
+
+/* Badges de statut */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 20px;
+    margin: 0.25rem;
+}
+
+.status-badge.complete {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.status-badge.in-progress {
+    background-color: var(--warning-color);
+    color: #212529;
+}
+
+.status-badge.planned {
+    background-color: var(--info-color);
+    color: white;
+}
+
+/* Amélioration des listes */
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Liens améliorés */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Code blocks améliorés */
+pre, code {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+code {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.9em;
+}
+
+/* Tables améliorées */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Boutons améliorés */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    color: white;
+}
+
+/* Alertes et notifications */
+.alert {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: var(--success-color);
+    color: #155724;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: var(--warning-color);
+    color: #856404;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: var(--info-color);
+    color: #0c5460;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: var(--danger-color);
+    color: #721c24;
+}
+
+/* Navigation améliorée */
+.sidebar {
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+}
+
+.sidebar .toctree-l1 > a {
+    color: #ecf0f1;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 0.25rem 0;
+    transition: all 0.2s ease;
+}
+
+.sidebar .toctree-l1 > a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sidebar .toctree-l1.current > a {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .module-card {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+}
+
+/* Animations subtiles */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}

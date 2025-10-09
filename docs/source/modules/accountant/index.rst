@@ -84,3 +84,66 @@ Démo
 .. video:: ../../_static/videos/accountant/capital_withdrawal_history.mp4
     :caption: Historiques des prélèvements de capitaux
 
+
+3. Traitement des écritures comptables
+---------------------------------------
+
+Cette fonctionnalité permet la gestion automatisée et optimisée des écritures comptables avec un nouveau système de composants de transaction. Elle améliore significativement les performances et la traçabilité des opérations comptables.
+
+Procédure
+~~~~~~~~~
+
+1. Connectez-vous au logiciel.
+2. Accédez au module **Comptabilité**.
+3. Le système traite automatiquement les écritures comptables via le nouveau système de composants.
+
+   \a. **Traitement par lots des écritures**
+
+      Le système utilise un traitement par lots optimisé qui :
+         - Traite les transactions non encore comptabilisées
+         - Crée une seule écriture comptable par transaction avec plusieurs lignes
+         - Améliore les performances de traitement
+         - Assure la traçabilité complète
+
+   \b. **Reprocessing des écritures**
+
+      En cas de besoin, le système permet de :
+         - Reprocesser les écritures existantes
+         - Mettre à jour les composants de transaction
+         - Maintenir la cohérence des données comptables
+
+   \c. **Composants de transaction**
+
+      Le nouveau système gère différents types de composants :
+         - Marge (MARGIN)
+         - TAF (Taxe sur les Activités Financières)
+         - Frais de communication
+         - Frais de transport
+         - Frais administratifs
+         - Frais d'assurance
+         - Et autres frais spécialisés
+
+4. Génération du grand livre
+-----------------------------
+
+Cette fonctionnalité permet de générer et consulter le grand livre des comptes avec des filtres avancés.
+
+Procédure
+~~~~~~~~~
+
+1. Connectez-vous au logiciel.
+2. Accédez au module **Comptabilité**.
+3. Sélectionnez **Grand livre** dans le menu.
+
+   \a. **Consultation du grand livre**
+
+      - Sélectionnez le compte concerné
+      - Définissez la période (date de début et de fin)
+      - Le système génère automatiquement le grand livre
+
+   \b. **Filtres disponibles**
+
+      - Filtrage par compte spécifique
+      - Filtrage par période
+      - Filtrage par type de transaction
+      - Export des données au format Excel
