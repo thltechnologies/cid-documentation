@@ -1,22 +1,22 @@
 Introduction
 ============
 
-**CID Core Banking**
+**THL Core Banking**
 ====================
 
-**CID Core Banking** est une plateforme bancaire complète et moderne, conçue pour répondre aux défis complexes du secteur financier contemporain. Développée par **THL Technologies**, cette solution intègre les dernières technologies et les meilleures pratiques du secteur pour offrir une expérience bancaire exceptionnelle.
+**THL Core Banking** est une plateforme bancaire complète et moderne, conçue pour répondre aux défis complexes du secteur financier contemporain. Développée par **THL Technologies**, cette solution intègre les dernières technologies et les meilleures pratiques du secteur pour offrir une expérience bancaire exceptionnelle.
 
 🎯 **Vision et Mission**
 ------------------------
 
-Notre vision est de démocratiser l'accès aux services bancaires modernes en proposant une solution technologique de pointe, accessible et sécurisée. CID Core Banking s'engage à :
+Notre vision est de démocratiser l'accès aux services bancaires modernes en proposant une solution technologique de pointe, accessible et sécurisée. THL Core Banking s'engage à :
 
 - **Transformer l'expérience bancaire** grâce à une interface intuitive et des processus optimisés
 - **Garantir la sécurité maximale** avec des protocoles de sécurité de niveau bancaire
 - **Assurer la conformité réglementaire** en respectant toutes les normes du secteur financier
 - **Offrir une scalabilité parfaite** pour s'adapter à la croissance de votre institution
 
-🚀 **Pourquoi CID Core Banking ?**
+🚀 **Pourquoi THL Core Banking ?**
 ----------------------------------
 
 **Innovation Technologique**
@@ -46,7 +46,7 @@ Notre vision est de démocratiser l'accès aux services bancaires modernes en pr
 🏗️ **Architecture Modulaire**
 -----------------------------
 
-CID Core Banking est construit autour d'une architecture modulaire sophistiquée, composée de **16 modules spécialisés** qui travaillent en parfaite harmonie :
+THL Core Banking est construit autour d'une architecture modulaire sophistiquée, composée de **16 modules spécialisés** qui travaillent en parfaite harmonie :
 
 **Modules Métier Principaux**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +79,7 @@ CID Core Banking est construit autour d'une architecture modulaire sophistiquée
 🔧 **Technologie Moderne**
 ---------------------------
 
-CID Core Banking utilise les dernières technologies du marché pour garantir :
+THL Core Banking utilise les dernières technologies du marché pour garantir :
 
 - **Performance optimale** : Système rapide et réactif
 - **Sécurité maximale** : Protection des données bancaires
@@ -219,7 +219,7 @@ CID Core Banking utilise les dernières technologies du marché pour garantir :
 
 ---
 
-**Prêt à découvrir CID Core Banking ?**
+**Prêt à découvrir THL Core Banking ?**
 
 Cette documentation vous guidera à travers tous les aspects de notre solution bancaire. Chaque module est documenté en détail avec des procédures pas-à-pas, des exemples pratiques et des conseils d'utilisation.
 

@@ -1,19 +1,19 @@
 .. _index:
 
 ================
-CID Core Banking
+THL Core Banking
 ================
 
-Bienvenue sur la documentation de CID Core Banking.
+Bienvenue sur la documentation de THL Core Banking.
 
 .. image:: _static/images/introduction.png
-   :alt: Interface de CID Core Banking
+   :alt: Interface de THL Core Banking
    :align: center
 
 📊 **Aperçu Rapide**
 --------------------
 
-**CID Core Banking** est une solution bancaire complète et moderne, conçue pour répondre aux besoins des institutions financières contemporaines. Notre plateforme intègre 16 modules spécialisés pour offrir une expérience bancaire exceptionnelle.
+**THL Core Banking** est une solution bancaire complète et moderne, conçue pour répondre aux besoins des institutions financières contemporaines. Notre plateforme intègre 16 modules spécialisés pour offrir une expérience bancaire exceptionnelle.
 
     **🎯 Modules Principaux :**
     - **Comptabilité** : Gestion comptable intégrée avec grand livre

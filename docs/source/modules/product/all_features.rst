@@ -1,7 +1,7 @@
 Toutes les fonctionnalités - Module Produits
 ============================================
 
-Cette page répertorie toutes les fonctionnalités disponibles dans le module Produits du système CID Core Banking.
+Cette page répertorie toutes les fonctionnalités disponibles dans le module Produits du système THL Core Banking.
 
 1. Création et gestion des produits bancaires
 =============================================

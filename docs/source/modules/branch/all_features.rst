@@ -1,7 +1,7 @@
 Toutes les fonctionnalités - Module Agence
 ==========================================
 
-Cette page répertorie toutes les fonctionnalités disponibles dans le module Agence du système CID Core Banking.
+Cette page répertorie toutes les fonctionnalités disponibles dans le module Agence du système THL Core Banking.
 
 1. Création et gestion des agences
 ==================================

@@ -1,7 +1,7 @@
 Module Produits
 ===============
 
-Le module **Produits** est le cœur du catalogue bancaire du système CID Core Banking. Il gère la création, la configuration et l'administration de tous les produits bancaires proposés aux clients.
+Le module **Produits** est le cœur du catalogue bancaire du système THL Core Banking. Il gère la création, la configuration et l'administration de tous les produits bancaires proposés aux clients.
 
 Vue d'ensemble
 --------------
