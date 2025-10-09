@@ -1,7 +1,7 @@
 Nouvelles fonctionnalités - Module Agence
 ==========================================
 
-Cette page présente les nouvelles fonctionnalités et améliorations apportées au module Agence du système CID Core Banking.
+Cette page présente les nouvelles fonctionnalités et améliorations apportées au module Agence du système THL Core Banking.
 
 1. Système de gestion centralisée des agences
 =============================================
