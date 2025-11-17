@@ -1,7 +1,7 @@
 Module Agence
 =============
 
-Le module **Agence** est le cœur organisationnel du système CID Core Banking. Il gère la création, la configuration et l'administration des agences bancaires, ainsi que toutes les entités qui leur sont associées (employés, clients, comptes, prêts, transactions).
+Le module **Agence** est le cœur organisationnel du système THL Core Banking. Il gère la création, la configuration et l'administration des agences bancaires, ainsi que toutes les entités qui leur sont associées (employés, clients, comptes, prêts, transactions).
 
 Vue d'ensemble
 --------------

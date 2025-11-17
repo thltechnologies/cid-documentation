@@ -4,7 +4,7 @@
 Modules
 =======
 
-Cette section présente tous les modules du système CID Core Banking, organisés par statut de documentation.
+Cette section présente tous les modules du système THL Core Banking, organisés par statut de documentation.
 
 📊 **Statistiques de Documentation**
 ------------------------------------

@@ -1,7 +1,7 @@
 Nouvelles fonctionnalités - Module Produits
 ===========================================
 
-Cette page présente les nouvelles fonctionnalités et améliorations apportées au module Produits du système CID Core Banking.
+Cette page présente les nouvelles fonctionnalités et améliorations apportées au module Produits du système THL Core Banking.
 
 1. Système de gestion avancé des produits bancaires
 ==================================================

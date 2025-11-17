@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'CID CoreBanking'
+project = 'THL CoreBanking'
 copyright = '2025, THL Technologies'
 author = 'THL Technologies'
 release = '0.0.1'
