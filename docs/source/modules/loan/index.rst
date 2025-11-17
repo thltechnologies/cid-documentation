@@ -5,6 +5,19 @@ Prêts
 
 Le module **Prêts** est un système complet de gestion des prêts qui permet la création, l'approbation, le suivi et le remboursement des prêts accordés aux clients. Il intègre un système de tarification avancé, des échéanciers flexibles et une gestion automatisée des remboursements.
 
+.. note::
+   **Mises à jour importantes - Octobre 2025**
+   
+   Le module prêts a bénéficié de corrections critiques et d'améliorations majeures :
+   
+   - ✅ Migration complète vers le système de composants de transaction
+   - ✅ Correction des calculs financiers avec protection contre les divisions par zéro
+   - ✅ Amélioration de la précision des échéanciers pour tous les types d'échéances
+   - ✅ Renforcement des validations et de la sécurité des données
+   - ✅ Correction des rapports et exports Excel
+   
+   Ces améliorations garantissent une meilleure fiabilité et précision du système.
+
 1. Création et gestion des prêts
 ---------------------------------
 
@@ -161,7 +174,20 @@ Procédure
 ---------------------------
 
 Le système intègre un moteur de tarification sophistiqué basé sur la formule :
-**Montant du prêt = Prix d'achat + Marge + TAF**
+
+.. math::
+   
+   \text{Marge} &= \text{Prix de vente} - \text{Prix d'achat} \\
+   \text{Pourcentage marge} &= \frac{\text{Marge}}{\text{Prix d'achat}} \times 100 \\
+   \text{Valeur TAF} &= \text{Marge} \times \frac{\text{Pourcentage TAF}}{100} \\
+   \text{Montant total} &= \text{Prix d'achat} + \text{Marge} + \text{Valeur TAF}
+
+**Validations automatiques** :
+
+- Prix d'achat doit être strictement supérieur à 0 (évite les divisions par zéro)
+- Prix de vente doit être supérieur ou égal au prix d'achat
+- Tous les calculs sont effectués avant l'enregistrement (évite les dépendances circulaires)
+- Précision garantie sur tous les montants financiers
 
 Procédure
 ~~~~~~~~~
@@ -169,22 +195,42 @@ Procédure
 1. **Configuration des paramètres**
 
    - Définition des pourcentages de marge
-   - Configuration des taux TAF
+   - Configuration des taux TAF (Taxe sur Activités Financières)
    - Paramétrage des frais additionnels
+   - Validation automatique de la cohérence des données
 
 2. **Calcul automatique**
 
    - Le système calcule automatiquement le montant total
-   - Application des règles de tarification
-   - Génération de l'échéancier
+   - Application des règles de tarification islamique
+   - Génération de l'échéancier selon le type d'échéance
+   - Vérification de la cohérence des montants
 
 3. **Types de prêts supportés**
 
-   - **Murabaha** : Vente avec marge
-   - **Ijara** : Location-vente
-   - **Musharaka** : Partenariat
-   - **Qard** : Prêt sans intérêt
+   - **Murabaha** : Vente avec marge (financement islamique)
+   - **Ijara** : Location-vente (leasing islamique)
+   - **Musharaka** : Partenariat (participation islamique)
+   - **Qard** : Prêt sans intérêt (prêt bienveillant)
    - **Autres types** : Prêts conventionnels
+
+4. **Types d'échéances disponibles**
+
+   - **MONTHLY** : Mensuel (30 jours)
+   - **QUARTERLY** : Trimestriel (90 jours)
+   - **FOURTH_MONTH** : Quatre mois (120 jours)
+   - **FIFTH_MONTH** : Cinq mois (150 jours)
+   - **SEMI_ANNUAL** : Semestriel (180 jours)
+   - **ANNUAL** : Annuel (360 jours)
+
+.. warning::
+   Le calcul de l'échéancier est automatiquement mis à jour lorsque vous modifiez :
+   
+   - La date du premier remboursement
+   - Le délai (nombre de périodes)
+   - Le type d'échéance
+   
+   Cette mise à jour supprime les remboursements non validés et régénère l'échéancier.
 
 Démo
 ~~~~

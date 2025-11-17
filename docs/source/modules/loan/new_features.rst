@@ -1,6 +1,35 @@
 Nouvelles fonctionnalités
 =========================
 
+Mises à jour d'octobre 2025 - Corrections critiques
+----------------------------------------------------
+**Version 2.0 - Améliorations majeures et corrections de bugs critiques**
+
+✅ **Migration complète vers les composants de transaction**
+   - Suppression de toutes les méthodes dépréciées (``getMarginTransaction()``)
+   - Utilisation exclusive du système de composants pour la marge
+   - Amélioration de la performance et de la traçabilité
+
+✅ **Corrections de calculs critiques**
+   - **Protection contre division par zéro** : Validation obligatoire que ``buyingPrice > 0``
+   - **Élimination des dépendances circulaires** : Tous les calculs utilisent des valeurs pré-calculées
+   - **Calcul précis des échéanciers** : Correction de la formule ``totalDays = intervalDays × delay``
+   - **Distribution de marge sécurisée** : Protection contre division par zéro quand tous les remboursements sont validés
+
+✅ **Améliorations de validation**
+   - Validation correcte du statut des transactions dans ``updateDueType``
+   - Vérification du solde uniquement sur les remboursements validés dans ``payOff``
+   - Comparaison correcte des objets avec ``Objects.equals()``
+   - Vérification de null pour les remboursements personnalisés
+
+✅ **Corrections de rapports**
+   - Correction du calcul du montant restant (était double-soustrait)
+   - Amélioration de la précision des exports Excel
+   - Affichage correct des montants dans tous les rapports
+
+**Impact** :
+Ces corrections éliminent les risques de crash de l'application, garantissent la précision des calculs financiers et améliorent la fiabilité globale du système de prêts.
+
 1. Système de composants de transaction pour les prêts
 -------------------------------------------------------
 - **Intégration des composants** : Les prêts utilisent maintenant le système de composants de transaction

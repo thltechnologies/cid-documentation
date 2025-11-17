@@ -40,6 +40,11 @@ Le module **Prêts** offre un système complet de gestion des prêts avec des fo
 - **Configuration flexible** : Paramétrage des pourcentages et taux
 - **Types de frais** : Gestion des marges, TAF, et frais additionnels
 - **Calcul automatique** : Génération automatique des montants et échéanciers
+- **Validations renforcées** : 
+   - Prix d'achat doit être > 0 (protection division par zéro)
+   - Prix de vente ≥ prix d'achat
+   - Calculs sans dépendances circulaires
+   - Précision garantie des montants financiers
 
 6. Gestion des échéances
 -------------------------

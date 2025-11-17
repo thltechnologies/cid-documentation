@@ -151,3 +151,14 @@ Procédure
       - Filtrage par période
       - Filtrage par type de transaction
       - Export des données au format Excel
+
+5. Module Comptable Complet
+----------------------------
+
+Le module comptable complet fournit un système comptable complet avec toutes les fonctionnalités nécessaires pour la gestion comptable d'une institution financière.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Module Comptable Complet
+
+   accounting_module

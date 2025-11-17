@@ -71,3 +71,27 @@ la centralisation des opérations, une traçabilité complète, et un système o
 - Optimisation de l'utilisation mémoire
 - Traitement simplifié des composants
 - Audit trail amélioré et cohérent
+
+10. Module Comptable Complet (NOUVEAU)
+---------------------------------------
+Le module comptable complet est une extension majeure qui fournit un système comptable complet conforme aux standards de la finance islamique.
+
+Fonctionnalités principales :
+- **Plan Comptable** : Structure hiérarchique des comptes avec types (ASSET, LIABILITY, EQUITY, REVENUE, EXPENSE)
+- **Exercices Comptables** : Gestion des exercices fiscaux avec création automatique de 12 périodes mensuelles
+- **Grand Livre Général** : Enregistrement de toutes les transactions comptables avec génération automatique
+- **Balance de Vérification** : Calcul automatique avec validation de l'équilibre débit/crédit
+- **États Financiers** : Génération automatique du bilan, compte de résultat et tableau de flux de trésorerie
+- **Réconciliation Bancaire** : Pointage automatique et manuel avec gestion des écarts
+
+Architecture :
+- **Backend** : 9 entités JPA, 7 services métier, 7 controllers REST, 50+ endpoints API
+- **Frontend** : 6 composants Angular, 7 services, 8 modèles TypeScript, 4 enums
+
+Conformité :
+- Support pour finance islamique (Murabaha, Ijara, Musharaka)
+- Conformité AAOIFI (structure prête)
+- Séparation des fonds islamiques/conventionnels
+- Traçabilité complète conforme à la Sharia
+
+Voir la documentation complète : :ref:`accounting-module`
