@@ -157,8 +157,14 @@ Procédure
 
 Le module comptable complet fournit un système comptable complet avec toutes les fonctionnalités nécessaires pour la gestion comptable d'une institution financière.
 
+5. Guide Utilisateur Complet (A-Z)
+-----------------------------------
+
+Pour une documentation complète de A à Z sur l'utilisation du module comptable, consultez le guide utilisateur complet qui couvre toutes les fonctionnalités étape par étape.
+
 .. toctree::
    :maxdepth: 2
-   :caption: Module Comptable Complet
+   :caption: Documentation Complète
 
+   user_guide
    accounting_module

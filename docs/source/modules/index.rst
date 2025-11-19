@@ -18,6 +18,8 @@ Cette section présente tous les modules du système THL Core Banking, organisé
 
 Ces modules bénéficient d'une documentation complète avec procédures détaillées, exemples pratiques et guides d'utilisation.
 
+⭐ **Module Comptable** : Guide utilisateur complet A-Z disponible avec toutes les fonctionnalités documentées étape par étape.
+
     .. toctree::
        :maxdepth: 1
        :caption: ✅ Modules Complets
@@ -52,6 +54,7 @@ Ces modules sont en cours de documentation et seront complétés progressivement
 --------------------------
 
 **Pour les Utilisateurs :**
+- 📘 **Nouveau !** Consultez le **Guide Utilisateur Complet (A-Z)** du module comptable pour une documentation exhaustive de toutes les fonctionnalités
 - Commencez par l'**Introduction** pour comprendre l'architecture
 - Consultez les **Modules Complets** pour les fonctionnalités principales
 - Utilisez la **recherche** (⌘K) pour trouver des informations spécifiques
@@ -65,3 +68,14 @@ Ces modules sont en cours de documentation et seront complétés progressivement
 - Consultez le module **Sécurité** pour la configuration des accès
 - Le module **Administration** couvre la configuration système
 - Les **Rapports** fournissent des métriques et analytics
+
+📚 **Documentation Spécialisée du Module Comptable**
+-----------------------------------------------------
+
+Le module comptable offre une documentation complète :
+
+- ⭐ **Guide Utilisateur Complet (A-Z)** : Documentation exhaustive de toutes les fonctionnalités avec procédures étape par étape
+- 📖 **Module Comptable Technique** : Architecture technique et détails d'implémentation
+- 🎯 **Fonctionnalités Disponibles** : Liste complète des fonctionnalités avec exemples
+
+Consultez : ``modules/accountant/user_guide`` pour le guide complet.
