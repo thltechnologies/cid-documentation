@@ -89,7 +89,42 @@ Démo
     :caption: Historiques des prélèvements de capitaux
 
 
-3. Traitement des écritures comptables
+3. Journaux Comptables
+-----------------------
+
+Cette fonctionnalité permet de gérer les journaux comptables qui organisent et classent les écritures comptables par type d'opération. Chaque journal a un code unique et génère automatiquement des références de pièces comptables.
+
+Procédure
+~~~~~~~~~
+
+1. Connectez-vous au logiciel.
+2. Accédez au module **Comptabilité**.
+3. Cliquez sur **Journaux Comptables** dans le menu.
+
+   \a. **Créer un journal**
+
+      Cliquez sur le bouton **"Nouveau Journal"**. Dans le formulaire qui s'affiche, saisissez :
+         - Le code unique du journal (ex: "BQ" pour Banque, "CS" pour Caisse)
+         - Le libellé du journal (ex: "Journal de Banque")
+         - Le type de journal (STANDARD, CAISSE, BANQUE, OD)
+         - Cliquez sur **"Enregistrer"** pour créer le journal.
+
+   \b. **Gérer les journaux**
+
+      Sur la page **Journaux Comptables**, vous pouvez :
+         - Activer ou désactiver un journal
+         - Modifier le libellé et le type
+         - Visualiser la séquence actuelle pour la génération des références
+         - Supprimer un journal (si non utilisé)
+
+   \c. **Utilisation des journaux**
+
+      Les journaux sont utilisés lors de la création d'écritures comptables :
+         - Sélection du journal lors de la création d'une écriture
+         - Génération automatique de la référence de pièce comptable (format: "CODE-SEQUENCE")
+         - Incrémentation automatique de la séquence après chaque écriture
+
+4. Traitement des écritures comptables
 ---------------------------------------
 
 Cette fonctionnalité permet la gestion automatisée et optimisée des écritures comptables avec un nouveau système de composants de transaction. Elle améliore significativement les performances et la traçabilité des opérations comptables.
@@ -127,7 +162,18 @@ Procédure
          - Frais d'assurance
          - Et autres frais spécialisés
 
-4. Génération du grand livre
+   \d. **Créer une écriture comptable manuelle**
+
+      Pour créer une écriture comptable manuellement :
+         - Cliquez sur **"Nouvelle écriture manuelle"** dans la page des écritures
+         - Sélectionnez un journal comptable actif
+         - Remplissez la date et la description
+         - Ajoutez les lignes d'écriture (compte, sens débit/crédit, montant)
+         - Vérifiez que l'écriture est équilibrée (Total Débit = Total Crédit)
+         - Cliquez sur **"Enregistrer"**
+         - La référence de pièce comptable est générée automatiquement (ex: "BQ-001")
+
+5. Génération du grand livre
 -----------------------------
 
 Cette fonctionnalité permet de générer et consulter le grand livre des comptes avec des filtres avancés.
@@ -152,12 +198,12 @@ Procédure
       - Filtrage par type de transaction
       - Export des données au format Excel
 
-5. Module Comptable Complet
+6. Module Comptable Complet
 ----------------------------
 
 Le module comptable complet fournit un système comptable complet avec toutes les fonctionnalités nécessaires pour la gestion comptable d'une institution financière.
 
-5. Guide Utilisateur Complet (A-Z)
+7. Guide Utilisateur Complet (A-Z)
 -----------------------------------
 
 Pour une documentation complète de A à Z sur l'utilisation du module comptable, consultez le guide utilisateur complet qui couvre toutes les fonctionnalités étape par étape.
