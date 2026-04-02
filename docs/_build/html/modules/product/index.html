@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="fr" x-data="{activeSection: ''}">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#030711" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Module Produits | Documentation THL CoreBanking 0.0.1</title>
+<meta content="Module Produits | Documentation THL CoreBanking 0.0.1" property="og:title"/>
+<meta content="Module Produits | Documentation THL CoreBanking 0.0.1" name="twitter:title"/>
+<link href="../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../../_static/theme.css?v=c0d22bf5" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css?v=d871b14e" rel="stylesheet" type="text/css"/>
+<link href="../../search.html" rel="search" title="Recherche"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="all_features.html" rel="next" title="Toutes les fonctionnalités - Module Produits"/>
+<link href="../internal_account/index.html" rel="prev" title="Comptes internes"/>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" @scroll.window="showScrollTop = pageYOffset &gt; 100" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border bg-background/90 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a><nav class="flex items-center gap-6 text-sm font-medium">
+<a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow">GitHub</a>
+</nav></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 gap-2 sm:gap-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center gap-1">
+<a href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow" title="Visit GitHub">
+<div class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9">
+            fa-brands fa-github
+          </div>
+</a>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="justify-start text-sm md:!hidden bg-background" href="../../index.html"><span class="font-bold text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0">
+<div class="overflow-y-auto h-full w-full relative pr-6"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<p class="caption" role="heading"><span class="caption-text">📚 Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#thl-core-banking"><strong>THL Core Banking</strong></a></li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../index.html">Modules<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#statistiques-de-documentation">📊 <strong>Statistiques de Documentation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#guide-de-navigation">📋 <strong>Guide de Navigation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#documentation-specialisee-du-module-comptable">📚 <strong>Documentation Spécialisée du Module Comptable</strong></a></li>
+</ul>
+</li>
+</ul>
+<div>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<ul>
+<li><ul>
+<li><a class="reference internal" href="#vue-d-ensemble">Vue d’ensemble</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creation-et-gestion-des-produits-bancaires">1. Création et gestion des produits bancaires</a></li>
+<li><a class="reference internal" href="#gestion-des-categories-de-produits">2. Gestion des catégories de produits</a></li>
+<li><a class="reference internal" href="#configuration-des-parametres-financiers">3. Configuration des paramètres financiers</a></li>
+<li><a class="reference internal" href="#gestion-des-comptes-associes">4. Gestion des comptes associés</a></li>
+<li><a class="reference internal" href="#controle-de-la-disponibilite">5. Contrôle de la disponibilité</a></li>
+<li><a class="reference internal" href="#import-et-export-de-donnees">6. Import et export de données</a></li>
+<li><a class="reference internal" href="#integration-avec-les-autres-modules">7. Intégration avec les autres modules</a></li>
+<li><a class="reference internal" href="#rapports-et-analytics">8. Rapports et analytics</a></li>
+<li><a class="reference internal" href="#securite-et-controles">9. Sécurité et contrôles</a></li>
+<li><a class="reference internal" href="#cas-d-usage-et-exemples">10. Cas d’usage et exemples</a></li>
+</ul>
+</div>
+<div>
+<h4>Sujet précédent</h4>
+<p class="topless"><a href="../internal_account/index.html" title="Chapitre précédent">Comptes internes</a></p>
+</div>
+<div>
+<h4>Sujet suivant</h4>
+<p class="topless"><a href="all_features.html" title="Chapitre suivant">Toutes les fonctionnalités - Module Produits</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>Cette page</h3>
+<ul class="this-page-menu">
+<li><a href="../../_sources/modules/product/index.rst.txt" rel="nofollow">Montrer le code source</a></li>
+</ul>
+</div>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
+<span class="hidden md:inline">Documentation THL CoreBanking 0.0.1</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="../index.html">Modules</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Module Produits</span>
+</nav>
+<div id="content" role="main">
+<section id="module-produits">
+<h1>Module Produits<a class="headerlink" href="#module-produits" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Le module <strong>Produits</strong> est le cœur du catalogue bancaire du système THL Core Banking. Il gère la création, la configuration et l’administration de tous les produits bancaires proposés aux clients.</p>
+<section id="vue-d-ensemble">
+<h2>Vue d’ensemble<a class="headerlink" href="#vue-d-ensemble" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#vue-d-ensemble'"><span>#</span></a></h2>
+<p>Le module Produits permet de :</p>
+<ul class="simple">
+<li><p><strong>Créer et gérer les produits bancaires</strong> : Définition des caractéristiques et conditions</p></li>
+<li><p><strong>Configurer les catégories de produits</strong> : Organisation hiérarchique des produits</p></li>
+<li><p><strong>Définir les paramètres financiers</strong> : Limites, frais, conditions de retrait</p></li>
+<li><p><strong>Gérer les comptes associés</strong> : Suivi des comptes utilisant chaque produit</p></li>
+<li><p><strong>Contrôler la disponibilité</strong> : Activation/désactivation des produits</p></li>
+<li><p><strong>Exporter et importer</strong> : Gestion en masse des produits bancaires</p></li>
+</ul>
+</section>
+</section>
+<section id="creation-et-gestion-des-produits-bancaires">
+<h1>1. Création et gestion des produits bancaires<a class="headerlink" href="#creation-et-gestion-des-produits-bancaires" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Cette section couvre la création, la configuration et la gestion des produits bancaires.</p>
+<ol class="arabic simple">
+<li><p>Connectez-vous au logiciel avec les droits appropriés.</p></li>
+<li><p>Accédez au module <strong>Produits</strong>.</p></li>
+<li><p>Cliquez sur <strong>Nouveau produit</strong>.</p>
+<ol class="loweralpha simple">
+<li><p><strong>Informations de base</strong>
+- Saisissez le code unique du produit
+- Entrez le nom du produit
+- Sélectionnez la catégorie de produit
+- Rédigez la description détaillée</p></li>
+<li><p><strong>Paramètres financiers</strong>
+- Définissez le dépôt minimum (minDeposit)
+- Définissez le dépôt maximum (maxDeposit)
+- Configurez le retrait minimum (minWithdrawal)
+- Configurez le retrait maximum (maxWithdrawal)
+- Définissez les frais de gestion (managementFees)
+- Configurez les frais d’ouverture (openingFees)
+- Définissez le retrait mensuel autorisé (monthlyWithdrawal)</p></li>
+<li><p><strong>Conditions spéciales</strong>
+- Configurez la condition de retrait (withdrawCondition) - max 100%
+- Activez/désactivez l’autorisation de découvert (overdraftAllowed)
+- Activez/désactivez le relevé de compte (accountStatement)</p></li>
+<li><p><strong>Validation et enregistrement</strong>
+- Vérification de l’unicité du code et du nom
+- Validation des paramètres financiers
+- Enregistrement dans la base de données
+- Journalisation de l’action</p></li>
+</ol>
+</li>
+<li><p>Le produit est créé avec le statut <strong>ACTIVATED</strong> par défaut.</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p><strong>Consultation des détails</strong>
+- Affichage des informations complètes du produit
+- Visualisation des paramètres financiers
+- Consultation des comptes associés
+- Affichage des statistiques d’utilisation</p></li>
+<li><p><strong>Modification des informations</strong>
+- Mise à jour des paramètres financiers
+- Modification des conditions spéciales
+- Changement de catégorie
+- Mise à jour de la description</p></li>
+<li><p><strong>Gestion des statuts</strong>
+- Activation/désactivation du produit
+- Suppression logique (soft delete)
+- Suppression définitive (hard delete)
+- Restauration de produits supprimés</p></li>
+</ol>
+</section>
+<section id="gestion-des-categories-de-produits">
+<h1>2. Gestion des catégories de produits<a class="headerlink" href="#gestion-des-categories-de-produits" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Cette fonctionnalité permet d’organiser les produits en catégories logiques.</p>
+<ol class="arabic simple">
+<li><p><strong>Informations de catégorie</strong>
+- Code unique de la catégorie
+- Nom de la catégorie
+- Description détaillée
+- Configuration des frais par table (feeFromTable)</p></li>
+<li><p><strong>Types de catégories supportées</strong>
+- <strong>Comptes d’épargne</strong> : Épargne classique, épargne logement
+- <strong>Comptes courants</strong> : Comptes de transaction
+- <strong>Comptes professionnels</strong> : Comptes pour entreprises
+- <strong>Comptes spécialisés</strong> : Comptes avec conditions particulières</p></li>
+<li><p><strong>Gestion des frais par catégorie</strong>
+- Configuration des frais standardisés
+- Table de frais par catégorie
+- Application automatique des frais</p></li>
+</ol>
+</section>
+<section id="configuration-des-parametres-financiers">
+<h1>3. Configuration des paramètres financiers<a class="headerlink" href="#configuration-des-parametres-financiers" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Cette section détaille la configuration des aspects financiers des produits.</p>
+<ol class="arabic simple">
+<li><p><strong>Dépôts</strong>
+- <strong>Dépôt minimum</strong> : Montant minimum pour ouvrir un compte
+- <strong>Dépôt maximum</strong> : Limite supérieure des dépôts
+- <strong>Contrôles automatiques</strong> : Vérification lors des opérations
+- <strong>Alertes de dépassement</strong> : Notifications pour les limites</p></li>
+<li><p><strong>Retraits</strong>
+- <strong>Retrait minimum</strong> : Montant minimum par retrait
+- <strong>Retrait maximum</strong> : Limite supérieure des retraits
+- <strong>Retrait mensuel</strong> : Limite mensuelle de retrait
+- <strong>Condition de retrait</strong> : Pourcentage maximum (max 100%)</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p><strong>Frais de gestion</strong>
+- Frais mensuels de gestion du compte
+- Calcul automatique et déduction
+- Configuration par produit</p></li>
+<li><p><strong>Frais d’ouverture</strong>
+- Frais uniques à l’ouverture du compte
+- Déduction lors de la création
+- Possibilité de remise</p></li>
+<li><p><strong>Frais par catégorie</strong>
+- Frais standardisés par type de produit
+- Application automatique
+- Personnalisation possible</p></li>
+</ol>
+</section>
+<section id="gestion-des-comptes-associes">
+<h1>4. Gestion des comptes associés<a class="headerlink" href="#gestion-des-comptes-associes" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Cette fonctionnalité permet de suivre tous les comptes utilisant un produit spécifique.</p>
+<ol class="arabic simple">
+<li><p><strong>Liste des comptes</strong>
+- Tous les comptes utilisant le produit
+- Filtrage par statut (ACTIVATED, SUSPENDED, CLOSED, DELETED)
+- Tri par date de création, solde, client
+- Recherche par numéro de compte ou nom du client</p></li>
+<li><p><strong>Statistiques détaillées</strong>
+- Nombre total de comptes
+- Nombre de comptes activés
+- Nombre de comptes désactivés
+- Nombre de comptes supprimés</p></li>
+<li><p><strong>Analyse des performances</strong>
+- Volume des transactions par produit
+- Évolution du nombre de comptes
+- Taux d’utilisation du produit
+- Rentabilité par produit</p></li>
+</ol>
+</section>
+<section id="controle-de-la-disponibilite">
+<h1>5. Contrôle de la disponibilité<a class="headerlink" href="#controle-de-la-disponibilite" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Cette section couvre la gestion de la disponibilité des produits.</p>
+<ol class="arabic simple">
+<li><p><strong>Activation de produits</strong>
+- Mise en service d’un nouveau produit
+- Disponibilité pour les nouveaux comptes
+- Notification aux utilisateurs</p></li>
+<li><p><strong>Désactivation de produits</strong>
+- Suspension temporaire des nouveaux comptes
+- Maintien des comptes existants
+- Communication aux clients</p></li>
+<li><p><strong>Suppression de produits</strong>
+- Suppression logique (soft delete)
+- Suppression définitive (hard delete)
+- Vérification des comptes associés</p></li>
+</ol>
+</section>
+<section id="import-et-export-de-donnees">
+<h1>6. Import et export de données<a class="headerlink" href="#import-et-export-de-donnees" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Le module offre des fonctionnalités d’import et d’export pour faciliter la gestion des produits.</p>
+<ol class="arabic simple">
+<li><p><strong>Import en masse</strong>
+- Import de produits via fichier Excel/CSV
+- Validation des données avant import
+- Gestion des erreurs et rejets
+- Rapport d’import détaillé</p></li>
+<li><p><strong>Format de fichier supporté</strong>
+- Fichiers Excel (.xlsx, .xls)
+- Fichiers CSV
+- Structure prédéfinie avec colonnes obligatoires
+- Validation des formats de données</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p><strong>Export des produits</strong>
+- Export de la liste des produits
+- Filtrage par statut ou catégorie
+- Formats Excel et CSV
+- Données complètes ou sélectionnées</p></li>
+<li><p><strong>Rapports de produits</strong>
+- Rapport de performance des produits
+- Statistiques d’utilisation
+- Analyse des revenus par produit
+- Métriques de rentabilité</p></li>
+</ol>
+</section>
+<section id="integration-avec-les-autres-modules">
+<h1>7. Intégration avec les autres modules<a class="headerlink" href="#integration-avec-les-autres-modules" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Le module Produits s’intègre étroitement avec plusieurs modules du système.</p>
+<ol class="arabic simple">
+<li><p><strong>Module Comptes</strong>
+- Association des comptes aux produits
+- Application des paramètres de produit
+- Contrôles automatiques des limites</p></li>
+<li><p><strong>Module Comptabilité</strong>
+- Écritures comptables pour les frais
+- Calcul des revenus par produit
+- Intégration avec le grand livre</p></li>
+<li><p><strong>Module Clients</strong>
+- Sélection de produits lors de l’ouverture
+- Historique des produits utilisés
+- Recommandations personnalisées</p></li>
+<li><p><strong>Module Transactions</strong>
+- Application des limites de transaction
+- Calcul des frais automatiques
+- Contrôles de cohérence</p></li>
+</ol>
+</section>
+<section id="rapports-et-analytics">
+<h1>8. Rapports et analytics<a class="headerlink" href="#rapports-et-analytics" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Le module fournit des rapports détaillés et des analyses pour la gestion des produits.</p>
+<ol class="arabic simple">
+<li><p><strong>Rapport de performance des produits</strong>
+- Nombre de comptes par produit
+- Volume des transactions
+- Revenus générés
+- Taux d’utilisation</p></li>
+<li><p><strong>Rapport des catégories</strong>
+- Performance par catégorie
+- Comparaison des produits
+- Tendances du marché
+- Recommandations stratégiques</p></li>
+<li><p><strong>Rapport financier</strong>
+- Revenus par produit
+- Coûts de gestion
+- Rentabilité détaillée
+- Projections futures</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p><strong>Tableaux de bord interactifs</strong>
+- Métriques en temps réel
+- Graphiques et visualisations
+- Indicateurs de performance clés (KPI)
+- Alertes automatiques</p></li>
+<li><p><strong>Analyse prédictive</strong>
+- Tendances des produits populaires
+- Prévision des besoins clients
+- Optimisation de l’offre
+- Recommandations stratégiques</p></li>
+<li><p><strong>Comparaisons et benchmarking</strong>
+- Performance relative des produits
+- Analyse concurrentielle
+- Identification des opportunités
+- Optimisation des paramètres</p></li>
+</ol>
+</section>
+<section id="securite-et-controles">
+<h1>9. Sécurité et contrôles<a class="headerlink" href="#securite-et-controles" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Le module intègre des mécanismes de sécurité avancés pour protéger les données des produits.</p>
+<ol class="arabic simple">
+<li><p><strong>Authentification obligatoire</strong>
+- Connexion requise pour toutes les opérations
+- Journalisation des accès
+- Gestion des sessions utilisateur</p></li>
+<li><p><strong>Autorisations granulaires</strong>
+- Droits de consultation des produits
+- Droits de modification des paramètres
+- Droits d’administration des catégories
+- Vérification des permissions avant chaque action</p></li>
+<li><p><strong>Audit et traçabilité</strong>
+- Journalisation complète des actions
+- Traçabilité des modifications
+- Historique des accès et opérations</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p><strong>Protection des informations sensibles</strong>
+- Chiffrement des données financières
+- Masquage des informations confidentielles
+- Contrôle d’accès aux paramètres critiques</p></li>
+<li><p><strong>Validation des données</strong>
+- Vérification de l’intégrité des données
+- Validation des formats et types
+- Contrôles de cohérence métier</p></li>
+</ol>
+</section>
+<section id="cas-d-usage-et-exemples">
+<h1>10. Cas d’usage et exemples<a class="headerlink" href="#cas-d-usage-et-exemples" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Cette section présente des cas d’usage concrets pour illustrer l’utilisation du module.</p>
+<ol class="arabic simple">
+<li><p><strong>Compte d’épargne classique</strong>
+- Dépôt minimum : 5 000 FCFA
+- Dépôt maximum : 10 000 000 FCFA
+- Retrait minimum : 1 000 FCFA
+- Retrait maximum : 500 000 FCFA
+- Frais de gestion : 500 FCFA/mois
+- Condition de retrait : 100%</p></li>
+<li><p><strong>Compte professionnel</strong>
+- Dépôt minimum : 50 000 FCFA
+- Dépôt maximum : 100 000 000 FCFA
+- Retrait minimum : 5 000 FCFA
+- Retrait maximum : 5 000 000 FCFA
+- Frais de gestion : 2 000 FCFA/mois
+- Découvert autorisé : Oui</p></li>
+<li><p><strong>Compte d’épargne logement</strong>
+- Dépôt minimum : 10 000 FCFA
+- Dépôt maximum : 50 000 000 FCFA
+- Retrait minimum : 2 000 FCFA
+- Retrait maximum : 2 000 000 FCFA
+- Frais de gestion : 1 000 FCFA/mois
+- Condition de retrait : 80%</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p><strong>Création d’un nouveau produit</strong>
+- Analyse des besoins clients
+- Définition des paramètres
+- Test et validation
+- Mise en production</p></li>
+<li><p><strong>Modification d’un produit existant</strong>
+- Analyse de l’impact
+- Communication aux clients
+- Mise à jour des paramètres
+- Suivi des effets</p></li>
+<li><p><strong>Désactivation d’un produit</strong>
+- Analyse des comptes actifs
+- Communication préalable
+- Désactivation progressive
+- Migration des clients</p></li>
+</ol>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html">Toutes les fonctionnalités - Module Produits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#creation-et-gestion-des-produits-bancaires">1. Création et gestion des produits bancaires</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#creation-de-produits">1.1. Création de produits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#gestion-des-informations">1.2. Gestion des informations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#gestion-des-statuts">1.3. Gestion des statuts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#gestion-des-categories-de-produits">2. Gestion des catégories de produits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#creation-de-categories">2.1. Création de catégories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#types-de-categories">2.2. Types de catégories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#gestion-des-frais-par-categorie">2.3. Gestion des frais par catégorie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#configuration-des-parametres-financiers">3. Configuration des paramètres financiers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#limites-de-depot">3.1. Limites de dépôt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#limites-de-retrait">3.2. Limites de retrait</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#frais-et-commissions">3.3. Frais et commissions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#gestion-des-comptes-associes">4. Gestion des comptes associés</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#consultation-des-comptes">4.1. Consultation des comptes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#statistiques-detaillees">4.2. Statistiques détaillées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#analyse-des-performances">4.3. Analyse des performances</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#controle-de-la-disponibilite">5. Contrôle de la disponibilité</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#id1">5.1. Gestion des statuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#controles-de-coherence">5.2. Contrôles de cohérence</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#import-et-export-de-donnees">6. Import et export de données</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#import-de-produits">6.1. Import de produits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#export-de-produits">6.2. Export de produits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#rapports-de-produits">6.3. Rapports de produits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#integration-avec-les-autres-modules">7. Intégration avec les autres modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#module-comptes">7.1. Module Comptes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#module-comptabilite">7.2. Module Comptabilité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#module-clients">7.3. Module Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#module-transactions">7.4. Module Transactions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#rapports-et-analytics">8. Rapports et analytics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#rapports-standard">8.1. Rapports standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#analytics-avances">8.2. Analytics avancés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#comparaisons-et-benchmarking">8.3. Comparaisons et benchmarking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#securite-et-controles">9. Sécurité et contrôles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#controles-d-acces">9.1. Contrôles d’accès</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#securite-des-donnees">9.2. Sécurité des données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#conformite-reglementaire">9.3. Conformité réglementaire</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="all_features.html#interface-utilisateur">10. Interface utilisateur</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#design-responsive">10.1. Design responsive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#experience-utilisateur">10.2. Expérience utilisateur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="all_features.html#fonctionnalites-avancees">10.3. Fonctionnalités avancées</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html">Nouvelles fonctionnalités - Module Produits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#systeme-de-gestion-avance-des-produits-bancaires">1. Système de gestion avancé des produits bancaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#configuration-des-parametres-financiers-avances">2. Configuration des paramètres financiers avancés</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#limites-dynamiques">2.1. Limites dynamiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#frais-personnalisables">2.2. Frais personnalisables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#gestion-des-categories-de-produits-intelligente">3. Gestion des catégories de produits intelligente</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#categorisation-automatique">3.1. Catégorisation automatique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#gestion-des-frais-par-categorie">3.2. Gestion des frais par catégorie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#suivi-avance-des-comptes-associes">4. Suivi avancé des comptes associés</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#analytics-en-temps-reel">4.1. Analytics en temps réel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#gestion-des-segments-clients">4.2. Gestion des segments clients</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#import-export-intelligent">5. Import/Export intelligent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#import-avance">5.1. Import avancé</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#export-personnalise">5.2. Export personnalisé</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#integration-renforcee">6. Intégration renforcée</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#api-rest-complete">6.1. API REST complète</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#integration-temps-reel">6.2. Intégration temps réel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#rapports-et-analytics-avances">7. Rapports et analytics avancés</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#intelligence-d-affaires">7.1. Intelligence d’affaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#visualisations-interactives">7.2. Visualisations interactives</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#securite-renforcee">8. Sécurité renforcée</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#controles-d-acces-avances">8.1. Contrôles d’accès avancés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#conformite-reglementaire">8.2. Conformité réglementaire</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#interface-utilisateur-modernisee">9. Interface utilisateur modernisée</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#design-responsive">9.1. Design responsive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#experience-utilisateur">9.2. Expérience utilisateur</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#performance-et-scalabilite">10. Performance et scalabilité</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#optimisations-techniques">10.1. Optimisations techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#scalabilite-horizontale">10.2. Scalabilité horizontale</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#nouvelles-fonctionnalites-metier">11. Nouvelles fonctionnalités métier</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#produits-dynamiques">11.1. Produits dynamiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#gestion-des-promotions">11.2. Gestion des promotions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_features.html#monitoring-et-observabilite">12. Monitoring et observabilité</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#metriques-avancees">12.1. Métriques avancées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new_features.html#debugging-et-troubleshooting">12.2. Debugging et troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../internal_account/index.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        Comptes internes
+      </a>
+</div>
+<div class="ml-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="all_features.html">
+        Toutes les fonctionnalités - Module Produits
+        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</div>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] h-full overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><ul>
+<li><a :data-current="activeSection === '#vue-d-ensemble'" class="reference internal" href="#vue-d-ensemble">Vue d’ensemble</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#creation-et-gestion-des-produits-bancaires'" class="reference internal" href="#creation-et-gestion-des-produits-bancaires">1. Création et gestion des produits bancaires</a></li>
+<li><a :data-current="activeSection === '#gestion-des-categories-de-produits'" class="reference internal" href="#gestion-des-categories-de-produits">2. Gestion des catégories de produits</a></li>
+<li><a :data-current="activeSection === '#configuration-des-parametres-financiers'" class="reference internal" href="#configuration-des-parametres-financiers">3. Configuration des paramètres financiers</a></li>
+<li><a :data-current="activeSection === '#gestion-des-comptes-associes'" class="reference internal" href="#gestion-des-comptes-associes">4. Gestion des comptes associés</a></li>
+<li><a :data-current="activeSection === '#controle-de-la-disponibilite'" class="reference internal" href="#controle-de-la-disponibilite">5. Contrôle de la disponibilité</a></li>
+<li><a :data-current="activeSection === '#import-et-export-de-donnees'" class="reference internal" href="#import-et-export-de-donnees">6. Import et export de données</a></li>
+<li><a :data-current="activeSection === '#integration-avec-les-autres-modules'" class="reference internal" href="#integration-avec-les-autres-modules">7. Intégration avec les autres modules</a></li>
+<li><a :data-current="activeSection === '#rapports-et-analytics'" class="reference internal" href="#rapports-et-analytics">8. Rapports et analytics</a></li>
+<li><a :data-current="activeSection === '#securite-et-controles'" class="reference internal" href="#securite-et-controles">9. Sécurité et contrôles</a></li>
+<li><a :data-current="activeSection === '#cas-d-usage-et-exemples'" class="reference internal" href="#cas-d-usage-et-exemples">10. Cas d’usage et exemples</a></li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, THL Technologies Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.1.3</a></p>
+</div>
+</div>
+</footer>
+</div><button :class="{'opacity-0 invisible' : !showScrollTop}" @click="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 p-2 z-10 rounded-sm bg-gray-700 text-xs text-white transition-all duration-1000 hover:bg-gray-950 focus:bg-gray-950" id="scrolltop" x-cloak="">
+<svg aria-hidden="true" class="inline fill-current mb-[2px]" height="14" viewbox="0 96 960 960" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M450 896V370L202 618l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
+</svg>
+  Back to top
+</button>
+<script src="../../_static/documentation_options.js?v=718f2d82"></script>
+<script src="../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/js/target-blank.js?v=4e58104d"></script>
+<script defer="defer" src="../../_static/theme.js?v=e14a7d8a"></script>
+<script src="../../_static/translations.js?v=e6b791cb"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

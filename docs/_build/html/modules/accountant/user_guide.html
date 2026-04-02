@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="fr" x-data="{activeSection: ''}">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#030711" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Guide Utilisateur Complet : Module Comptable | Documentation THL CoreBanking 0.0.1</title>
+<meta content="Guide Utilisateur Complet : Module Comptable | Documentation THL CoreBanking 0.0.1" property="og:title"/>
+<meta content="Guide Utilisateur Complet : Module Comptable | Documentation THL CoreBanking 0.0.1" name="twitter:title"/>
+<link href="../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../../_static/theme.css?v=c0d22bf5" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css?v=d871b14e" rel="stylesheet" type="text/css"/>
+<link href="../../search.html" rel="search" title="Recherche"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="accounting_module.html" rel="next" title="Module Comptable Complet"/>
+<link href="index.html" rel="prev" title="Comptabilité"/>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" @scroll.window="showScrollTop = pageYOffset &gt; 100" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border bg-background/90 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a><nav class="flex items-center gap-6 text-sm font-medium">
+<a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow">GitHub</a>
+</nav></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 gap-2 sm:gap-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center gap-1">
+<a href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow" title="Visit GitHub">
+<div class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9">
+            fa-brands fa-github
+          </div>
+</a>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="justify-start text-sm md:!hidden bg-background" href="../../index.html"><span class="font-bold text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0">
+<div class="overflow-y-auto h-full w-full relative pr-6"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<p class="caption" role="heading"><span class="caption-text">📚 Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#thl-core-banking"><strong>THL Core Banking</strong></a></li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../index.html">Modules<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#statistiques-de-documentation">📊 <strong>Statistiques de Documentation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#guide-de-navigation">📋 <strong>Guide de Navigation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#documentation-specialisee-du-module-comptable">📚 <strong>Documentation Spécialisée du Module Comptable</strong></a></li>
+</ul>
+</li>
+</ul>
+<div>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<ul>
+<li><a class="reference internal" href="#table-des-matieres">Table des Matières</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#introduction">Introduction<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#qu-est-ce-que-le-module-comptable">Qu’est-ce que le Module Comptable ?</a></li>
+<li><a class="reference internal" href="#prerequis">Prérequis</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#acces-au-module">Accès au Module<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#navigation">Navigation</a></li>
+<li><a class="reference internal" href="#sections-du-module-comptable">Sections du Module Comptable</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-exercices-comptables">Gestion des Exercices Comptables<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#vue-d-ensemble">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#acces">Accès</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#fonctionnalites">Fonctionnalités<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#creer-un-nouvel-exercice">Créer un nouvel exercice</a></li>
+<li><a class="reference internal" href="#modifier-un-exercice">Modifier un exercice</a></li>
+<li><a class="reference internal" href="#activer-un-exercice">Activer un exercice</a></li>
+<li><a class="reference internal" href="#cloturer-un-exercice">Clôturer un exercice</a></li>
+<li><a class="reference internal" href="#supprimer-un-exercice">Supprimer un exercice</a></li>
+<li><a class="reference internal" href="#tableau-des-exercices">Tableau des Exercices</a></li>
+<li><a class="reference internal" href="#actions-du-dialog">Actions du Dialog</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-periodes-comptables">Gestion des Périodes Comptables<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id1">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#gestion-via-les-exercices-comptables">Gestion via les Exercices Comptables</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#plan-comptable">Plan Comptable<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id2">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#id3">Accès</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#id4">Fonctionnalités<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#rechercher-un-compte">Rechercher un compte</a></li>
+<li><a class="reference internal" href="#creer-un-nouveau-compte">Créer un nouveau compte</a></li>
+<li><a class="reference internal" href="#modifier-un-compte">Modifier un compte</a></li>
+<li><a class="reference internal" href="#supprimer-un-compte">Supprimer un compte</a></li>
+<li><a class="reference internal" href="#tableau-du-plan-comptable">Tableau du Plan Comptable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#journaux-comptables">Journaux Comptables<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id5">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#id6">Accès</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#id7">Fonctionnalités<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#creer-un-nouveau-journal">Créer un nouveau journal</a></li>
+<li><a class="reference internal" href="#modifier-un-journal">Modifier un journal</a></li>
+<li><a class="reference internal" href="#activer-un-journal">Activer un journal</a></li>
+<li><a class="reference internal" href="#desactiver-un-journal">Désactiver un journal</a></li>
+<li><a class="reference internal" href="#supprimer-un-journal">Supprimer un journal</a></li>
+<li><a class="reference internal" href="#tableau-des-journaux">Tableau des Journaux</a></li>
+<li><a class="reference internal" href="#id8">Actions du Dialog</a></li>
+<li><a class="reference internal" href="#utilisation-des-journaux">Utilisation des Journaux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#ecritures-comptables">Écritures Comptables<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id9">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#id10">Accès</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#id11">Fonctionnalités<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#rechercher-des-ecritures">Rechercher des écritures</a></li>
+<li><a class="reference internal" href="#visualiser-les-ecritures">Visualiser les écritures</a></li>
+<li><a class="reference internal" href="#creer-une-nouvelle-ecriture-automatique">Créer une nouvelle écriture (automatique)</a></li>
+<li><a class="reference internal" href="#visualiser-les-ecritures-automatiques">Visualiser les écritures automatiques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#creer-une-ecriture-comptable-manuelle">Créer une Écriture Comptable Manuelle<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id12">Vue d’ensemble</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#id13">Accès<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#procedure-de-creation">Procédure de Création</a></li>
+<li><a class="reference internal" href="#modifier-une-ecriture-manuelle">Modifier une Écriture Manuelle</a></li>
+<li><a class="reference internal" href="#exemples-d-ecritures-manuelles">Exemples d’Écritures Manuelles</a></li>
+<li><a class="reference internal" href="#pieces-comptables-references">Pièces Comptables (Références)</a></li>
+<li><a class="reference internal" href="#modifier-une-ecriture">Modifier une écriture</a></li>
+<li><a class="reference internal" href="#supprimer-une-ecriture">Supprimer une écriture</a></li>
+<li><a class="reference internal" href="#exporter-les-ecritures">Exporter les écritures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#grand-livre">Grand Livre<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id14">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#id15">Accès</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#id16">Fonctionnalités<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#rechercher-dans-le-grand-livre">Rechercher dans le Grand Livre</a></li>
+<li><a class="reference internal" href="#generer-le-grand-livre-pour-une-periode">Générer le Grand Livre pour une période</a></li>
+<li><a class="reference internal" href="#visualiser-le-grand-livre">Visualiser le Grand Livre</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#balance-de-verification">Balance de Vérification<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id17">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#id18">Accès</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#id19">Fonctionnalités<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#calculer-la-balance-de-verification">Calculer la Balance de Vérification</a></li>
+<li><a class="reference internal" href="#verifier-l-equilibre">Vérifier l’équilibre</a></li>
+<li><a class="reference internal" href="#visualiser-la-balance">Visualiser la Balance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#reconciliation-bancaire">Réconciliation Bancaire<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id20">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#id21">Accès</a></li>
+<li><a class="reference internal" href="#guide-complet">Guide complet</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#fonctionnalites-principales">Fonctionnalités principales<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#creer-une-reconciliation">Créer une réconciliation</a></li>
+<li><a class="reference internal" href="#pointage-automatique">Pointage automatique</a></li>
+<li><a class="reference internal" href="#finaliser-la-reconciliation">Finaliser la réconciliation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#etats-financiers">États Financiers<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id22">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#id23">Accès</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#types-d-etats-financiers">Types d’États Financiers<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#bilan">Bilan</a></li>
+<li><a class="reference internal" href="#compte-de-resultat">Compte de Résultat</a></li>
+<li><a class="reference internal" href="#flux-de-tresorerie">Flux de Trésorerie</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#id24">Fonctionnalités<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#visualiser-un-etat">Visualiser un état</a></li>
+<li><a class="reference internal" href="#approuver-un-etat">Approuver un état</a></li>
+<li><a class="reference internal" href="#finaliser-un-etat">Finaliser un état</a></li>
+<li><a class="reference internal" href="#tableau-des-etats-financiers">Tableau des États Financiers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#transferts-internes">Transferts Internes<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id25">Vue d’ensemble</a></li>
+<li><a class="reference internal" href="#id26">Accès</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#id27">Fonctionnalités<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#effectuer-un-transfert">Effectuer un transfert</a></li>
+<li><a class="reference internal" href="#visualiser-les-transferts">Visualiser les transferts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#bonnes-pratiques">Bonnes Pratiques<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#gestion-des-exercices">Gestion des Exercices</a></li>
+<li><a class="reference internal" href="#id28">Écritures Comptables</a></li>
+<li><a class="reference internal" href="#id29">Réconciliation Bancaire</a></li>
+<li><a class="reference internal" href="#id30">Plan Comptable</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#faq-foire-aux-questions">FAQ (Foire aux Questions)<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#exercices-comptables">Exercices Comptables</a></li>
+<li><a class="reference internal" href="#id31">Écritures Comptables</a></li>
+<li><a class="reference internal" href="#id32">Balance de Vérification</a></li>
+<li><a class="reference internal" href="#id33">Réconciliation Bancaire</a></li>
+<li><a class="reference internal" href="#id34">États Financiers</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#workflow-recommande">Workflow Recommandé<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#pour-une-nouvelle-periode-comptable">Pour une nouvelle période comptable</a></li>
+<li><a class="reference internal" href="#pour-une-reconciliation-mensuelle">Pour une réconciliation mensuelle</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#permissions-et-securite">Permissions et Sécurité<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#droits-d-acces">Droits d’accès</a></li>
+<li><a class="reference internal" href="#restrictions-par-fonctionnalite">Restrictions par fonctionnalité</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#support-et-assistance">Support et Assistance<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#en-cas-de-probleme">En cas de problème</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#ressources-additionnelles">Ressources Additionnelles<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#documentation-technique">Documentation technique</a></li>
+<li><a class="reference internal" href="#guides-specialises">Guides spécialisés</a></li>
+<li><a class="reference internal" href="#exercices-pratiques">Exercices pratiques</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notes-finales">Notes Finales</a></li>
+</ul>
+</div>
+<div>
+<h4>Sujet précédent</h4>
+<p class="topless"><a href="index.html" title="Chapitre précédent">Comptabilité</a></p>
+</div>
+<div>
+<h4>Sujet suivant</h4>
+<p class="topless"><a href="accounting_module.html" title="Chapitre suivant">Module Comptable Complet</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>Cette page</h3>
+<ul class="this-page-menu">
+<li><a href="../../_sources/modules/accountant/user_guide.rst.txt" rel="nofollow">Montrer le code source</a></li>
+</ul>
+</div>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
+<span class="hidden md:inline">Documentation THL CoreBanking 0.0.1</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="../index.html">Modules</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="index.html">Comptabilité</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Guide Utilisateur Complet : Module Comptable</span>
+</nav>
+<div id="content" role="main">
+<section id="guide-utilisateur-complet-module-comptable">
+<span id="accountant-user-guide"></span><h1>Guide Utilisateur Complet : Module Comptable<a class="headerlink" href="#guide-utilisateur-complet-module-comptable" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Ce guide fournit une documentation complète de A à Z pour utiliser le module comptable du système Core Banking.</p>
+<section id="table-des-matieres">
+<h2>Table des Matières<a class="headerlink" href="#table-des-matieres" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#table-des-matieres'"><span>#</span></a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#accountant-introduction"><span class="std std-ref">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-access"><span class="std std-ref">Accès au Module</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-fiscal-years"><span class="std std-ref">Gestion des Exercices Comptables</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-accounting-periods"><span class="std std-ref">Gestion des Périodes Comptables</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-chart-of-accounts"><span class="std std-ref">Plan Comptable</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-accounting-journals"><span class="std std-ref">Journaux Comptables</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-journal-entries"><span class="std std-ref">Écritures Comptables</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-manual-journal-entries"><span class="std std-ref">Créer une Écriture Comptable Manuelle</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-general-ledger"><span class="std std-ref">Grand Livre</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-trial-balance"><span class="std std-ref">Balance de Vérification</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-bank-reconciliation"><span class="std std-ref">Réconciliation Bancaire</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-financial-statements"><span class="std std-ref">États Financiers</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-internal-transfers"><span class="std std-ref">Transferts Internes</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-best-practices"><span class="std std-ref">Bonnes Pratiques</span></a></p></li>
+<li><p><a class="reference internal" href="#accountant-faq"><span class="std std-ref">FAQ (Foire aux Questions)</span></a></p></li>
+</ol>
+</section>
+<section id="introduction">
+<span id="accountant-introduction"></span><h2>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#introduction'"><span>#</span></a></h2>
+<section id="qu-est-ce-que-le-module-comptable">
+<h3>Qu’est-ce que le Module Comptable ?<a class="headerlink" href="#qu-est-ce-que-le-module-comptable" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#qu-est-ce-que-le-module-comptable'"><span>#</span></a></h3>
+<p>Le module comptable est un système complet de gestion comptable qui permet de :</p>
+<ul class="simple">
+<li><p>Gérer les exercices et périodes comptables</p></li>
+<li><p>Maintenir le plan comptable</p></li>
+<li><p>Enregistrer les écritures comptables</p></li>
+<li><p>Générer le grand livre et la balance de vérification</p></li>
+<li><p>Effectuer la réconciliation bancaire</p></li>
+<li><p>Produire les états financiers</p></li>
+</ul>
+</section>
+<section id="prerequis">
+<h3>Prérequis<a class="headerlink" href="#prerequis" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#prerequis'"><span>#</span></a></h3>
+<p>Pour utiliser le module comptable, vous devez avoir :</p>
+<ul class="simple">
+<li><p>✅ Un compte utilisateur avec les droits <strong>ADMIN</strong> ou <strong>SUPER_ADMIN</strong></p></li>
+<li><p>✅ Une entreprise configurée</p></li>
+<li><p>✅ Connexion au système Core Banking</p></li>
+</ul>
+</section>
+</section>
+<section id="acces-au-module">
+<span id="accountant-access"></span><h2>Accès au Module<a class="headerlink" href="#acces-au-module" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#acces-au-module'"><span>#</span></a></h2>
+<section id="navigation">
+<h3>Navigation<a class="headerlink" href="#navigation" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#navigation'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p>Connectez-vous au système Core Banking</p></li>
+<li><p>Dans le menu principal, cliquez sur <strong>Comptabilité</strong></p></li>
+<li><p>Le menu comptable s’affiche avec toutes les options disponibles</p></li>
+</ol>
+</section>
+<section id="sections-du-module-comptable">
+<h3>Sections du Module Comptable<a class="headerlink" href="#sections-du-module-comptable" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#sections-du-module-comptable'"><span>#</span></a></h3>
+<p>Le module comptable comprend les sections suivantes :</p>
+<ol class="arabic simple">
+<li><p><strong>Exercices Comptables</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/fiscal-year</span></code>)</p></li>
+<li><p><strong>Périodes Comptables</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/accounting-period</span></code>)</p></li>
+<li><p><strong>Plan Comptable</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/chart-of-accounts</span></code>)</p></li>
+<li><p><strong>Journaux Comptables</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/accounting-journals</span></code>)</p></li>
+<li><p><strong>Écritures Comptables</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/journal-entry</span></code>)</p></li>
+<li><p><strong>Grand Livre</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/general-ledger</span></code>)</p></li>
+<li><p><strong>Balance de Vérification</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/trial-balance</span></code>)</p></li>
+<li><p><strong>Réconciliation Bancaire</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/bank-reconciliation</span></code>)</p></li>
+<li><p><strong>États Financiers</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/financial-statements</span></code>)</p></li>
+<li><p><strong>Transferts Internes</strong> (<code class="docutils literal notranslate"><span class="pre">/accountant/accountant</span></code>)</p></li>
+</ol>
+</section>
+</section>
+<section id="gestion-des-exercices-comptables">
+<span id="accountant-fiscal-years"></span><h2>Gestion des Exercices Comptables<a class="headerlink" href="#gestion-des-exercices-comptables" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-exercices-comptables'"><span>#</span></a></h2>
+<section id="vue-d-ensemble">
+<h3>Vue d’ensemble<a class="headerlink" href="#vue-d-ensemble" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#vue-d-ensemble'"><span>#</span></a></h3>
+<p>Les exercices comptables représentent les périodes fiscales (généralement annuelles) pendant lesquelles les opérations comptables sont enregistrées.</p>
+</section>
+<section id="acces">
+<h3>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#acces'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → Exercices Comptables
+<strong>URL</strong> : <code class="docutils literal notranslate"><span class="pre">/accountant/fiscal-year</span></code></p>
+</section>
+<section id="fonctionnalites">
+<h3>Fonctionnalités<a class="headerlink" href="#fonctionnalites" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#fonctionnalites'"><span>#</span></a></h3>
+<section id="creer-un-nouvel-exercice">
+<h4>Créer un nouvel exercice<a class="headerlink" href="#creer-un-nouvel-exercice" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Cliquez sur le bouton <strong>« Nouvel Exercice »</strong> (icône ➕)
+- <strong>Tooltip</strong> : « Créer un nouvel exercice comptable »</p></li>
+<li><p>Remplissez le formulaire :
+- <strong>Nom</strong> * (obligatoire) : Ex. « Exercice 2025 »
+- <strong>Date Début</strong> * (obligatoire) : Date de début de l’exercice
+- <strong>Date Fin</strong> * (obligatoire) : Date de fin de l’exercice
+- <strong>Notes</strong> (optionnel) : Notes additionnelles</p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong>
+- <strong>Tooltip</strong> : « Enregistrer l’exercice comptable »</p></li>
+</ol>
+<p><strong>Ce qui se passe automatiquement :</strong></p>
+<ul class="simple">
+<li><p>✅ Vérification qu’il n’y a pas de chevauchement de dates avec d’autres exercices</p></li>
+<li><p>✅ Si aucun exercice n’est actif, le nouvel exercice est automatiquement activé</p></li>
+<li><p>✅ Création automatique des 12 périodes mensuelles</p></li>
+<li><p>✅ Message de confirmation : « Exercice créé avec succès. Les périodes mensuelles seront créées automatiquement. »</p></li>
+</ul>
+<p><strong>Important :</strong></p>
+<ul class="simple">
+<li><p>❌ Impossible de créer un exercice avec des dates qui chevauchent un exercice existant</p></li>
+<li><p>❌ Les dates doivent être valides (date début &lt; date fin)</p></li>
+</ul>
+</section>
+<section id="modifier-un-exercice">
+<h4>Modifier un exercice<a class="headerlink" href="#modifier-un-exercice" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>✏️ (crayon)</strong>
+- <strong>Tooltip</strong> : « Modifier l’exercice comptable »
+- <strong>Note</strong> : Le bouton est désactivé si l’exercice est clôturé</p></li>
+<li><p>Modifiez les champs souhaités dans le formulaire</p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong></p></li>
+</ol>
+<p><strong>Restrictions :</strong></p>
+<ul class="simple">
+<li><p>❌ Impossible de modifier un exercice <strong>clôturé</strong></p></li>
+<li><p>❌ Impossible de modifier les dates si des écritures ont déjà été enregistrées</p></li>
+</ul>
+</section>
+<section id="activer-un-exercice">
+<h4>Activer un exercice<a class="headerlink" href="#activer-un-exercice" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>✓ (check)</strong>
+- <strong>Tooltip</strong> : « Activer cet exercice comptable »
+- <strong>Note</strong> : Le bouton est désactivé si l’exercice est déjà actif ou clôturé</p></li>
+<li><p>Confirmez l’activation si demandé</p></li>
+</ol>
+<p><strong>Ce qui se passe :</strong></p>
+<ul class="simple">
+<li><p>✅ L’exercice sélectionné devient actif</p></li>
+<li><p>✅ Tous les autres exercices deviennent inactifs automatiquement</p></li>
+<li><p>✅ Message de confirmation : « Exercice activé avec succès »</p></li>
+</ul>
+<p><strong>Important :</strong></p>
+<ul class="simple">
+<li><p>⚠️ Un seul exercice peut être actif à la fois</p></li>
+<li><p>⚠️ L’exercice actif est utilisé par défaut pour les nouvelles opérations</p></li>
+</ul>
+</section>
+<section id="cloturer-un-exercice">
+<h4>Clôturer un exercice<a class="headerlink" href="#cloturer-un-exercice" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>🔒 (lock)</strong>
+- <strong>Tooltip</strong> : « Clôturer cet exercice comptable »
+- <strong>Note</strong> : Le bouton est désactivé si l’exercice est déjà clôturé</p></li>
+<li><p>Confirmez la clôture dans la boîte de dialogue :
+- Message : « Êtes-vous sûr de vouloir clôturer l’exercice {nom} ? »
+- Cliquez sur <strong>« Oui »</strong> pour confirmer</p></li>
+</ol>
+<p><strong>Conditions préalables :</strong></p>
+<ul class="simple">
+<li><p>✅ Toutes les périodes de l’exercice doivent être <strong>clôturées</strong></p></li>
+<li><p>✅ Toutes les réconciliations bancaires doivent être <strong>finalisées</strong></p></li>
+<li><p>✅ Toutes les écritures doivent être <strong>validées</strong></p></li>
+</ul>
+<p><strong>Ce qui se passe :</strong></p>
+<ul class="simple">
+<li><p>✅ L’exercice est marqué comme clôturé (<code class="docutils literal notranslate"><span class="pre">isClosed</span> <span class="pre">=</span> <span class="pre">true</span></code>)</p></li>
+<li><p>✅ Date et utilisateur de clôture sont enregistrés</p></li>
+<li><p>✅ Message de confirmation : « Exercice clôturé avec succès »</p></li>
+</ul>
+<p><strong>Important :</strong></p>
+<ul class="simple">
+<li><p>❌ <strong>Irréversible</strong> : Une fois clôturé, un exercice ne peut plus être modifié</p></li>
+<li><p>❌ Impossible d’enregistrer de nouvelles écritures pour un exercice clôturé</p></li>
+</ul>
+</section>
+<section id="supprimer-un-exercice">
+<h4>Supprimer un exercice<a class="headerlink" href="#supprimer-un-exercice" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>🗑️ (trash)</strong>
+- <strong>Tooltip</strong> : « Supprimer cet exercice comptable »
+- <strong>Note</strong> : Le bouton est désactivé si l’exercice est clôturé</p></li>
+<li><p>Confirmez la suppression dans la boîte de dialogue :
+- Message : « Êtes-vous sûr de vouloir supprimer l’exercice {nom} ? »
+- Cliquez sur <strong>« Oui »</strong> pour confirmer</p></li>
+</ol>
+<p><strong>Restrictions :</strong></p>
+<ul class="simple">
+<li><p>❌ Impossible de supprimer un exercice <strong>clôturé</strong></p></li>
+<li><p>❌ Impossible de supprimer un exercice avec des écritures enregistrées</p></li>
+<li><p>ℹ️ La suppression est un <strong>soft delete</strong> (état = DELETED)</p></li>
+</ul>
+</section>
+<section id="tableau-des-exercices">
+<h4>Tableau des Exercices<a class="headerlink" href="#tableau-des-exercices" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le tableau affiche les colonnes suivantes :</p>
+<p><strong>Codes couleur des statuts :</strong></p>
+<ul class="simple">
+<li><p>🟢 <strong>Vert</strong> : Actif</p></li>
+<li><p>🟡 <strong>Jaune</strong> : Inactif</p></li>
+<li><p>⚫ <strong>Gris</strong> : Clôturé</p></li>
+</ul>
+</section>
+<section id="actions-du-dialog">
+<h4>Actions du Dialog<a class="headerlink" href="#actions-du-dialog" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<ul class="simple">
+<li><p><strong>Annuler</strong> (icône ✖️) : Ferme le formulaire sans enregistrer
+- <strong>Tooltip</strong> : « Annuler et fermer le formulaire »</p></li>
+<li><p><strong>Enregistrer</strong> (icône ✓) : Sauvegarde les modifications
+- <strong>Tooltip</strong> : « Enregistrer l’exercice comptable »
+- Affiche un indicateur de chargement pendant la sauvegarde</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="gestion-des-periodes-comptables">
+<span id="accountant-accounting-periods"></span><h2>Gestion des Périodes Comptables<a class="headerlink" href="#gestion-des-periodes-comptables" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-periodes-comptables'"><span>#</span></a></h2>
+<section id="id1">
+<h3>Vue d’ensemble<a class="headerlink" href="#id1" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id1'"><span>#</span></a></h3>
+<p>Les périodes comptables sont les subdivisions d’un exercice (généralement mensuelles) qui permettent de suivre les opérations par période. Les périodes sont créées automatiquement lors de la création d’un exercice.</p>
+</section>
+<section id="gestion-via-les-exercices-comptables">
+<h3>Gestion via les Exercices Comptables<a class="headerlink" href="#gestion-via-les-exercices-comptables" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-via-les-exercices-comptables'"><span>#</span></a></h3>
+<p>Les périodes comptables sont gérées automatiquement par le système et sont liées aux exercices comptables. Vous pouvez :</p>
+<ol class="arabic simple">
+<li><p><strong>Visualiser les périodes</strong> : Lors de la création d’un exercice, 12 périodes mensuelles sont automatiquement créées (Janvier à Décembre)</p></li>
+<li><p><strong>Sélectionner une période</strong> : Les périodes sont disponibles dans les dropdowns lors de :
+- Création d’écritures comptables
+- Génération du Grand Livre
+- Calcul de la Balance de Vérification
+- Génération d’états financiers</p></li>
+<li><p><strong>Clôturer une période</strong> :
+- Les périodes doivent être clôturées via l’API backend ou l’interface d’administration
+- Avant de clôturer un exercice, toutes ses périodes doivent être clôturées
+- Une période clôturée ne peut plus recevoir de nouvelles écritures</p></li>
+</ol>
+<p><strong>Important :</strong></p>
+<ul class="simple">
+<li><p>✅ Les périodes sont créées automatiquement (pas besoin de les créer manuellement)</p></li>
+<li><p>✅ Chaque période couvre un mois complet (ex: Janvier 2025, Février 2025, etc.)</p></li>
+<li><p>✅ Toutes les périodes doivent être clôturées avant de clôturer l’exercice</p></li>
+</ul>
+</section>
+</section>
+<section id="plan-comptable">
+<span id="accountant-chart-of-accounts"></span><h2>Plan Comptable<a class="headerlink" href="#plan-comptable" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#plan-comptable'"><span>#</span></a></h2>
+<section id="id2">
+<h3>Vue d’ensemble<a class="headerlink" href="#id2" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h3>
+<p>Le plan comptable (Chart of Accounts) est la liste structurée de tous les comptes utilisés dans la comptabilité.</p>
+</section>
+<section id="id3">
+<h3>Accès<a class="headerlink" href="#id3" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → Plan Comptable
+<strong>URL</strong> : <code class="docutils literal notranslate"><span class="pre">/accountant/chart-of-accounts</span></code></p>
+</section>
+<section id="id4">
+<h3>Fonctionnalités<a class="headerlink" href="#id4" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h3>
+<section id="rechercher-un-compte">
+<h4>Rechercher un compte<a class="headerlink" href="#rechercher-un-compte" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Barre de recherche</strong> :
+- Recherche par <strong>code</strong> du compte
+- Recherche par <strong>libellé</strong> du compte
+- Recherche en temps réel (filtre automatique)</p>
+</section>
+<section id="creer-un-nouveau-compte">
+<h4>Créer un nouveau compte<a class="headerlink" href="#creer-un-nouveau-compte" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Cliquez sur le bouton <strong>« Nouveau Compte »</strong> (icône ➕)</p></li>
+<li><p>Remplissez le formulaire :
+- <strong>Code</strong> * (obligatoire) : Code unique du compte (ex: « 101 », « 401 »)
+- <strong>Libellé</strong> * (obligatoire) : Nom du compte (ex: « Caisse », « Fournisseurs »)
+- <strong>Type</strong> * (obligatoire) : Type de compte (Actif, Passif, Produits, Charges, etc.)
+- <strong>Classe</strong> (optionnel) : Classe comptable associée
+- <strong>Compte Parent</strong> (optionnel) : Pour créer une hiérarchie
+- <strong>Actif</strong> : Cocher si le compte est actif</p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong></p></li>
+</ol>
+<p><strong>Types de comptes disponibles :</strong></p>
+<ul class="simple">
+<li><p><strong>Actif</strong> : Actifs de l’entreprise</p></li>
+<li><p><strong>Passif</strong> : Passifs de l’entreprise</p></li>
+<li><p><strong>Produits</strong> : Revenus et produits</p></li>
+<li><p><strong>Charges</strong> : Dépenses et charges</p></li>
+<li><p><strong>Capitaux</strong> : Capitaux propres</p></li>
+</ul>
+</section>
+<section id="modifier-un-compte">
+<h4>Modifier un compte<a class="headerlink" href="#modifier-un-compte" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>✏️ (crayon)</strong></p></li>
+<li><p>Modifiez les champs souhaités</p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong></p></li>
+</ol>
+<p><strong>Restrictions :</strong></p>
+<ul class="simple">
+<li><p>❌ Impossible de modifier un compte système (comptes prédéfinis)</p></li>
+<li><p>❌ Impossible de modifier le code d’un compte utilisé dans des écritures</p></li>
+</ul>
+</section>
+<section id="supprimer-un-compte">
+<h4>Supprimer un compte<a class="headerlink" href="#supprimer-un-compte" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>🗑️ (trash)</strong></p></li>
+<li><p>Confirmez la suppression</p></li>
+</ol>
+<p><strong>Restrictions :</strong></p>
+<ul class="simple">
+<li><p>❌ Impossible de supprimer un compte système</p></li>
+<li><p>❌ Impossible de supprimer un compte utilisé dans des écritures</p></li>
+<li><p>⚠️ La suppression est un <strong>soft delete</strong></p></li>
+</ul>
+</section>
+<section id="tableau-du-plan-comptable">
+<h4>Tableau du Plan Comptable<a class="headerlink" href="#tableau-du-plan-comptable" title="Lien vers cette rubrique"><span>#</span></a></h4>
+</section>
+</section>
+</section>
+<section id="journaux-comptables">
+<span id="accountant-accounting-journals"></span><h2>Journaux Comptables<a class="headerlink" href="#journaux-comptables" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#journaux-comptables'"><span>#</span></a></h2>
+<section id="id5">
+<h3>Vue d’ensemble<a class="headerlink" href="#id5" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
+<p>Les journaux comptables (Accounting Journals) sont des registres spécialisés utilisés pour organiser et classer les écritures comptables par type d’opération. Chaque journal a un code unique et une séquence de numérotation automatique pour les pièces comptables.</p>
+</section>
+<section id="id6">
+<h3>Accès<a class="headerlink" href="#id6" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → Journaux Comptables
+<strong>URL</strong> : <code class="docutils literal notranslate"><span class="pre">/accountant/accounting-journals</span></code></p>
+</section>
+<section id="id7">
+<h3>Fonctionnalités<a class="headerlink" href="#id7" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id7'"><span>#</span></a></h3>
+<section id="creer-un-nouveau-journal">
+<h4>Créer un nouveau journal<a class="headerlink" href="#creer-un-nouveau-journal" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic">
+<li><p>Cliquez sur le bouton <strong>« Nouveau Journal »</strong> (icône ➕)
+- <strong>Tooltip</strong> : « Créer un nouveau journal comptable »</p></li>
+<li><p>Remplissez le formulaire :
+- <strong>Code</strong> * (obligatoire) : Code unique du journal (ex: « BQ » pour Banque, « CS » pour Caisse, « OD » pour Opérations Diverses)
+- <strong>Libellé</strong> * (obligatoire) : Nom du journal (ex: « Journal de Banque », « Journal de Caisse »)
+- <strong>Type</strong> * (obligatoire) : Type de journal</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>STANDARD</strong> : Journal standard</p></li>
+<li><p><strong>CAISSE</strong> : Journal de caisse</p></li>
+<li><p><strong>BANQUE</strong> : Journal de banque</p></li>
+<li><p><strong>OD</strong> : Opérations Diverses</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Séquence Initiale</strong> : Numéro de séquence de départ (par défaut: 0)</p></li>
+</ul>
+</li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong>
+- <strong>Tooltip</strong> : « Enregistrer le journal comptable »</p></li>
+</ol>
+<p><strong>Ce qui se passe automatiquement :</strong>
+- ✅ Vérification de l’unicité du code
+- ✅ Création du journal avec état ACTIVATED
+- ✅ Initialisation de la séquence à 0
+- ✅ Message de confirmation : « Journal créé avec succès »</p>
+<p><strong>Important :</strong>
+- ❌ Le code doit être unique (maximum 50 caractères)
+- ❌ Le libellé est obligatoire (maximum 255 caractères)
+- ✅ La séquence est incrémentée automatiquement lors de la création de pièces comptables</p>
+</section>
+<section id="modifier-un-journal">
+<h4>Modifier un journal<a class="headerlink" href="#modifier-un-journal" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>✏️ (crayon)</strong>
+- <strong>Tooltip</strong> : « Modifier le journal comptable »
+- <strong>Note</strong> : Le bouton est désactivé si le journal est désactivé</p></li>
+<li><p>Modifiez les champs souhaités dans le formulaire :
+- Vous pouvez modifier le <strong>Libellé</strong> et le <strong>Type</strong>
+- Le <strong>Code</strong> ne peut généralement pas être modifié après création</p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong></p></li>
+</ol>
+<p><strong>Restrictions :</strong>
+- ❌ Impossible de modifier un journal désactivé
+- ⚠️ La modification du code peut affecter les écritures existantes</p>
+</section>
+<section id="activer-un-journal">
+<h4>Activer un journal<a class="headerlink" href="#activer-un-journal" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>✓ (check)</strong>
+- <strong>Tooltip</strong> : « Activer ce journal comptable »
+- <strong>Note</strong> : Le bouton est désactivé si le journal est déjà actif</p></li>
+<li><p>Confirmez l’activation si demandé</p></li>
+</ol>
+<p><strong>Ce qui se passe :</strong>
+- ✅ Le journal devient actif (état = ACTIVATED)
+- ✅ Le journal peut être utilisé pour créer des écritures
+- ✅ Message de confirmation : « Journal activé avec succès »</p>
+</section>
+<section id="desactiver-un-journal">
+<h4>Désactiver un journal<a class="headerlink" href="#desactiver-un-journal" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>✖️ (désactiver)</strong>
+- <strong>Tooltip</strong> : « Désactiver ce journal comptable »
+- <strong>Note</strong> : Le bouton est désactivé si le journal est déjà désactivé</p></li>
+<li><p>Confirmez la désactivation dans la boîte de dialogue :
+- Message : « Êtes-vous sûr de vouloir désactiver le journal {code} ? »
+- Cliquez sur <strong>« Oui »</strong> pour confirmer</p></li>
+</ol>
+<p><strong>Ce qui se passe :</strong>
+- ✅ Le journal est désactivé (état = DEACTIVATED)
+- ⚠️ Le journal ne peut plus être utilisé pour créer de nouvelles écritures
+- ✅ Les écritures existantes restent valides
+- ✅ Message de confirmation : « Journal désactivé avec succès »</p>
+<p><strong>Important :</strong>
+- ⚠️ Désactiver un journal empêche la création de nouvelles écritures avec ce journal
+- ✅ Les écritures existantes ne sont pas affectées</p>
+</section>
+<section id="supprimer-un-journal">
+<h4>Supprimer un journal<a class="headerlink" href="#supprimer-un-journal" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>🗑️ (trash)</strong>
+- <strong>Tooltip</strong> : « Supprimer ce journal comptable »
+- <strong>Note</strong> : Le bouton est désactivé si le journal est utilisé dans des écritures</p></li>
+<li><p>Confirmez la suppression dans la boîte de dialogue :
+- Message : « Êtes-vous sûr de vouloir supprimer le journal {code} ? »
+- Cliquez sur <strong>« Oui »</strong> pour confirmer</p></li>
+</ol>
+<p><strong>Restrictions :</strong>
+- ❌ Impossible de supprimer un journal utilisé dans des écritures comptables
+- ❌ Impossible de supprimer un journal système
+- ℹ️ La suppression est un <strong>soft delete</strong> (état = DELETED)</p>
+</section>
+<section id="tableau-des-journaux">
+<h4>Tableau des Journaux<a class="headerlink" href="#tableau-des-journaux" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le tableau affiche les colonnes suivantes :</p>
+<p><strong>Codes couleur des statuts :</strong>
+- 🟢 <strong>Vert</strong> : Actif (ACTIVATED)
+- 🔴 <strong>Rouge</strong> : Désactivé (DEACTIVATED)</p>
+<p><strong>Types de journaux courants :</strong>
+- <strong>BQ</strong> : Journal de Banque
+- <strong>CS</strong> : Journal de Caisse
+- <strong>OD</strong> : Opérations Diverses
+- <strong>AC</strong> : Journal d’Achats
+- <strong>VT</strong> : Journal de Ventes</p>
+</section>
+<section id="id8">
+<h4>Actions du Dialog<a class="headerlink" href="#id8" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<ul class="simple">
+<li><p><strong>Annuler</strong> (icône ✖️) : Ferme le formulaire sans enregistrer
+- <strong>Tooltip</strong> : « Annuler et fermer le formulaire »</p></li>
+<li><p><strong>Enregistrer</strong> (icône ✓) : Sauvegarde les modifications
+- <strong>Tooltip</strong> : « Enregistrer le journal comptable »
+- Affiche un indicateur de chargement pendant la sauvegarde</p></li>
+</ul>
+</section>
+<section id="utilisation-des-journaux">
+<h4>Utilisation des Journaux<a class="headerlink" href="#utilisation-des-journaux" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Les journaux comptables sont utilisés lors de la création d’écritures comptables :</p>
+<ol class="arabic simple">
+<li><p><strong>Sélection du journal</strong> : Lors de la création d’une écriture, vous devez sélectionner un journal actif</p></li>
+<li><p><strong>Génération automatique de référence</strong> : Le système génère automatiquement une référence de pièce comptable basée sur :
+- Le code du journal (ex: « BQ »)
+- La séquence actuelle (ex: 001)
+- Format : « {CODE}-{SEQUENCE} » (ex: « BQ-001 », « CS-002 »)</p></li>
+<li><p><strong>Incrémentation automatique</strong> : Après chaque création d’écriture, la séquence du journal est automatiquement incrémentée</p></li>
+</ol>
+<p><strong>Exemple :</strong>
+- Journal « BQ » (Banque) avec séquence 0
+- Création d’une écriture → Référence générée : « BQ-001 »
+- Séquence mise à jour à 1
+- Prochaine écriture → Référence : « BQ-002 »</p>
+</section>
+</section>
+</section>
+<section id="ecritures-comptables">
+<span id="accountant-journal-entries"></span><h2>Écritures Comptables<a class="headerlink" href="#ecritures-comptables" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ecritures-comptables'"><span>#</span></a></h2>
+<section id="id9">
+<h3>Vue d’ensemble<a class="headerlink" href="#id9" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id9'"><span>#</span></a></h3>
+<p>Les écritures comptables (Journal Entries) enregistrent toutes les opérations comptables selon le principe de la comptabilité en partie double. Elles peuvent être créées automatiquement par le système ou manuellement par l’utilisateur.</p>
+</section>
+<section id="id10">
+<h3>Accès<a class="headerlink" href="#id10" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id10'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → Écritures Comptables
+<strong>URL</strong> : <code class="docutils literal notranslate"><span class="pre">/accountant/journal-entry</span></code></p>
+</section>
+<section id="id11">
+<h3>Fonctionnalités<a class="headerlink" href="#id11" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id11'"><span>#</span></a></h3>
+<section id="rechercher-des-ecritures">
+<h4>Rechercher des écritures<a class="headerlink" href="#rechercher-des-ecritures" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Filtres disponibles :</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Plage de dates</strong> :
+- <strong>Du</strong> : Date de début
+- <strong>Au</strong> : Date de fin
+- Cliquez sur <strong>« Chercher »</strong> pour appliquer le filtre</p></li>
+<li><p><strong>Recherche par période</strong> :
+- Sélectionnez une période comptable dans le dropdown</p></li>
+</ol>
+</section>
+<section id="visualiser-les-ecritures">
+<h4>Visualiser les écritures<a class="headerlink" href="#visualiser-les-ecritures" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le tableau affiche :
+- <strong>Référence</strong> : Numéro de référence de l’écriture
+- <strong>Description</strong> : Description de l’écriture
+- <strong>Montant</strong> : Montant total de l’écriture
+- <strong>Nb. LIGNE</strong> : Nombre de lignes d’écriture
+- <strong>Actions</strong> : Voir détails, Modifier, Supprimer</p>
+<p><strong>Expansion des lignes :</strong>
+- Cliquez sur l’icône <strong>▶️</strong> à gauche pour voir les détails
+- Cliquez sur <strong>▼</strong> pour réduire les détails</p>
+</section>
+<section id="creer-une-nouvelle-ecriture-automatique">
+<h4>Créer une nouvelle écriture (automatique)<a class="headerlink" href="#creer-une-nouvelle-ecriture-automatique" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Les écritures comptables sont créées automatiquement par le système lors de certaines opérations :
+- Transferts internes
+- Prélèvements de capitaux
+- Transactions bancaires
+- Autres opérations financières</p>
+<p><strong>Caractéristiques des écritures automatiques :</strong>
+- ✅ Génération automatique de la référence de pièce comptable
+- ✅ Association automatique avec un journal comptable
+- ✅ Création des lignes débit/crédit selon les règles comptables
+- ✅ Validation automatique de l’équilibre</p>
+</section>
+<section id="visualiser-les-ecritures-automatiques">
+<h4>Visualiser les écritures automatiques<a class="headerlink" href="#visualiser-les-ecritures-automatiques" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le tableau affiche toutes les écritures (automatiques et manuelles) avec :
+- <strong>Référence</strong> : Numéro de référence de la pièce comptable (ex: « BQ-001 »)
+- <strong>Journal</strong> : Code du journal associé
+- <strong>Date</strong> : Date de l’écriture
+- <strong>Description</strong> : Description de l’opération
+- <strong>Montant</strong> : Montant total de l’écriture
+- <strong>Nb. LIGNE</strong> : Nombre de lignes d’écriture
+- <strong>Actions</strong> : Voir détails, Modifier, Supprimer</p>
+<p><strong>Expansion des lignes :</strong>
+- Cliquez sur l’icône <strong>▶️</strong> à gauche pour voir les détails
+- Cliquez sur <strong>▼</strong> pour réduire les détails
+- Les détails montrent toutes les lignes débit/crédit de l’écriture</p>
+</section>
+</section>
+</section>
+<section id="creer-une-ecriture-comptable-manuelle">
+<span id="accountant-manual-journal-entries"></span><h2>Créer une Écriture Comptable Manuelle<a class="headerlink" href="#creer-une-ecriture-comptable-manuelle" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#creer-une-ecriture-comptable-manuelle'"><span>#</span></a></h2>
+<section id="id12">
+<h3>Vue d’ensemble<a class="headerlink" href="#id12" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id12'"><span>#</span></a></h3>
+<p>Les écritures comptables manuelles permettent de créer des écritures comptables directement depuis l’interface utilisateur, sans passer par une transaction automatique. Cela est utile pour :
+- Ajustements comptables
+- Écritures de régularisation
+- Corrections d’erreurs
+- Écritures d’inventaire</p>
+</section>
+<section id="id13">
+<h3>Accès<a class="headerlink" href="#id13" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id13'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → Écritures Comptables → <strong>« Nouvelle écriture manuelle »</strong>
+<strong>Bouton</strong> : Cliquez sur le bouton <strong>« Nouvelle écriture manuelle »</strong> dans la page des écritures comptables</p>
+<section id="procedure-de-creation">
+<h4>Procédure de Création<a class="headerlink" href="#procedure-de-creation" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes détaillées :</strong></p>
+<ol class="arabic">
+<li><p><strong>Accéder au formulaire</strong>
+- Dans la page <strong>Écritures Comptables</strong>, cliquez sur <strong>« Nouvelle écriture manuelle »</strong> (icône ➕)
+- Un dialog s’ouvre avec le formulaire de création</p></li>
+<li><p><strong>Remplir les informations de base</strong>
+- <strong>Journal Comptable</strong> * (obligatoire) : Sélectionnez un journal actif dans le dropdown</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Les journaux disponibles sont filtrés (seulement les journaux actifs)</p></li>
+<li><p>Format d’affichage : <strong>Code</strong> - <strong>Libellé</strong> (ex: « BQ - Journal de Banque »)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Date</strong> * (obligatoire) : Date de l’écriture comptable
+- Utilisez le calendrier pour sélectionner la date</p></li>
+<li><p><strong>Description</strong> (optionnel) : Description générale de l’opération
+- Exemple : « Ajustement de fin de mois », « Régularisation charges »</p></li>
+</ul>
+</li>
+<li><p><strong>Ajouter les lignes d’écriture</strong></p>
+<p><strong>Pour chaque ligne, vous devez :</strong></p>
+<ol class="loweralpha simple">
+<li><p><strong>Sélectionner un compte</strong> * (obligatoire)
+- Utilisez le dropdown pour rechercher un compte du plan comptable
+- Recherche par code ou libellé
+- Seuls les comptes actifs sont disponibles</p></li>
+<li><p><strong>Définir le sens</strong> * (obligatoire)
+- <strong>DÉBIT</strong> : Montant au débit
+- <strong>CRÉDIT</strong> : Montant au crédit
+- Sélectionnez dans le dropdown</p></li>
+<li><p><strong>Saisir le montant</strong> * (obligatoire)
+- Montant positif uniquement
+- Utilisez le format numérique (ex: 100000.00)
+- Le système valide que le montant est &gt; 0</p></li>
+<li><p><strong>Ajouter une description</strong> (optionnel)
+- Description spécifique à la ligne
+- Utile pour documenter chaque mouvement</p></li>
+<li><p><strong>Ajouter la ligne</strong>
+- Cliquez sur le bouton <strong>« Ajouter »</strong> (icône ➕) à droite de la ligne
+- La ligne est ajoutée au tableau des lignes</p></li>
+</ol>
+<p><strong>Ajouter plusieurs lignes :</strong>
+- Cliquez sur <strong>« Ajouter une ligne »</strong> pour créer une nouvelle ligne vide
+- Répétez le processus pour chaque ligne
+- Minimum 2 lignes requises (principe de la partie double)</p>
+</li>
+<li><p><strong>Vérifier l’équilibre</strong></p>
+<p><strong>Le système affiche en temps réel :</strong>
+- <strong>Total Débit</strong> : Somme de tous les montants au débit
+- <strong>Total Crédit</strong> : Somme de tous les montants au crédit
+- <strong>Différence</strong> : Écart entre débits et crédits</p>
+<p><strong>Indicateur visuel :</strong>
+- 🟢 <strong>Vert</strong> : Écriture équilibrée (Débits = Crédits)
+- 🔴 <strong>Rouge</strong> : Écriture non équilibrée (Débits ≠ Crédits)</p>
+<p><strong>Règle de la partie double :</strong>
+- ✅ <strong>Total Débit = Total Crédit</strong> (obligatoire)
+- ✅ Au moins 2 lignes sont requises
+- ❌ Impossible d’enregistrer si l’écriture n’est pas équilibrée</p>
+</li>
+<li><p><strong>Modifier ou supprimer des lignes</strong></p>
+<p><strong>Modifier une ligne :</strong>
+- Cliquez sur l’icône <strong>✏️ (crayon)</strong> dans la colonne Actions
+- Modifiez les champs souhaités
+- Cliquez sur <strong>« Mettre à jour »</strong> pour sauvegarder</p>
+<p><strong>Supprimer une ligne :</strong>
+- Cliquez sur l’icône <strong>🗑️ (trash)</strong> dans la colonne Actions
+- Confirmez la suppression
+- La ligne est retirée du tableau</p>
+</li>
+<li><p><strong>Enregistrer l’écriture</strong></p>
+<ul class="simple">
+<li><p>Cliquez sur <strong>« Enregistrer »</strong> (icône ✓)</p></li>
+<li><p><strong>Tooltip</strong> : « Enregistrer l’écriture comptable »</p></li>
+</ul>
+<p><strong>Ce qui se passe automatiquement :</strong>
+- ✅ Validation de l’équilibre (Débits = Crédits)
+- ✅ Vérification que tous les comptes sont valides et actifs
+- ✅ Vérification que le journal est actif
+- ✅ Génération automatique de la référence de pièce comptable</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Format : « {CODE_JOURNAL}-{SEQUENCE} » (ex: « BQ-001 », « CS-002 »)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>✅ Incrémentation de la séquence du journal</p></li>
+<li><p>✅ Création de l’écriture avec état BROUILLON</p></li>
+<li><p>✅ Message de confirmation : « Écriture créée avec succès »</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Validation automatique :</strong>
+- ✅ Vérification de l’équilibre (Débits = Crédits)
+- ✅ Vérification que tous les comptes sont valides et actifs
+- ✅ Vérification que le journal est actif
+- ✅ Vérification que tous les montants sont positifs
+- ✅ Vérification qu’au moins 2 lignes sont présentes</p>
+</section>
+<section id="modifier-une-ecriture-manuelle">
+<h4>Modifier une Écriture Manuelle<a class="headerlink" href="#modifier-une-ecriture-manuelle" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau des écritures, cliquez sur l’icône <strong>✏️ (crayon)</strong>
+- <strong>Tooltip</strong> : « Modifier l’écriture comptable »
+- <strong>Note</strong> : Le bouton est désactivé si l’écriture est validée ou dans une période clôturée</p></li>
+<li><p>Le formulaire s’ouvre avec les données existantes</p></li>
+<li><p>Modifiez les champs souhaités :
+- Vous pouvez modifier la date, la description
+- Vous pouvez modifier, ajouter ou supprimer des lignes
+- <strong>Important</strong> : L’écriture doit rester équilibrée après modification</p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong></p></li>
+</ol>
+<p><strong>Restrictions :</strong>
+- ❌ Impossible de modifier une écriture dans une période clôturée
+- ❌ Impossible de modifier une écriture dans un exercice clôturé
+- ❌ Impossible de modifier une écriture validée (selon configuration)
+- ⚠️ La modification peut affecter les rapports comptables</p>
+<p><strong>Ce qui se passe :</strong>
+- ✅ Validation de l’équilibre après modification
+- ✅ Mise à jour de l’écriture et de ses lignes
+- ✅ Message de confirmation : « Écriture modifiée avec succès »</p>
+</section>
+<section id="exemples-d-ecritures-manuelles">
+<h4>Exemples d’Écritures Manuelles<a class="headerlink" href="#exemples-d-ecritures-manuelles" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Exemple 1 : Ajustement de charges</strong></p>
+<p><em>Objectif :</em> Enregistrer une charge non encore comptabilisée</p>
+<p><strong>Lignes :</strong>
+1. <strong>Compte</strong> : 601 (Charges d’exploitation) - <strong>DÉBIT</strong> : 50 000 FCFA
+2. <strong>Compte</strong> : 401 (Fournisseurs) - <strong>CRÉDIT</strong> : 50 000 FCFA</p>
+<p><strong>Description</strong> : « Facture fournisseur janvier 2025 »</p>
+<p>—</p>
+<p><strong>Exemple 2 : Régularisation de produits</strong></p>
+<p><em>Objectif :</em> Enregistrer un produit à recevoir</p>
+<p><strong>Lignes :</strong>
+1. <strong>Compte</strong> : 411 (Clients) - <strong>DÉBIT</strong> : 100 000 FCFA
+2. <strong>Compte</strong> : 701 (Produits d’exploitation) - <strong>CRÉDIT</strong> : 100 000 FCFA</p>
+<p><strong>Description</strong> : « Facturation client - Vente de services »</p>
+<p>—</p>
+<p><strong>Exemple 3 : Ajustement d’inventaire</strong></p>
+<p><em>Objectif :</em> Corriger un écart d’inventaire</p>
+<p><strong>Lignes :</strong>
+1. <strong>Compte</strong> : 603 (Variation de stocks) - <strong>DÉBIT</strong> : 25 000 FCFA
+2. <strong>Compte</strong> : 31 (Stocks) - <strong>CRÉDIT</strong> : 25 000 FCFA</p>
+<p><strong>Description</strong> : « Ajustement inventaire fin de mois »</p>
+</section>
+<section id="pieces-comptables-references">
+<h4>Pièces Comptables (Références)<a class="headerlink" href="#pieces-comptables-references" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Qu’est-ce qu’une pièce comptable ?</strong></p>
+<p>Une pièce comptable est une référence unique qui identifie une écriture comptable. Elle est générée automatiquement par le système lors de la création d’une écriture.</p>
+<p><strong>Format de la référence :</strong>
+- <strong>Format</strong> : <code class="docutils literal notranslate"><span class="pre">{CODE_JOURNAL}-{SEQUENCE}</span></code>
+- <strong>Exemples</strong> :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BQ-001</span></code> : Première écriture du journal Banque</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CS-002</span></code> : Deuxième écriture du journal Caisse</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OD-015</span></code> : Quinzième écriture du journal Opérations Diverses</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Génération automatique :</strong>
+- ✅ La référence est générée automatiquement lors de la création
+- ✅ Basée sur le journal sélectionné
+- ✅ Utilise la séquence actuelle du journal
+- ✅ La séquence est incrémentée automatiquement après création</p>
+<p><strong>Utilisation :</strong>
+- La référence apparaît dans :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Le tableau des écritures comptables</p></li>
+<li><p>Le grand livre</p></li>
+<li><p>Les rapports comptables</p></li>
+<li><p>Les exports Excel/PDF</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Recherche par référence :</strong>
+- Vous pouvez rechercher une écriture par sa référence
+- Utilisez le filtre de recherche dans le tableau des écritures</p>
+</section>
+<section id="modifier-une-ecriture">
+<h4>Modifier une écriture<a class="headerlink" href="#modifier-une-ecriture" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>✏️ (crayon)</strong></p></li>
+<li><p>Modifiez les champs souhaités</p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong></p></li>
+</ol>
+<p><strong>Restrictions :</strong>
+- ❌ Impossible de modifier une écriture dans une période clôturée
+- ❌ Impossible de modifier une écriture dans un exercice clôturé</p>
+</section>
+<section id="supprimer-une-ecriture">
+<h4>Supprimer une écriture<a class="headerlink" href="#supprimer-une-ecriture" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>🗑️ (trash)</strong></p></li>
+<li><p>Confirmez la suppression</p></li>
+</ol>
+<p><strong>Restrictions :</strong>
+- ❌ Impossible de supprimer une écriture dans une période clôturée
+- ⚠️ La suppression est un <strong>soft delete</strong></p>
+</section>
+<section id="exporter-les-ecritures">
+<h4>Exporter les écritures<a class="headerlink" href="#exporter-les-ecritures" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Envoi par email :</strong>
+- Cliquez sur le bouton <strong>« Envoyer par mail »</strong> (icône ✉️)
+- <strong>Tooltip</strong> : « Envoyer par mail (Excel) »
+- Les écritures sont exportées en format Excel et envoyées par email</p>
+</section>
+</section>
+</section>
+<section id="grand-livre">
+<span id="accountant-general-ledger"></span><h2>Grand Livre<a class="headerlink" href="#grand-livre" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#grand-livre'"><span>#</span></a></h2>
+<section id="id14">
+<h3>Vue d’ensemble<a class="headerlink" href="#id14" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id14'"><span>#</span></a></h3>
+<p>Le Grand Livre affiche toutes les écritures comptables organisées par compte, avec le solde de chaque compte.</p>
+</section>
+<section id="id15">
+<h3>Accès<a class="headerlink" href="#id15" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id15'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → Grand Livre
+<strong>URL</strong> : <code class="docutils literal notranslate"><span class="pre">/accountant/general-ledger</span></code></p>
+</section>
+<section id="id16">
+<h3>Fonctionnalités<a class="headerlink" href="#id16" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id16'"><span>#</span></a></h3>
+<section id="rechercher-dans-le-grand-livre">
+<h4>Rechercher dans le Grand Livre<a class="headerlink" href="#rechercher-dans-le-grand-livre" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Filtres disponibles :</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Compte</strong> : Sélectionner un compte spécifique (ou « Tous les comptes »)</p></li>
+<li><p><strong>Période</strong> : Sélectionner une période comptable (ou « Toutes les périodes »)</p></li>
+<li><p><strong>Date Début</strong> : Date de début de la recherche</p></li>
+<li><p><strong>Date Fin</strong> : Date de fin de la recherche</p></li>
+<li><p>Cliquez sur <strong>« Rechercher »</strong> pour appliquer les filtres</p></li>
+</ol>
+</section>
+<section id="generer-le-grand-livre-pour-une-periode">
+<h4>Générer le Grand Livre pour une période<a class="headerlink" href="#generer-le-grand-livre-pour-une-periode" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Sélectionnez une <strong>Période</strong> dans le dropdown</p></li>
+<li><p>Cliquez sur <strong>« Générer »</strong> (icône 🔄)
+- <strong>Note</strong> : Le bouton est désactivé si aucune période n’est sélectionnée</p></li>
+<li><p>Le Grand Livre est généré pour la période sélectionnée</p></li>
+</ol>
+<p><strong>Ce qui se passe :</strong>
+- ✅ Calcul automatique des soldes par compte
+- ✅ Affichage des écritures chronologiques
+- ✅ Calcul du solde cumulé</p>
+</section>
+<section id="visualiser-le-grand-livre">
+<h4>Visualiser le Grand Livre<a class="headerlink" href="#visualiser-le-grand-livre" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le tableau affiche les colonnes suivantes :</p>
+<p><strong>Informations affichées :</strong>
+- ✅ Toutes les écritures du compte sélectionné
+- ✅ Soldes débits et crédits
+- ✅ Solde cumulé après chaque écriture
+- ✅ Code couleur : Vert pour les soldes positifs, Rouge pour les soldes négatifs</p>
+</section>
+</section>
+</section>
+<section id="balance-de-verification">
+<span id="accountant-trial-balance"></span><h2>Balance de Vérification<a class="headerlink" href="#balance-de-verification" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#balance-de-verification'"><span>#</span></a></h2>
+<section id="id17">
+<h3>Vue d’ensemble<a class="headerlink" href="#id17" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id17'"><span>#</span></a></h3>
+<p>La Balance de Vérification (Trial Balance) est un rapport qui montre les soldes de tous les comptes à une date donnée, permettant de vérifier l’équilibre de la comptabilité.</p>
+</section>
+<section id="id18">
+<h3>Accès<a class="headerlink" href="#id18" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id18'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → Balance de Vérification
+<strong>URL</strong> : <code class="docutils literal notranslate"><span class="pre">/accountant/trial-balance</span></code></p>
+</section>
+<section id="id19">
+<h3>Fonctionnalités<a class="headerlink" href="#id19" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id19'"><span>#</span></a></h3>
+<section id="calculer-la-balance-de-verification">
+<h4>Calculer la Balance de Vérification<a class="headerlink" href="#calculer-la-balance-de-verification" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Sélectionnez une <strong>Période</strong> dans le dropdown
+- <strong>Note</strong> : Le bouton « Calculer » est désactivé si aucune période n’est sélectionnée</p></li>
+<li><p>Cliquez sur <strong>« Calculer »</strong> (icône 🧮)
+- Un indicateur de chargement s’affiche pendant le calcul</p></li>
+</ol>
+<p><strong>Ce qui se passe :</strong>
+- ✅ Calcul automatique des soldes de tous les comptes
+- ✅ Calcul des totaux débits et crédits
+- ✅ Vérification de l’équilibre de la balance</p>
+</section>
+<section id="verifier-l-equilibre">
+<h4>Vérifier l’équilibre<a class="headerlink" href="#verifier-l-equilibre" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Indicateur visuel :</strong>
+- 🟢 <strong>« Balance équilibrée »</strong> (fond vert) : Total débits = Total crédits
+- 🔴 <strong>« Balance non équilibrée »</strong> (fond rouge) : Total débits ≠ Total crédits</p>
+<p><strong>Si la balance n’est pas équilibrée :</strong>
+- ⚠️ Vérifiez les écritures comptables
+- ⚠️ Vérifiez qu’il n’y a pas d’erreurs de saisie
+- ⚠️ Vérifiez que toutes les écritures sont validées</p>
+</section>
+<section id="visualiser-la-balance">
+<h4>Visualiser la Balance<a class="headerlink" href="#visualiser-la-balance" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le tableau affiche les colonnes suivantes :</p>
+<p><strong>Totaux en bas du tableau :</strong>
+- <strong>Total Débit</strong> : Somme de tous les débits
+- <strong>Total Crédit</strong> : Somme de tous les crédits
+- <strong>Différence</strong> : Écart entre totaux (doit être 0 pour une balance équilibrée)</p>
+</section>
+</section>
+</section>
+<section id="reconciliation-bancaire">
+<span id="accountant-bank-reconciliation"></span><h2>Réconciliation Bancaire<a class="headerlink" href="#reconciliation-bancaire" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#reconciliation-bancaire'"><span>#</span></a></h2>
+<section id="id20">
+<h3>Vue d’ensemble<a class="headerlink" href="#id20" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id20'"><span>#</span></a></h3>
+<p>La réconciliation bancaire permet de comparer les relevés bancaires avec les écritures comptables pour identifier et résoudre les différences.</p>
+</section>
+<section id="id21">
+<h3>Accès<a class="headerlink" href="#id21" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id21'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → Réconciliation Bancaire
+<strong>URL</strong> : <code class="docutils literal notranslate"><span class="pre">/accountant/bank-reconciliation</span></code></p>
+</section>
+<section id="guide-complet">
+<h3>Guide complet<a class="headerlink" href="#guide-complet" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#guide-complet'"><span>#</span></a></h3>
+<p>Consultez la <span class="xref std std-ref">bank-reconciliation-user-guide</span> pour une documentation détaillée.</p>
+</section>
+<section id="fonctionnalites-principales">
+<h3>Fonctionnalités principales<a class="headerlink" href="#fonctionnalites-principales" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#fonctionnalites-principales'"><span>#</span></a></h3>
+<section id="creer-une-reconciliation">
+<h4>Créer une réconciliation<a class="headerlink" href="#creer-une-reconciliation" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<ol class="arabic simple">
+<li><p>Cliquez sur <strong>« Nouvelle Réconciliation »</strong> (icône ➕)</p></li>
+<li><p>Sélectionnez le <strong>Compte Interne</strong> :
+- Utilisez le dropdown filtré pour rechercher par numéro, clé ou libellé
+- L’affichage montre : <strong>Numéro/Clé</strong> (en gras) - <strong>Libellé</strong> (en gris)</p></li>
+<li><p>Sélectionnez l”<strong>Exercice Comptable</strong> et la <strong>Période Comptable</strong></p></li>
+<li><p>Saisissez la <strong>Date du Relevé</strong> et le <strong>Solde Bancaire</strong></p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong></p></li>
+</ol>
+</section>
+<section id="pointage-automatique">
+<h4>Pointage automatique<a class="headerlink" href="#pointage-automatique" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<ul class="simple">
+<li><p>Cliquez sur l’icône <strong>🔗 (lien)</strong> pour matcher automatiquement les transactions</p></li>
+<li><p>Le système compare montants, dates et références</p></li>
+</ul>
+</section>
+<section id="finaliser-la-reconciliation">
+<h4>Finaliser la réconciliation<a class="headerlink" href="#finaliser-la-reconciliation" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<ul class="simple">
+<li><p>Cliquez sur l’icône <strong>✓ (check)</strong> pour finaliser</p></li>
+<li><p>Tous les éléments doivent être pointés avant la finalisation</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="etats-financiers">
+<span id="accountant-financial-statements"></span><h2>États Financiers<a class="headerlink" href="#etats-financiers" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#etats-financiers'"><span>#</span></a></h2>
+<section id="id22">
+<h3>Vue d’ensemble<a class="headerlink" href="#id22" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id22'"><span>#</span></a></h3>
+<p>Les états financiers sont des rapports comptables qui présentent la situation financière de l’entreprise.</p>
+</section>
+<section id="id23">
+<h3>Accès<a class="headerlink" href="#id23" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id23'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → États Financiers
+<strong>URL</strong> : <code class="docutils literal notranslate"><span class="pre">/accountant/financial-statements</span></code></p>
+</section>
+<section id="types-d-etats-financiers">
+<h3>Types d’États Financiers<a class="headerlink" href="#types-d-etats-financiers" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#types-d-etats-financiers'"><span>#</span></a></h3>
+<section id="bilan">
+<h4>Bilan<a class="headerlink" href="#bilan" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le bilan présente la situation financière de l’entreprise à une date donnée (Actifs = Passifs + Capitaux).</p>
+<p><strong>Génération :</strong></p>
+<ol class="arabic simple">
+<li><p>Sélectionnez un <strong>Exercice Comptable</strong> (obligatoire)</p></li>
+<li><p>Optionnellement, sélectionnez une <strong>Période</strong></p></li>
+<li><p>Cliquez sur <strong>« Générer Bilan »</strong></p></li>
+</ol>
+<p><strong>Contenu du bilan :</strong>
+- <strong>Actifs</strong> : Actifs de l’entreprise
+- <strong>Passifs</strong> : Passifs de l’entreprise
+- <strong>Capitaux Propres</strong> : Capitaux propres</p>
+</section>
+<section id="compte-de-resultat">
+<h4>Compte de Résultat<a class="headerlink" href="#compte-de-resultat" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le compte de résultat présente les produits et charges de l’entreprise pour une période donnée.</p>
+<p><strong>Génération :</strong></p>
+<ol class="arabic simple">
+<li><p>Sélectionnez un <strong>Exercice Comptable</strong> (obligatoire)</p></li>
+<li><p>Optionnellement, sélectionnez une <strong>Période</strong></p></li>
+<li><p>Cliquez sur <strong>« Générer Compte de Résultat »</strong></p></li>
+</ol>
+<p><strong>Contenu du compte de résultat :</strong>
+- <strong>Produits</strong> : Revenus et produits
+- <strong>Charges</strong> : Dépenses et charges
+- <strong>Résultat</strong> : Bénéfice ou perte (Produits - Charges)</p>
+</section>
+<section id="flux-de-tresorerie">
+<h4>Flux de Trésorerie<a class="headerlink" href="#flux-de-tresorerie" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le flux de trésorerie présente les mouvements de trésorerie (encaissements et décaissements).</p>
+<p><strong>Génération :</strong></p>
+<ol class="arabic simple">
+<li><p>Sélectionnez un <strong>Exercice Comptable</strong> (obligatoire)</p></li>
+<li><p>Optionnellement, sélectionnez une <strong>Période</strong></p></li>
+<li><p>Cliquez sur <strong>« Générer Flux de Trésorerie »</strong></p></li>
+</ol>
+</section>
+</section>
+<section id="id24">
+<h3>Fonctionnalités<a class="headerlink" href="#id24" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id24'"><span>#</span></a></h3>
+<section id="visualiser-un-etat">
+<h4>Visualiser un état<a class="headerlink" href="#visualiser-un-etat" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<ul class="simple">
+<li><p>Dans le tableau, cliquez sur l’icône <strong>👁️ (œil)</strong> pour voir les détails</p></li>
+</ul>
+</section>
+<section id="approuver-un-etat">
+<h4>Approuver un état<a class="headerlink" href="#approuver-un-etat" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<ul class="simple">
+<li><p>Cliquez sur l’icône <strong>✓ (check)</strong> pour approuver</p></li>
+<li><p><strong>Note</strong> : Le bouton est désactivé si l’état est déjà approuvé</p></li>
+</ul>
+</section>
+<section id="finaliser-un-etat">
+<h4>Finaliser un état<a class="headerlink" href="#finaliser-un-etat" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<ul class="simple">
+<li><p>Cliquez sur l’icône <strong>🔒 (lock)</strong> pour finaliser</p></li>
+<li><p>Un état finalisé ne peut plus être modifié</p></li>
+</ul>
+</section>
+<section id="tableau-des-etats-financiers">
+<h4>Tableau des États Financiers<a class="headerlink" href="#tableau-des-etats-financiers" title="Lien vers cette rubrique"><span>#</span></a></h4>
+</section>
+</section>
+</section>
+<section id="transferts-internes">
+<span id="accountant-internal-transfers"></span><h2>Transferts Internes<a class="headerlink" href="#transferts-internes" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#transferts-internes'"><span>#</span></a></h2>
+<section id="id25">
+<h3>Vue d’ensemble<a class="headerlink" href="#id25" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id25'"><span>#</span></a></h3>
+<p>Les transferts internes permettent de transférer des fonds entre comptes internes.</p>
+</section>
+<section id="id26">
+<h3>Accès<a class="headerlink" href="#id26" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id26'"><span>#</span></a></h3>
+<p><strong>Menu</strong> : Comptabilité → Transferts Internes
+<strong>URL</strong> : <code class="docutils literal notranslate"><span class="pre">/accountant/accountant</span></code></p>
+</section>
+<section id="id27">
+<h3>Fonctionnalités<a class="headerlink" href="#id27" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id27'"><span>#</span></a></h3>
+<section id="effectuer-un-transfert">
+<h4>Effectuer un transfert<a class="headerlink" href="#effectuer-un-transfert" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p><strong>Étapes :</strong></p>
+<ol class="arabic simple">
+<li><p>Remplissez le formulaire :
+- <strong>Compte Source</strong> * : Compte interne source
+- <strong>Compte Cible</strong> * : Compte interne cible
+- <strong>Montant</strong> * : Montant du transfert
+- <strong>Date</strong> * : Date du transfert
+- <strong>Description</strong> : Description du transfert</p></li>
+<li><p>Vérifications automatiques :
+- ✅ Le compte source doit être différent du compte cible
+- ✅ Le compte source doit avoir un solde suffisant (si applicable)</p></li>
+<li><p>Cliquez sur <strong>« Transférer »</strong> ou <strong>« Enregistrer »</strong></p></li>
+</ol>
+</section>
+<section id="visualiser-les-transferts">
+<h4>Visualiser les transferts<a class="headerlink" href="#visualiser-les-transferts" title="Lien vers cette rubrique"><span>#</span></a></h4>
+<p>Le tableau affiche :
+- <strong>Date</strong> : Date du transfert
+- <strong>Compte Source</strong> : Compte source
+- <strong>Compte Cible</strong> : Compte cible
+- <strong>Montant</strong> : Montant transféré
+- <strong>Description</strong> : Description</p>
+</section>
+</section>
+</section>
+<section id="bonnes-pratiques">
+<span id="accountant-best-practices"></span><h2>Bonnes Pratiques<a class="headerlink" href="#bonnes-pratiques" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#bonnes-pratiques'"><span>#</span></a></h2>
+<section id="gestion-des-exercices">
+<h3>Gestion des Exercices<a class="headerlink" href="#gestion-des-exercices" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-exercices'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Créer l’exercice à l’avance</strong> :
+- Créez l’exercice suivant avant la fin de l’exercice en cours
+- Vérifiez les dates pour éviter les chevauchements</p></li>
+<li><p><strong>Clôturer dans l’ordre</strong> :
+- Clôturez d’abord toutes les périodes
+- Puis clôturez l’exercice
+- Vérifiez que toutes les réconciliations sont finalisées</p></li>
+<li><p><strong>Un seul exercice actif</strong> :
+- Assurez-vous qu’un seul exercice est actif à tout moment
+- Désactivez l’ancien exercice lors de l’activation du nouveau</p></li>
+</ol>
+</section>
+<section id="id28">
+<h3>Écritures Comptables<a class="headerlink" href="#id28" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id28'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Vérifier l’équilibre</strong> :
+- Vérifiez toujours que Débits = Crédits avant d’enregistrer
+- Le système valide automatiquement, mais vérifiez manuellement</p></li>
+<li><p><strong>Descriptions claires</strong> :
+- Utilisez des descriptions explicites pour faciliter la recherche
+- Incluez des références (numéros de facture, etc.)</p></li>
+<li><p><strong>Périodes appropriées</strong> :
+- Enregistrez les écritures dans la période correcte
+- Ne modifiez pas les périodes après clôture</p></li>
+</ol>
+</section>
+<section id="id29">
+<h3>Réconciliation Bancaire<a class="headerlink" href="#id29" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id29'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Réconciliation régulière</strong> :
+- Effectuez la réconciliation bancaire mensuellement
+- Utilisez le pointage automatique en premier
+- Vérifiez manuellement les éléments non pointés</p></li>
+<li><p><strong>Documentation</strong> :
+- Ajoutez des notes pour expliquer les écarts importants
+- Conservez une trace des réconciliations</p></li>
+</ol>
+</section>
+<section id="id30">
+<h3>Plan Comptable<a class="headerlink" href="#id30" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id30'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Structure hiérarchique</strong> :
+- Utilisez les comptes parents pour organiser le plan comptable
+- Suivez les normes comptables en vigueur</p></li>
+<li><p><strong>Codes cohérents</strong> :
+- Utilisez des codes cohérents et logiques
+- Évitez de modifier les codes une fois utilisés</p></li>
+</ol>
+</section>
+</section>
+<section id="faq-foire-aux-questions">
+<span id="accountant-faq"></span><h2>FAQ (Foire aux Questions)<a class="headerlink" href="#faq-foire-aux-questions" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#faq-foire-aux-questions'"><span>#</span></a></h2>
+<section id="exercices-comptables">
+<h3>Exercices Comptables<a class="headerlink" href="#exercices-comptables" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#exercices-comptables'"><span>#</span></a></h3>
+<p><strong>Q : Puis-je créer deux exercices qui se chevauchent ?</strong>
+R : Non, le système empêche la création d’exercices avec des dates qui se chevauchent.</p>
+<p><strong>Q : Que se passe-t-il si j’active un exercice alors qu’un autre est actif ?</strong>
+R : L’ancien exercice actif est automatiquement désactivé. Un seul exercice peut être actif à la fois.</p>
+<p><strong>Q : Puis-je modifier un exercice clôturé ?</strong>
+R : Non, les exercices clôturés sont verrouillés et ne peuvent plus être modifiés.</p>
+<p><strong>Q : Comment savoir si je peux clôturer un exercice ?</strong>
+R : Le système vérifie automatiquement que toutes les périodes sont clôturées. Si ce n’est pas le cas, vous recevrez un message d’erreur.</p>
+</section>
+<section id="id31">
+<h3>Écritures Comptables<a class="headerlink" href="#id31" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id31'"><span>#</span></a></h3>
+<p><strong>Q : Que se passe-t-il si Débits ≠ Crédits ?</strong>
+R : Le système refuse l’enregistrement et affiche un message d’erreur. Vous devez corriger l’écriture pour qu’elle soit équilibrée.</p>
+<p><strong>Q : Puis-je modifier une écriture dans une période clôturée ?</strong>
+R : Non, les écritures dans les périodes clôturées sont verrouillées.</p>
+<p><strong>Q : Combien de lignes puis-je ajouter à une écriture ?</strong>
+R : Aucune limite, mais vous devez respecter la partie double (au moins 2 lignes).</p>
+</section>
+<section id="id32">
+<h3>Balance de Vérification<a class="headerlink" href="#id32" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id32'"><span>#</span></a></h3>
+<p><strong>Q : Que faire si la balance n’est pas équilibrée ?</strong>
+R : Vérifiez les écritures comptables pour trouver l’erreur. Le système affiche la différence pour vous aider.</p>
+<p><strong>Q : La balance est-elle calculée en temps réel ?</strong>
+R : Non, vous devez cliquer sur « Calculer » pour générer la balance. Cela permet d’optimiser les performances.</p>
+</section>
+<section id="id33">
+<h3>Réconciliation Bancaire<a class="headerlink" href="#id33" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id33'"><span>#</span></a></h3>
+<p><strong>Q : Pourquoi certains éléments ne sont pas pointés automatiquement ?</strong>
+R : Le pointage automatique fonctionne par montant, date et référence. Si aucun match n’est trouvé, vous devez pointer manuellement.</p>
+<p><strong>Q : Puis-je finaliser une réconciliation avec des éléments non pointés ?</strong>
+R : Non, tous les éléments doivent être pointés avant la finalisation.</p>
+</section>
+<section id="id34">
+<h3>États Financiers<a class="headerlink" href="#id34" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id34'"><span>#</span></a></h3>
+<p><strong>Q : Puis-je générer un état pour plusieurs exercices ?</strong>
+R : Non, chaque état est généré pour un exercice spécifique. Vous pouvez générer plusieurs états pour différents exercices.</p>
+<p><strong>Q : Un état finalisé peut-il être modifié ?</strong>
+R : Non, les états finalisés sont verrouillés pour garantir l’intégrité.</p>
+</section>
+</section>
+<section id="workflow-recommande">
+<h2>Workflow Recommandé<a class="headerlink" href="#workflow-recommande" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#workflow-recommande'"><span>#</span></a></h2>
+<section id="pour-une-nouvelle-periode-comptable">
+<h3>Pour une nouvelle période comptable<a class="headerlink" href="#pour-une-nouvelle-periode-comptable" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#pour-une-nouvelle-periode-comptable'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Créer l’exercice</strong> (si nouveau) → Exercices Comptables</p></li>
+<li><p><strong>Vérifier les périodes</strong> → Périodes Comptables</p></li>
+<li><p><strong>Activer l’exercice</strong> → Exercices Comptables</p></li>
+<li><p><strong>Enregistrer les écritures</strong> → Écritures Comptables</p></li>
+<li><p><strong>Vérifier le Grand Livre</strong> → Grand Livre</p></li>
+<li><p><strong>Vérifier la Balance</strong> → Balance de Vérification</p></li>
+<li><p><strong>Réconcilier les comptes bancaires</strong> → Réconciliation Bancaire</p></li>
+<li><p><strong>Clôturer les périodes</strong> → Périodes Comptables</p></li>
+<li><p><strong>Générer les états financiers</strong> → États Financiers</p></li>
+<li><p><strong>Clôturer l’exercice</strong> → Exercices Comptables</p></li>
+</ol>
+</section>
+<section id="pour-une-reconciliation-mensuelle">
+<h3>Pour une réconciliation mensuelle<a class="headerlink" href="#pour-une-reconciliation-mensuelle" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#pour-une-reconciliation-mensuelle'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Accéder à Réconciliation Bancaire</strong></p></li>
+<li><p><strong>Créer une nouvelle réconciliation</strong> pour le mois</p></li>
+<li><p><strong>Sélectionner le compte interne</strong> (dropdown filtré)</p></li>
+<li><p><strong>Saisir le solde bancaire</strong> du relevé</p></li>
+<li><p><strong>Utiliser le pointage automatique</strong></p></li>
+<li><p><strong>Pointer manuellement</strong> les éléments restants</p></li>
+<li><p><strong>Vérifier l’équilibre</strong></p></li>
+<li><p><strong>Finaliser la réconciliation</strong></p></li>
+</ol>
+</section>
+</section>
+<section id="permissions-et-securite">
+<h2>Permissions et Sécurité<a class="headerlink" href="#permissions-et-securite" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#permissions-et-securite'"><span>#</span></a></h2>
+<section id="droits-d-acces">
+<h3>Droits d’accès<a class="headerlink" href="#droits-d-acces" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#droits-d-acces'"><span>#</span></a></h3>
+<p>Toutes les fonctionnalités du module comptable nécessitent les droits :
+- <strong>ADMIN</strong> ou <strong>SUPER_ADMIN</strong></p>
+</section>
+<section id="restrictions-par-fonctionnalite">
+<h3>Restrictions par fonctionnalité<a class="headerlink" href="#restrictions-par-fonctionnalite" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#restrictions-par-fonctionnalite'"><span>#</span></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fonctionnalité</p></th>
+<th class="head"><p>Création</p></th>
+<th class="head"><p>Modification</p></th>
+<th class="head"><p>Suppression</p></th>
+<th class="head"><p>Consultation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Exercices</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ Tous</p></td>
+</tr>
+<tr class="row-odd"><td><p>Périodes</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ Tous</p></td>
+</tr>
+<tr class="row-even"><td><p>Plan Comptable</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ Tous</p></td>
+</tr>
+<tr class="row-odd"><td><p>Écritures</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ Tous</p></td>
+</tr>
+<tr class="row-even"><td><p>Grand Livre</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>✅ Tous</p></td>
+</tr>
+<tr class="row-odd"><td><p>Balance</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>✅ Tous</p></td>
+</tr>
+<tr class="row-even"><td><p>Réconciliation</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ Tous</p></td>
+</tr>
+<tr class="row-odd"><td><p>États Financiers</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ ADMIN</p></td>
+<td><p>✅ Tous</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="support-et-assistance">
+<h2>Support et Assistance<a class="headerlink" href="#support-et-assistance" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#support-et-assistance'"><span>#</span></a></h2>
+<section id="en-cas-de-probleme">
+<h3>En cas de problème<a class="headerlink" href="#en-cas-de-probleme" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#en-cas-de-probleme'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Vérifiez les validations</strong> :
+- Lisez attentivement les messages d’erreur
+- Vérifiez que tous les champs requis sont remplis
+- Vérifiez les permissions</p></li>
+<li><p><strong>Consultez la documentation</strong> :
+- Guide utilisateur (ce document)
+- Guide technique (<a class="reference internal" href="accounting_module.html#accounting-module"><span class="std std-ref">Module Comptable Complet</span></a>)
+- Exercices pratiques</p></li>
+<li><p><strong>Contactez le support</strong> :
+- Si le problème persiste, contactez l’administrateur système</p></li>
+</ol>
+</section>
+</section>
+<section id="ressources-additionnelles">
+<h2>Ressources Additionnelles<a class="headerlink" href="#ressources-additionnelles" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ressources-additionnelles'"><span>#</span></a></h2>
+<section id="documentation-technique">
+<h3>Documentation technique<a class="headerlink" href="#documentation-technique" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#documentation-technique'"><span>#</span></a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="accounting_module.html#accounting-module"><span class="std std-ref">Module Comptable Complet</span></a> : Architecture technique complète</p></li>
+<li><p><span class="xref std std-ref">bank-reconciliation-summary</span> : Architecture technique de la réconciliation bancaire</p></li>
+</ul>
+</section>
+<section id="guides-specialises">
+<h3>Guides spécialisés<a class="headerlink" href="#guides-specialises" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#guides-specialises'"><span>#</span></a></h3>
+<ul class="simple">
+<li><p><span class="xref std std-ref">bank-reconciliation-user-guide</span> : Guide détaillé de la réconciliation bancaire</p></li>
+</ul>
+</section>
+<section id="exercices-pratiques">
+<h3>Exercices pratiques<a class="headerlink" href="#exercices-pratiques" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#exercices-pratiques'"><span>#</span></a></h3>
+<ul class="simple">
+<li><p>Consultez les exercices pratiques disponibles dans le système</p></li>
+</ul>
+</section>
+</section>
+<section id="notes-finales">
+<h2>Notes Finales<a class="headerlink" href="#notes-finales" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#notes-finales'"><span>#</span></a></h2>
+<p>Ce guide couvre toutes les fonctionnalités principales du module comptable. Pour des questions spécifiques ou des cas d’usage avancés, consultez la documentation technique ou contactez le support.</p>
+<p><strong>Dernière mise à jour</strong> : 2025
+<strong>Version</strong> : 3.0</p>
+<p><strong>Nouvelles fonctionnalités ajoutées :</strong>
+- ✅ Gestion des journaux comptables
+- ✅ Création d’écritures comptables manuelles
+- ✅ Génération automatique de références de pièces comptables
+- ✅ Validation en temps réel de l’équilibre débit/crédit</p>
+<p><strong>Bon usage du module comptable ! 🎉</strong></p>
+</section>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="index.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        Comptabilité
+      </a>
+</div>
+<div class="ml-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="accounting_module.html">
+        Module Comptable Complet
+        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</div>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] h-full overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#table-des-matieres'" class="reference internal" href="#table-des-matieres">Table des Matières</a></li>
+<li><a :data-current="activeSection === '#introduction'" class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a :data-current="activeSection === '#qu-est-ce-que-le-module-comptable'" class="reference internal" href="#qu-est-ce-que-le-module-comptable">Qu’est-ce que le Module Comptable ?</a></li>
+<li><a :data-current="activeSection === '#prerequis'" class="reference internal" href="#prerequis">Prérequis</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#acces-au-module'" class="reference internal" href="#acces-au-module">Accès au Module</a><ul>
+<li><a :data-current="activeSection === '#navigation'" class="reference internal" href="#navigation">Navigation</a></li>
+<li><a :data-current="activeSection === '#sections-du-module-comptable'" class="reference internal" href="#sections-du-module-comptable">Sections du Module Comptable</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-exercices-comptables'" class="reference internal" href="#gestion-des-exercices-comptables">Gestion des Exercices Comptables</a><ul>
+<li><a :data-current="activeSection === '#vue-d-ensemble'" class="reference internal" href="#vue-d-ensemble">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#acces'" class="reference internal" href="#acces">Accès</a></li>
+<li><a :data-current="activeSection === '#fonctionnalites'" class="reference internal" href="#fonctionnalites">Fonctionnalités</a><ul>
+<li><a :data-current="activeSection === '#creer-un-nouvel-exercice'" class="reference internal" href="#creer-un-nouvel-exercice">Créer un nouvel exercice</a></li>
+<li><a :data-current="activeSection === '#modifier-un-exercice'" class="reference internal" href="#modifier-un-exercice">Modifier un exercice</a></li>
+<li><a :data-current="activeSection === '#activer-un-exercice'" class="reference internal" href="#activer-un-exercice">Activer un exercice</a></li>
+<li><a :data-current="activeSection === '#cloturer-un-exercice'" class="reference internal" href="#cloturer-un-exercice">Clôturer un exercice</a></li>
+<li><a :data-current="activeSection === '#supprimer-un-exercice'" class="reference internal" href="#supprimer-un-exercice">Supprimer un exercice</a></li>
+<li><a :data-current="activeSection === '#tableau-des-exercices'" class="reference internal" href="#tableau-des-exercices">Tableau des Exercices</a></li>
+<li><a :data-current="activeSection === '#actions-du-dialog'" class="reference internal" href="#actions-du-dialog">Actions du Dialog</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-periodes-comptables'" class="reference internal" href="#gestion-des-periodes-comptables">Gestion des Périodes Comptables</a><ul>
+<li><a :data-current="activeSection === '#id1'" class="reference internal" href="#id1">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#gestion-via-les-exercices-comptables'" class="reference internal" href="#gestion-via-les-exercices-comptables">Gestion via les Exercices Comptables</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#plan-comptable'" class="reference internal" href="#plan-comptable">Plan Comptable</a><ul>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">Accès</a></li>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">Fonctionnalités</a><ul>
+<li><a :data-current="activeSection === '#rechercher-un-compte'" class="reference internal" href="#rechercher-un-compte">Rechercher un compte</a></li>
+<li><a :data-current="activeSection === '#creer-un-nouveau-compte'" class="reference internal" href="#creer-un-nouveau-compte">Créer un nouveau compte</a></li>
+<li><a :data-current="activeSection === '#modifier-un-compte'" class="reference internal" href="#modifier-un-compte">Modifier un compte</a></li>
+<li><a :data-current="activeSection === '#supprimer-un-compte'" class="reference internal" href="#supprimer-un-compte">Supprimer un compte</a></li>
+<li><a :data-current="activeSection === '#tableau-du-plan-comptable'" class="reference internal" href="#tableau-du-plan-comptable">Tableau du Plan Comptable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#journaux-comptables'" class="reference internal" href="#journaux-comptables">Journaux Comptables</a><ul>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">Accès</a></li>
+<li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">Fonctionnalités</a><ul>
+<li><a :data-current="activeSection === '#creer-un-nouveau-journal'" class="reference internal" href="#creer-un-nouveau-journal">Créer un nouveau journal</a></li>
+<li><a :data-current="activeSection === '#modifier-un-journal'" class="reference internal" href="#modifier-un-journal">Modifier un journal</a></li>
+<li><a :data-current="activeSection === '#activer-un-journal'" class="reference internal" href="#activer-un-journal">Activer un journal</a></li>
+<li><a :data-current="activeSection === '#desactiver-un-journal'" class="reference internal" href="#desactiver-un-journal">Désactiver un journal</a></li>
+<li><a :data-current="activeSection === '#supprimer-un-journal'" class="reference internal" href="#supprimer-un-journal">Supprimer un journal</a></li>
+<li><a :data-current="activeSection === '#tableau-des-journaux'" class="reference internal" href="#tableau-des-journaux">Tableau des Journaux</a></li>
+<li><a :data-current="activeSection === '#id8'" class="reference internal" href="#id8">Actions du Dialog</a></li>
+<li><a :data-current="activeSection === '#utilisation-des-journaux'" class="reference internal" href="#utilisation-des-journaux">Utilisation des Journaux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#ecritures-comptables'" class="reference internal" href="#ecritures-comptables">Écritures Comptables</a><ul>
+<li><a :data-current="activeSection === '#id9'" class="reference internal" href="#id9">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#id10'" class="reference internal" href="#id10">Accès</a></li>
+<li><a :data-current="activeSection === '#id11'" class="reference internal" href="#id11">Fonctionnalités</a><ul>
+<li><a :data-current="activeSection === '#rechercher-des-ecritures'" class="reference internal" href="#rechercher-des-ecritures">Rechercher des écritures</a></li>
+<li><a :data-current="activeSection === '#visualiser-les-ecritures'" class="reference internal" href="#visualiser-les-ecritures">Visualiser les écritures</a></li>
+<li><a :data-current="activeSection === '#creer-une-nouvelle-ecriture-automatique'" class="reference internal" href="#creer-une-nouvelle-ecriture-automatique">Créer une nouvelle écriture (automatique)</a></li>
+<li><a :data-current="activeSection === '#visualiser-les-ecritures-automatiques'" class="reference internal" href="#visualiser-les-ecritures-automatiques">Visualiser les écritures automatiques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#creer-une-ecriture-comptable-manuelle'" class="reference internal" href="#creer-une-ecriture-comptable-manuelle">Créer une Écriture Comptable Manuelle</a><ul>
+<li><a :data-current="activeSection === '#id12'" class="reference internal" href="#id12">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#id13'" class="reference internal" href="#id13">Accès</a><ul>
+<li><a :data-current="activeSection === '#procedure-de-creation'" class="reference internal" href="#procedure-de-creation">Procédure de Création</a></li>
+<li><a :data-current="activeSection === '#modifier-une-ecriture-manuelle'" class="reference internal" href="#modifier-une-ecriture-manuelle">Modifier une Écriture Manuelle</a></li>
+<li><a :data-current="activeSection === '#exemples-d-ecritures-manuelles'" class="reference internal" href="#exemples-d-ecritures-manuelles">Exemples d’Écritures Manuelles</a></li>
+<li><a :data-current="activeSection === '#pieces-comptables-references'" class="reference internal" href="#pieces-comptables-references">Pièces Comptables (Références)</a></li>
+<li><a :data-current="activeSection === '#modifier-une-ecriture'" class="reference internal" href="#modifier-une-ecriture">Modifier une écriture</a></li>
+<li><a :data-current="activeSection === '#supprimer-une-ecriture'" class="reference internal" href="#supprimer-une-ecriture">Supprimer une écriture</a></li>
+<li><a :data-current="activeSection === '#exporter-les-ecritures'" class="reference internal" href="#exporter-les-ecritures">Exporter les écritures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#grand-livre'" class="reference internal" href="#grand-livre">Grand Livre</a><ul>
+<li><a :data-current="activeSection === '#id14'" class="reference internal" href="#id14">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#id15'" class="reference internal" href="#id15">Accès</a></li>
+<li><a :data-current="activeSection === '#id16'" class="reference internal" href="#id16">Fonctionnalités</a><ul>
+<li><a :data-current="activeSection === '#rechercher-dans-le-grand-livre'" class="reference internal" href="#rechercher-dans-le-grand-livre">Rechercher dans le Grand Livre</a></li>
+<li><a :data-current="activeSection === '#generer-le-grand-livre-pour-une-periode'" class="reference internal" href="#generer-le-grand-livre-pour-une-periode">Générer le Grand Livre pour une période</a></li>
+<li><a :data-current="activeSection === '#visualiser-le-grand-livre'" class="reference internal" href="#visualiser-le-grand-livre">Visualiser le Grand Livre</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#balance-de-verification'" class="reference internal" href="#balance-de-verification">Balance de Vérification</a><ul>
+<li><a :data-current="activeSection === '#id17'" class="reference internal" href="#id17">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#id18'" class="reference internal" href="#id18">Accès</a></li>
+<li><a :data-current="activeSection === '#id19'" class="reference internal" href="#id19">Fonctionnalités</a><ul>
+<li><a :data-current="activeSection === '#calculer-la-balance-de-verification'" class="reference internal" href="#calculer-la-balance-de-verification">Calculer la Balance de Vérification</a></li>
+<li><a :data-current="activeSection === '#verifier-l-equilibre'" class="reference internal" href="#verifier-l-equilibre">Vérifier l’équilibre</a></li>
+<li><a :data-current="activeSection === '#visualiser-la-balance'" class="reference internal" href="#visualiser-la-balance">Visualiser la Balance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#reconciliation-bancaire'" class="reference internal" href="#reconciliation-bancaire">Réconciliation Bancaire</a><ul>
+<li><a :data-current="activeSection === '#id20'" class="reference internal" href="#id20">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#id21'" class="reference internal" href="#id21">Accès</a></li>
+<li><a :data-current="activeSection === '#guide-complet'" class="reference internal" href="#guide-complet">Guide complet</a></li>
+<li><a :data-current="activeSection === '#fonctionnalites-principales'" class="reference internal" href="#fonctionnalites-principales">Fonctionnalités principales</a><ul>
+<li><a :data-current="activeSection === '#creer-une-reconciliation'" class="reference internal" href="#creer-une-reconciliation">Créer une réconciliation</a></li>
+<li><a :data-current="activeSection === '#pointage-automatique'" class="reference internal" href="#pointage-automatique">Pointage automatique</a></li>
+<li><a :data-current="activeSection === '#finaliser-la-reconciliation'" class="reference internal" href="#finaliser-la-reconciliation">Finaliser la réconciliation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#etats-financiers'" class="reference internal" href="#etats-financiers">États Financiers</a><ul>
+<li><a :data-current="activeSection === '#id22'" class="reference internal" href="#id22">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#id23'" class="reference internal" href="#id23">Accès</a></li>
+<li><a :data-current="activeSection === '#types-d-etats-financiers'" class="reference internal" href="#types-d-etats-financiers">Types d’États Financiers</a><ul>
+<li><a :data-current="activeSection === '#bilan'" class="reference internal" href="#bilan">Bilan</a></li>
+<li><a :data-current="activeSection === '#compte-de-resultat'" class="reference internal" href="#compte-de-resultat">Compte de Résultat</a></li>
+<li><a :data-current="activeSection === '#flux-de-tresorerie'" class="reference internal" href="#flux-de-tresorerie">Flux de Trésorerie</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#id24'" class="reference internal" href="#id24">Fonctionnalités</a><ul>
+<li><a :data-current="activeSection === '#visualiser-un-etat'" class="reference internal" href="#visualiser-un-etat">Visualiser un état</a></li>
+<li><a :data-current="activeSection === '#approuver-un-etat'" class="reference internal" href="#approuver-un-etat">Approuver un état</a></li>
+<li><a :data-current="activeSection === '#finaliser-un-etat'" class="reference internal" href="#finaliser-un-etat">Finaliser un état</a></li>
+<li><a :data-current="activeSection === '#tableau-des-etats-financiers'" class="reference internal" href="#tableau-des-etats-financiers">Tableau des États Financiers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#transferts-internes'" class="reference internal" href="#transferts-internes">Transferts Internes</a><ul>
+<li><a :data-current="activeSection === '#id25'" class="reference internal" href="#id25">Vue d’ensemble</a></li>
+<li><a :data-current="activeSection === '#id26'" class="reference internal" href="#id26">Accès</a></li>
+<li><a :data-current="activeSection === '#id27'" class="reference internal" href="#id27">Fonctionnalités</a><ul>
+<li><a :data-current="activeSection === '#effectuer-un-transfert'" class="reference internal" href="#effectuer-un-transfert">Effectuer un transfert</a></li>
+<li><a :data-current="activeSection === '#visualiser-les-transferts'" class="reference internal" href="#visualiser-les-transferts">Visualiser les transferts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#bonnes-pratiques'" class="reference internal" href="#bonnes-pratiques">Bonnes Pratiques</a><ul>
+<li><a :data-current="activeSection === '#gestion-des-exercices'" class="reference internal" href="#gestion-des-exercices">Gestion des Exercices</a></li>
+<li><a :data-current="activeSection === '#id28'" class="reference internal" href="#id28">Écritures Comptables</a></li>
+<li><a :data-current="activeSection === '#id29'" class="reference internal" href="#id29">Réconciliation Bancaire</a></li>
+<li><a :data-current="activeSection === '#id30'" class="reference internal" href="#id30">Plan Comptable</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#faq-foire-aux-questions'" class="reference internal" href="#faq-foire-aux-questions">FAQ (Foire aux Questions)</a><ul>
+<li><a :data-current="activeSection === '#exercices-comptables'" class="reference internal" href="#exercices-comptables">Exercices Comptables</a></li>
+<li><a :data-current="activeSection === '#id31'" class="reference internal" href="#id31">Écritures Comptables</a></li>
+<li><a :data-current="activeSection === '#id32'" class="reference internal" href="#id32">Balance de Vérification</a></li>
+<li><a :data-current="activeSection === '#id33'" class="reference internal" href="#id33">Réconciliation Bancaire</a></li>
+<li><a :data-current="activeSection === '#id34'" class="reference internal" href="#id34">États Financiers</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#workflow-recommande'" class="reference internal" href="#workflow-recommande">Workflow Recommandé</a><ul>
+<li><a :data-current="activeSection === '#pour-une-nouvelle-periode-comptable'" class="reference internal" href="#pour-une-nouvelle-periode-comptable">Pour une nouvelle période comptable</a></li>
+<li><a :data-current="activeSection === '#pour-une-reconciliation-mensuelle'" class="reference internal" href="#pour-une-reconciliation-mensuelle">Pour une réconciliation mensuelle</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#permissions-et-securite'" class="reference internal" href="#permissions-et-securite">Permissions et Sécurité</a><ul>
+<li><a :data-current="activeSection === '#droits-d-acces'" class="reference internal" href="#droits-d-acces">Droits d’accès</a></li>
+<li><a :data-current="activeSection === '#restrictions-par-fonctionnalite'" class="reference internal" href="#restrictions-par-fonctionnalite">Restrictions par fonctionnalité</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#support-et-assistance'" class="reference internal" href="#support-et-assistance">Support et Assistance</a><ul>
+<li><a :data-current="activeSection === '#en-cas-de-probleme'" class="reference internal" href="#en-cas-de-probleme">En cas de problème</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#ressources-additionnelles'" class="reference internal" href="#ressources-additionnelles">Ressources Additionnelles</a><ul>
+<li><a :data-current="activeSection === '#documentation-technique'" class="reference internal" href="#documentation-technique">Documentation technique</a></li>
+<li><a :data-current="activeSection === '#guides-specialises'" class="reference internal" href="#guides-specialises">Guides spécialisés</a></li>
+<li><a :data-current="activeSection === '#exercices-pratiques'" class="reference internal" href="#exercices-pratiques">Exercices pratiques</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#notes-finales'" class="reference internal" href="#notes-finales">Notes Finales</a></li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, THL Technologies Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.1.3</a></p>
+</div>
+</div>
+</footer>
+</div><button :class="{'opacity-0 invisible' : !showScrollTop}" @click="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 p-2 z-10 rounded-sm bg-gray-700 text-xs text-white transition-all duration-1000 hover:bg-gray-950 focus:bg-gray-950" id="scrolltop" x-cloak="">
+<svg aria-hidden="true" class="inline fill-current mb-[2px]" height="14" viewbox="0 96 960 960" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M450 896V370L202 618l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
+</svg>
+  Back to top
+</button>
+<script src="../../_static/documentation_options.js?v=718f2d82"></script>
+<script src="../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/js/target-blank.js?v=4e58104d"></script>
+<script defer="defer" src="../../_static/theme.js?v=e14a7d8a"></script>
+<script src="../../_static/translations.js?v=e6b791cb"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

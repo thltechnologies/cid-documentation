@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="fr" x-data="{activeSection: ''}">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#030711" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Comptabilité | Documentation THL CoreBanking 0.0.1</title>
+<meta content="Comptabilité | Documentation THL CoreBanking 0.0.1" property="og:title"/>
+<meta content="Comptabilité | Documentation THL CoreBanking 0.0.1" name="twitter:title"/>
+<link href="../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../../_static/theme.css?v=c0d22bf5" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css?v=d871b14e" rel="stylesheet" type="text/css"/>
+<link href="../../search.html" rel="search" title="Recherche"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="user_guide.html" rel="next" title="Guide Utilisateur Complet : Module Comptable"/>
+<link href="../index.html" rel="prev" title="Modules"/>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" @scroll.window="showScrollTop = pageYOffset &gt; 100" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border bg-background/90 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a><nav class="flex items-center gap-6 text-sm font-medium">
+<a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow">GitHub</a>
+</nav></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 gap-2 sm:gap-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center gap-1">
+<a href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow" title="Visit GitHub">
+<div class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9">
+            fa-brands fa-github
+          </div>
+</a>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="justify-start text-sm md:!hidden bg-background" href="../../index.html"><span class="font-bold text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0">
+<div class="overflow-y-auto h-full w-full relative pr-6"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<p class="caption" role="heading"><span class="caption-text">📚 Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#thl-core-banking"><strong>THL Core Banking</strong></a></li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../index.html">Modules<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#statistiques-de-documentation">📊 <strong>Statistiques de Documentation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#guide-de-navigation">📋 <strong>Guide de Navigation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#documentation-specialisee-du-module-comptable">📚 <strong>Documentation Spécialisée du Module Comptable</strong></a></li>
+</ul>
+</li>
+</ul>
+<div>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<ul>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#operations-sur-les-comptes-internes">1. Opérations sur les comptes internes<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#procedure">Procédure</a></li>
+<li><a class="reference internal" href="#demo">Démo</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#prelevement-des-capitaux">2. Prélèvement des capitaux<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id1">Procédure</a></li>
+<li><a class="reference internal" href="#id2">Démo</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#journaux-comptables">3. Journaux Comptables<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id3">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#traitement-des-ecritures-comptables">4. Traitement des écritures comptables<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id4">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#generation-du-grand-livre">5. Génération du grand livre<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id5">Procédure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-comptable-complet">6. Module Comptable Complet</a></li>
+<li><a class="reference internal" href="#guide-utilisateur-complet-a-z">7. Guide Utilisateur Complet (A-Z)</a></li>
+</ul>
+</div>
+<div>
+<h4>Sujet précédent</h4>
+<p class="topless"><a href="../index.html" title="Chapitre précédent">Modules</a></p>
+</div>
+<div>
+<h4>Sujet suivant</h4>
+<p class="topless"><a href="user_guide.html" title="Chapitre suivant">Guide Utilisateur Complet : Module Comptable</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>Cette page</h3>
+<ul class="this-page-menu">
+<li><a href="../../_sources/modules/accountant/index.rst.txt" rel="nofollow">Montrer le code source</a></li>
+</ul>
+</div>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
+<span class="hidden md:inline">Documentation THL CoreBanking 0.0.1</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="../index.html">Modules</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Comptabilité</span>
+</nav>
+<div id="content" role="main">
+<section id="comptabilite">
+<span id="accountant-index"></span><h1>Comptabilité<a class="headerlink" href="#comptabilite" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Le module <strong>Comptabilité</strong> regroupe les différentes options destinées aux comptables, notamment :</p>
+<section id="operations-sur-les-comptes-internes">
+<h2>1. Opérations sur les comptes internes<a class="headerlink" href="#operations-sur-les-comptes-internes" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#operations-sur-les-comptes-internes'"><span>#</span></a></h2>
+<p>Cette section permet de gérer les transactions liées aux comptes internes de CID, telles que les transferts entre comptes ou le suivi des soldes. Elle offre aux comptables les outils nécessaires pour une gestion efficace des flux financiers internes.</p>
+<section id="procedure">
+<h3>Procédure<a class="headerlink" href="#procedure" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#procedure'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Cliquez sur le module <strong>Comptabilité</strong> : vous serez automatiquement redirigé vers l’option <strong>Opérations sur les comptes internes</strong>.</p>
+<p>a. <strong>Transfert d’argent entre deux comptes internes</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Dans le formulaire en haut de la page, sélectionnez :</dt><dd><ul class="simple">
+<li><p>Le compte interne source (depuis lequel l’argent sera débité)</p></li>
+<li><p>Le compte interne cible (vers lequel l’argent sera transféré)</p></li>
+<li><p>Le montant à transférer</p></li>
+<li><p>Vous pouvez ajouter une description (optionnelle) à la transaction, puis cliquez sur le bouton <strong>Enregistrer</strong>.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>b. <strong>Historique des transactions</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Sur la page des opérations sur les comptes internes, vous trouverez l’historique des transactions. Il est possible de :</dt><dd><ul class="simple">
+<li><p>Trier les transactions par intervalle de dates</p></li>
+<li><p>Rechercher une transaction par montant, nom de l’agence, etc.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="demo">
+<h3>Démo<a class="headerlink" href="#demo" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#demo'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p>Le comptable John Comptable veut transférer 2 500 FCFA du compte interne des frais de l’agence 02 vers le compte interne des frais de l’agence 01.</p></li>
+</ol>
+<figure class="sphinx-contrib-video-container align-left"><video autoplay="True" controls="True" preload="auto"><source src="../../_images/accountant_demo.mp4" type="video/mp4"/></video><figcaption class="align-center"><p style="text-align: left; display:inline-block"><span class="caption-text">Opérations sur les comptes internes</span></p></figcaption></figure><ol class="arabic simple" start="2">
+<li><p>Le comptable John Comptable veut afficher l’historique des transactions des comptes internes qui ont lieu le mois de Janvier 2025.</p></li>
+</ol>
+<figure class="sphinx-contrib-video-container align-left"><video autoplay="True" controls="True" preload="auto"><source src="../../_images/accountant_history.mp4" type="video/mp4"/></video><figcaption class="align-center"><p style="text-align: left; display:inline-block"><span class="caption-text">Historiques des opérations sur les comptes internes</span></p></figcaption></figure></section>
+</section>
+<section id="prelevement-des-capitaux">
+<h2>2. Prélèvement des capitaux<a class="headerlink" href="#prelevement-des-capitaux" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#prelevement-des-capitaux'"><span>#</span></a></h2>
+<p>Cette fonctionnalité est dédiée à la gestion des opérations de prélèvement et d’investissement de capitaux. Elle permet de suivre et d’enregistrer les mouvements financiers liés aux parts sociales, aux actions ou à tout autre type de capital détenu par les parties prenantes de CID.</p>
+<section id="id1">
+<h3>Procédure<a class="headerlink" href="#id1" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id1'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Cliquez sur le module <strong>Comptabilité</strong>.</p></li>
+<li><p>Cliquez sur le menu <strong>Prélèvement des capitaux</strong>.</p>
+<p>a. <strong>Transfert de capitaux</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Cliquez sur le bouton <strong>Prélever</strong> (en haut, à gauche de la page). Dans le formulaire qui s’affiche, saisissez :</dt><dd><ul class="simple">
+<li><p>Le code KYC du client</p></li>
+<li><p>Le compte interne des capitaux concerné</p></li>
+<li><p>Le montant à prélever</p></li>
+<li><p>Une description de la transaction (optionnelle)</p></li>
+<li><p>Cliquez sur le bouton <strong>Prélever</strong> pour finaliser l’opération de prélèvement.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>b. <strong>Historique des transactions</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Sur la page <strong>Prélèvements des capitaux</strong>, vous trouverez l’historique des transactions. Il est possible de :</dt><dd><ul class="simple">
+<li><p>Trier les transactions par intervalle de dates</p></li>
+<li><p>Rechercher une transaction par montant, nom de l’agence, etc.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="id2">
+<h3>Démo<a class="headerlink" href="#id2" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p>Le comptable John Comptable veut prélever 200 000 FCFA au compte client (kyc: 00001-01234-01234567-08) pour le compte des capitaux 01 de l’agence 01.</p></li>
+</ol>
+<figure class="sphinx-contrib-video-container align-left"><video autoplay="True" controls="True" preload="auto"><source src="../../_images/capital_withdrawal_demo.mp4" type="video/mp4"/></video><figcaption class="align-center"><p style="text-align: left; display:inline-block"><span class="caption-text">Prélèvement des capitaux</span></p></figcaption></figure><ol class="arabic simple" start="2">
+<li><p>Le comptable John Comptable veut afficher l’historique des transactions de prélèvement de capitaux du mois de Janvier 2025 dont le montant est 200 000  FCFA.</p></li>
+</ol>
+<figure class="sphinx-contrib-video-container align-left"><video autoplay="True" controls="True" preload="auto"><source src="../../_images/capital_withdrawal_history.mp4" type="video/mp4"/></video><figcaption class="align-center"><p style="text-align: left; display:inline-block"><span class="caption-text">Historiques des prélèvements de capitaux</span></p></figcaption></figure></section>
+</section>
+<section id="journaux-comptables">
+<h2>3. Journaux Comptables<a class="headerlink" href="#journaux-comptables" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#journaux-comptables'"><span>#</span></a></h2>
+<p>Cette fonctionnalité permet de gérer les journaux comptables qui organisent et classent les écritures comptables par type d’opération. Chaque journal a un code unique et génère automatiquement des références de pièces comptables.</p>
+<section id="id3">
+<h3>Procédure<a class="headerlink" href="#id3" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Comptabilité</strong>.</p></li>
+<li><p>Cliquez sur <strong>Journaux Comptables</strong> dans le menu.</p>
+<p>a. <strong>Créer un journal</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Cliquez sur le bouton <strong>« Nouveau Journal »</strong>. Dans le formulaire qui s’affiche, saisissez :</dt><dd><ul class="simple">
+<li><p>Le code unique du journal (ex: « BQ » pour Banque, « CS » pour Caisse)</p></li>
+<li><p>Le libellé du journal (ex: « Journal de Banque »)</p></li>
+<li><p>Le type de journal (STANDARD, CAISSE, BANQUE, OD)</p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong> pour créer le journal.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>b. <strong>Gérer les journaux</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Sur la page <strong>Journaux Comptables</strong>, vous pouvez :</dt><dd><ul class="simple">
+<li><p>Activer ou désactiver un journal</p></li>
+<li><p>Modifier le libellé et le type</p></li>
+<li><p>Visualiser la séquence actuelle pour la génération des références</p></li>
+<li><p>Supprimer un journal (si non utilisé)</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>c. <strong>Utilisation des journaux</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Les journaux sont utilisés lors de la création d’écritures comptables :</dt><dd><ul class="simple">
+<li><p>Sélection du journal lors de la création d’une écriture</p></li>
+<li><p>Génération automatique de la référence de pièce comptable (format: « CODE-SEQUENCE »)</p></li>
+<li><p>Incrémentation automatique de la séquence après chaque écriture</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="traitement-des-ecritures-comptables">
+<h2>4. Traitement des écritures comptables<a class="headerlink" href="#traitement-des-ecritures-comptables" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#traitement-des-ecritures-comptables'"><span>#</span></a></h2>
+<p>Cette fonctionnalité permet la gestion automatisée et optimisée des écritures comptables avec un nouveau système de composants de transaction. Elle améliore significativement les performances et la traçabilité des opérations comptables.</p>
+<section id="id4">
+<h3>Procédure<a class="headerlink" href="#id4" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Comptabilité</strong>.</p></li>
+<li><p>Le système traite automatiquement les écritures comptables via le nouveau système de composants.</p>
+<p>a. <strong>Traitement par lots des écritures</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Le système utilise un traitement par lots optimisé qui :</dt><dd><ul class="simple">
+<li><p>Traite les transactions non encore comptabilisées</p></li>
+<li><p>Crée une seule écriture comptable par transaction avec plusieurs lignes</p></li>
+<li><p>Améliore les performances de traitement</p></li>
+<li><p>Assure la traçabilité complète</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>b. <strong>Reprocessing des écritures</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>En cas de besoin, le système permet de :</dt><dd><ul class="simple">
+<li><p>Reprocesser les écritures existantes</p></li>
+<li><p>Mettre à jour les composants de transaction</p></li>
+<li><p>Maintenir la cohérence des données comptables</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>c. <strong>Composants de transaction</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Le nouveau système gère différents types de composants :</dt><dd><ul class="simple">
+<li><p>Marge (MARGIN)</p></li>
+<li><p>TAF (Taxe sur les Activités Financières)</p></li>
+<li><p>Frais de communication</p></li>
+<li><p>Frais de transport</p></li>
+<li><p>Frais administratifs</p></li>
+<li><p>Frais d’assurance</p></li>
+<li><p>Et autres frais spécialisés</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>d. <strong>Créer une écriture comptable manuelle</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Pour créer une écriture comptable manuellement :</dt><dd><ul class="simple">
+<li><p>Cliquez sur <strong>« Nouvelle écriture manuelle »</strong> dans la page des écritures</p></li>
+<li><p>Sélectionnez un journal comptable actif</p></li>
+<li><p>Remplissez la date et la description</p></li>
+<li><p>Ajoutez les lignes d’écriture (compte, sens débit/crédit, montant)</p></li>
+<li><p>Vérifiez que l’écriture est équilibrée (Total Débit = Total Crédit)</p></li>
+<li><p>Cliquez sur <strong>« Enregistrer »</strong></p></li>
+<li><p>La référence de pièce comptable est générée automatiquement (ex: « BQ-001 »)</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="generation-du-grand-livre">
+<h2>5. Génération du grand livre<a class="headerlink" href="#generation-du-grand-livre" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#generation-du-grand-livre'"><span>#</span></a></h2>
+<p>Cette fonctionnalité permet de générer et consulter le grand livre des comptes avec des filtres avancés.</p>
+<section id="id5">
+<h3>Procédure<a class="headerlink" href="#id5" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Comptabilité</strong>.</p></li>
+<li><p>Sélectionnez <strong>Grand livre</strong> dans le menu.</p>
+<p>a. <strong>Consultation du grand livre</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Sélectionnez le compte concerné</p></li>
+<li><p>Définissez la période (date de début et de fin)</p></li>
+<li><p>Le système génère automatiquement le grand livre</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Filtres disponibles</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Filtrage par compte spécifique</p></li>
+<li><p>Filtrage par période</p></li>
+<li><p>Filtrage par type de transaction</p></li>
+<li><p>Export des données au format Excel</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="module-comptable-complet">
+<h2>6. Module Comptable Complet<a class="headerlink" href="#module-comptable-complet" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-comptable-complet'"><span>#</span></a></h2>
+<p>Le module comptable complet fournit un système comptable complet avec toutes les fonctionnalités nécessaires pour la gestion comptable d’une institution financière.</p>
+</section>
+<section id="guide-utilisateur-complet-a-z">
+<h2>7. Guide Utilisateur Complet (A-Z)<a class="headerlink" href="#guide-utilisateur-complet-a-z" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#guide-utilisateur-complet-a-z'"><span>#</span></a></h2>
+<p>Pour une documentation complète de A à Z sur l’utilisation du module comptable, consultez le guide utilisateur complet qui couvre toutes les fonctionnalités étape par étape.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Documentation Complète</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">Guide Utilisateur Complet : Module Comptable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#table-des-matieres">Table des Matières</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#acces-au-module">Accès au Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#gestion-des-exercices-comptables">Gestion des Exercices Comptables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#gestion-des-periodes-comptables">Gestion des Périodes Comptables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#plan-comptable">Plan Comptable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#journaux-comptables">Journaux Comptables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#ecritures-comptables">Écritures Comptables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#creer-une-ecriture-comptable-manuelle">Créer une Écriture Comptable Manuelle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#grand-livre">Grand Livre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#balance-de-verification">Balance de Vérification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#reconciliation-bancaire">Réconciliation Bancaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#etats-financiers">États Financiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#transferts-internes">Transferts Internes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#bonnes-pratiques">Bonnes Pratiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#faq-foire-aux-questions">FAQ (Foire aux Questions)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#workflow-recommande">Workflow Recommandé</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#permissions-et-securite">Permissions et Sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#support-et-assistance">Support et Assistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#ressources-additionnelles">Ressources Additionnelles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#notes-finales">Notes Finales</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="accounting_module.html">Module Comptable Complet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#vue-d-ensemble">Vue d’ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#plan-comptable">1. Plan Comptable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#exercices-comptables">2. Exercices Comptables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#grand-livre-general">3. Grand Livre Général</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#balance-de-verification">4. Balance de Vérification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#etats-financiers">5. États Financiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#reconciliation-bancaire">6. Réconciliation Bancaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#conformite-finance-islamique">Conformité Finance Islamique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#api-rest">API REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounting_module.html#statistiques">Statistiques</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../index.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        Modules
+      </a>
+</div>
+<div class="ml-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="user_guide.html">
+        Guide Utilisateur Complet : Module Comptable
+        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</div>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] h-full overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#operations-sur-les-comptes-internes'" class="reference internal" href="#operations-sur-les-comptes-internes">1. Opérations sur les comptes internes</a><ul>
+<li><a :data-current="activeSection === '#procedure'" class="reference internal" href="#procedure">Procédure</a></li>
+<li><a :data-current="activeSection === '#demo'" class="reference internal" href="#demo">Démo</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#prelevement-des-capitaux'" class="reference internal" href="#prelevement-des-capitaux">2. Prélèvement des capitaux</a><ul>
+<li><a :data-current="activeSection === '#id1'" class="reference internal" href="#id1">Procédure</a></li>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">Démo</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#journaux-comptables'" class="reference internal" href="#journaux-comptables">3. Journaux Comptables</a><ul>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#traitement-des-ecritures-comptables'" class="reference internal" href="#traitement-des-ecritures-comptables">4. Traitement des écritures comptables</a><ul>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#generation-du-grand-livre'" class="reference internal" href="#generation-du-grand-livre">5. Génération du grand livre</a><ul>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#module-comptable-complet'" class="reference internal" href="#module-comptable-complet">6. Module Comptable Complet</a></li>
+<li><a :data-current="activeSection === '#guide-utilisateur-complet-a-z'" class="reference internal" href="#guide-utilisateur-complet-a-z">7. Guide Utilisateur Complet (A-Z)</a></li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, THL Technologies Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.1.3</a></p>
+</div>
+</div>
+</footer>
+</div><button :class="{'opacity-0 invisible' : !showScrollTop}" @click="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 p-2 z-10 rounded-sm bg-gray-700 text-xs text-white transition-all duration-1000 hover:bg-gray-950 focus:bg-gray-950" id="scrolltop" x-cloak="">
+<svg aria-hidden="true" class="inline fill-current mb-[2px]" height="14" viewbox="0 96 960 960" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M450 896V370L202 618l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
+</svg>
+  Back to top
+</button>
+<script src="../../_static/documentation_options.js?v=718f2d82"></script>
+<script src="../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/js/target-blank.js?v=4e58104d"></script>
+<script defer="defer" src="../../_static/theme.js?v=e14a7d8a"></script>
+<script src="../../_static/translations.js?v=e6b791cb"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

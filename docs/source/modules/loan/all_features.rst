@@ -95,3 +95,22 @@ Le module **Prêts** offre un système complet de gestion des prêts avec des fo
 - **Logs d'audit** : Enregistrement de toutes les opérations
 - **Contrôles d'accès** : Gestion fine des permissions
 - **Conformité réglementaire** : Respect des réglementations bancaires
+
+13. Financement multi-tranches (Facility + Tranches)
+----------------------------------------------------
+- **Facility (plafond)** : gestion d'un plafond contractuel ``facilityAmount``
+- **Tranches (drawdowns)** : demandes, approbation et décaissement de plusieurs tranches par prêt
+- **Montant décaissé** : suivi du montant effectivement décaissé ``disbursedAmount``
+- **Statuts multi-tranches** :
+  - Prêt : ``AVAILABLE_FOR_DRAWDOWN``, ``PARTIALLY_DISBURSED``, ``FULLY_DISBURSED``
+  - Tranche : ``REQUESTED``, ``APPROVED``, ``REJECTED``, ``DISBURSED``
+- **Contrôles prod** :
+  - Maker-checker sur approbation/décaissement
+  - Anti double décaissement
+  - Contrôle plafond disponible
+- **Échéancier sur montant décaissé** : régénération automatique après décaissement
+
+14. Simulation de financement (Dashboard)
+-----------------------------------------
+- **Simulation** : calcul (achat + marge + TAF) et aperçu d'échéancier (sans persistance)
+- **Objectif** : aide à la saisie avant création du prêt

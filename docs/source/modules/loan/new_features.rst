@@ -136,3 +136,29 @@ Mesures de sécurité :
 - Validation des montants et des calculs
 - Protection contre les injections SQL
 
+Mises à jour - Avril 2026 (Multi-tranches + Simulation)
+-------------------------------------------------------
+✅ **Financement multi-tranches (Facility + Tranches)**
+   - Ajout de ``facilityAmount`` (plafond) et ``disbursedAmount`` (montant décaissé) sur le prêt
+   - Ajout des statuts de prêt :
+     - ``AVAILABLE_FOR_DRAWDOWN`` (ouvert aux tranches)
+     - ``PARTIALLY_DISBURSED`` (partiellement décaissé)
+     - ``FULLY_DISBURSED`` (totalement décaissé)
+   - Ajout de l'entité ``LoanDrawdown`` (tranches) et de ses statuts :
+     - ``REQUESTED``, ``APPROVED``, ``REJECTED``, ``DISBURSED``
+   - Ajout des APIs :
+     - ``PUT /loan/{id}/open-drawdowns`` (LOAN_MANAGER)
+     - ``POST /loan-drawdown/loan/{loanId}`` (LOAN_MANAGER)
+     - ``PUT /loan-drawdown/{drawdownId}/approve?approved=true|false`` (LOAN_VALIDATOR)
+     - ``PUT /loan-drawdown/{drawdownId}/disburse`` (LOAN_MANAGER)
+   - **Règles prod** :
+     - Maker-checker (approbateur ≠ demandeur, décaissant ≠ approbateur)
+     - Anti double décaissement
+     - Contrôle plafond disponible
+   - Régénération automatique de l'échéancier après décaissement (sur le montant décaissé)
+
+✅ **Simulation de financement (Dashboard)**
+   - Ajout d'une section Simulation (sans persistance) :
+     - Calcul marge/TAF/montant total
+     - Aperçu d'échéancier selon dates/durée/type d'échéance
+

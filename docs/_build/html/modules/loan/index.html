@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="fr" x-data="{activeSection: ''}">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#030711" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Prêts | Documentation THL CoreBanking 0.0.1</title>
+<meta content="Prêts | Documentation THL CoreBanking 0.0.1" property="og:title"/>
+<meta content="Prêts | Documentation THL CoreBanking 0.0.1" name="twitter:title"/>
+<link href="../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../../_static/theme.css?v=c0d22bf5" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css?v=d871b14e" rel="stylesheet" type="text/css"/>
+<link href="../../search.html" rel="search" title="Recherche"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../cashier/index.html" rel="next" title="Caissier et Billetage"/>
+<link href="../transaction/index.html" rel="prev" title="Transactions"/>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" @scroll.window="showScrollTop = pageYOffset &gt; 100" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border bg-background/90 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a><nav class="flex items-center gap-6 text-sm font-medium">
+<a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow">GitHub</a>
+</nav></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 gap-2 sm:gap-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center gap-1">
+<a href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow" title="Visit GitHub">
+<div class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9">
+            fa-brands fa-github
+          </div>
+</a>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="justify-start text-sm md:!hidden bg-background" href="../../index.html"><span class="font-bold text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0">
+<div class="overflow-y-auto h-full w-full relative pr-6"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<p class="caption" role="heading"><span class="caption-text">📚 Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#thl-core-banking"><strong>THL Core Banking</strong></a></li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../index.html">Modules<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#statistiques-de-documentation">📊 <strong>Statistiques de Documentation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#guide-de-navigation">📋 <strong>Guide de Navigation</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#documentation-specialisee-du-module-comptable">📚 <strong>Documentation Spécialisée du Module Comptable</strong></a></li>
+</ul>
+</li>
+</ul>
+<div>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<ul>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#creation-et-gestion-des-prets">1. Création et gestion des prêts<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#procedure">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#approbation-des-prets">2. Approbation des prêts<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id1">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#gestion-des-remboursements">3. Gestion des remboursements<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id2">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#remboursement-anticipe">4. Remboursement anticipé<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id3">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#reports-et-exports">5. Reports et exports<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id4">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#systeme-de-tarification">6. Système de tarification<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#id5">Procédure</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#financement-multi-tranches-facility-tranches">7. Financement multi-tranches (Facility + Tranches)<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#concepts">Concepts</a></li>
+<li><a class="reference internal" href="#statuts-du-pret-facility">Statuts du prêt (Facility)</a></li>
+<li><a class="reference internal" href="#workflow-etapes">Workflow (étapes)</a></li>
+<li><a class="reference internal" href="#controles-de-securite-prod">Contrôles de sécurité (prod)</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#simulation-de-financement-dashboard">8. Simulation de financement (Dashboard)<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#demo">Démo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div>
+<h4>Sujet précédent</h4>
+<p class="topless"><a href="../transaction/index.html" title="Chapitre précédent">Transactions</a></p>
+</div>
+<div>
+<h4>Sujet suivant</h4>
+<p class="topless"><a href="../cashier/index.html" title="Chapitre suivant">Caissier et Billetage</a></p>
+</div>
+<div aria-label="source link" role="note">
+<h3>Cette page</h3>
+<ul class="this-page-menu">
+<li><a href="../../_sources/modules/loan/index.rst.txt" rel="nofollow">Montrer le code source</a></li>
+</ul>
+</div>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
+<span class="hidden md:inline">Documentation THL CoreBanking 0.0.1</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="../index.html">Modules</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Prêts</span>
+</nav>
+<div id="content" role="main">
+<section id="prets">
+<span id="loan-index"></span><h1>Prêts<a class="headerlink" href="#prets" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<p>Le module <strong>Prêts</strong> est un système complet de gestion des prêts qui permet la création, l’approbation, le suivi et le remboursement des prêts accordés aux clients. Il intègre un système de tarification avancé, des échéanciers flexibles et une gestion automatisée des remboursements.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Mises à jour importantes - Octobre 2025</strong></p>
+<p>Le module prêts a bénéficié de corrections critiques et d’améliorations majeures :</p>
+<ul class="simple">
+<li><p>✅ Migration complète vers le système de composants de transaction</p></li>
+<li><p>✅ Correction des calculs financiers avec protection contre les divisions par zéro</p></li>
+<li><p>✅ Amélioration de la précision des échéanciers pour tous les types d’échéances</p></li>
+<li><p>✅ Renforcement des validations et de la sécurité des données</p></li>
+<li><p>✅ Correction des rapports et exports Excel</p></li>
+</ul>
+<p>Ces améliorations garantissent une meilleure fiabilité et précision du système.</p>
+</div>
+<section id="creation-et-gestion-des-prets">
+<h2>1. Création et gestion des prêts<a class="headerlink" href="#creation-et-gestion-des-prets" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#creation-et-gestion-des-prets'"><span>#</span></a></h2>
+<p>Cette section permet aux gestionnaires de prêts de créer, modifier et gérer les prêts accordés aux clients.</p>
+<section id="procedure">
+<h3>Procédure<a class="headerlink" href="#procedure" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#procedure'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Prêts</strong>.</p></li>
+<li><p>Cliquez sur <strong>Nouveau prêt</strong> pour créer un prêt.</p>
+<p>a. <strong>Création d’un prêt</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Dans le formulaire de création, renseignez :</dt><dd><ul class="simple">
+<li><p>Le type de prêt (Murabaha, Ijara, Musharaka, Qard, etc.)</p></li>
+<li><p>Le client bénéficiaire</p></li>
+<li><p>Le montant du prêt (prix d’achat + marge + TAF)</p></li>
+<li><p>La date de livraison</p></li>
+<li><p>La date du premier remboursement</p></li>
+<li><p>Le type d’échéance (mensuel, trimestriel, etc.)</p></li>
+<li><p>Le type de remboursement (linéaire, personnalisé)</p></li>
+<li><p>Une description du prêt</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p>b. <strong>Modification d’un prêt</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Sélectionnez le prêt à modifier</p></li>
+<li><p>Mettez à jour les informations nécessaires</p></li>
+<li><p>Sauvegardez les modifications</p></li>
+</ul>
+</div></blockquote>
+<p>c. <strong>Mise à jour du produit de prêt</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Modifiez le produit associé au prêt</p></li>
+<li><p>Ajustez les paramètres de tarification</p></li>
+<li><p>Mettez à jour les conditions contractuelles</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="approbation-des-prets">
+<h2>2. Approbation des prêts<a class="headerlink" href="#approbation-des-prets" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#approbation-des-prets'"><span>#</span></a></h2>
+<p>Cette fonctionnalité permet aux validateurs de prêts d’approuver ou de rejeter les demandes de prêt.</p>
+<section id="id1">
+<h3>Procédure<a class="headerlink" href="#id1" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id1'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel avec les droits de <strong>LOAN_VALIDATOR</strong>.</p></li>
+<li><p>Accédez au module <strong>Prêts</strong>.</p></li>
+<li><p>Consultez la liste des prêts en attente d’approbation.</p>
+<p>a. <strong>Processus d’approbation</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Examinez les détails du prêt</p></li>
+<li><p>Vérifiez la solvabilité du client</p></li>
+<li><p>Validez les conditions contractuelles</p></li>
+<li><p>Approuvez ou rejetez la demande</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Contrôles de sécurité</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Vérification des autorisations</p></li>
+<li><p>Validation des montants</p></li>
+<li><p>Contrôle de cohérence des données</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="gestion-des-remboursements">
+<h2>3. Gestion des remboursements<a class="headerlink" href="#gestion-des-remboursements" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#gestion-des-remboursements'"><span>#</span></a></h2>
+<p>Cette section permet de gérer les échéances et les remboursements des prêts.</p>
+<section id="id2">
+<h3>Procédure<a class="headerlink" href="#id2" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Prêts</strong>.</p></li>
+<li><p>Sélectionnez le prêt concerné.</p>
+<p>a. <strong>Création d’un remboursement</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Cliquez sur <strong>Nouveau remboursement</strong></p></li>
+<li><p>Renseignez le montant à rembourser</p></li>
+<li><p>Définissez la période</p></li>
+<li><p>Spécifiez la date de paiement</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Confirmation des remboursements</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Vérifiez les détails du remboursement</p></li>
+<li><p>Confirmez le paiement</p></li>
+<li><p>Le système génère automatiquement les transactions</p></li>
+</ul>
+</div></blockquote>
+<p>c. <strong>Remboursements personnalisés</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Créez des remboursements sur mesure</p></li>
+<li><p>Ajustez les montants selon les besoins</p></li>
+<li><p>Gérez les reports d’échéances</p></li>
+</ul>
+</div></blockquote>
+<p>d. <strong>Gestion des retards</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Identification automatique des échéances en retard</p></li>
+<li><p>Calcul des pénalités</p></li>
+<li><p>Suivi des remboursements en souffrance</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="remboursement-anticipe">
+<h2>4. Remboursement anticipé<a class="headerlink" href="#remboursement-anticipe" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#remboursement-anticipe'"><span>#</span></a></h2>
+<p>Cette fonctionnalité permet aux clients de rembourser leurs prêts de manière anticipée.</p>
+<section id="id3">
+<h3>Procédure<a class="headerlink" href="#id3" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Prêts</strong>.</p></li>
+<li><p>Sélectionnez le prêt à rembourser.</p>
+<p>a. <strong>Calcul du remboursement anticipé</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Le système calcule automatiquement le montant dû</p></li>
+<li><p>Prise en compte des intérêts et frais</p></li>
+<li><p>Génération du solde de tout compte</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Validation du remboursement</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Vérification des fonds disponibles</p></li>
+<li><p>Confirmation du paiement</p></li>
+<li><p>Clôture du prêt</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="reports-et-exports">
+<h2>5. Reports et exports<a class="headerlink" href="#reports-et-exports" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#reports-et-exports'"><span>#</span></a></h2>
+<p>Cette section permet de générer des rapports et d’exporter les données de prêts.</p>
+<section id="id4">
+<h3>Procédure<a class="headerlink" href="#id4" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'"><span>#</span></a></h3>
+<ol class="arabic">
+<li><p>Connectez-vous au logiciel.</p></li>
+<li><p>Accédez au module <strong>Prêts</strong>.</p></li>
+<li><p>Sélectionnez l’option <strong>Rapports</strong>.</p>
+<p>a. <strong>Export des prêts</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Export de la liste complète des prêts</p></li>
+<li><p>Filtrage par période, client, ou statut</p></li>
+<li><p>Export au format Excel</p></li>
+</ul>
+</div></blockquote>
+<p>b. <strong>Rapport des prêts en retard</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Liste des prêts en souffrance</p></li>
+<li><p>Détails des échéances manquées</p></li>
+<li><p>Export pour suivi de recouvrement</p></li>
+</ul>
+</div></blockquote>
+<p>c. <strong>Rapport de performance</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Statistiques de remboursement</p></li>
+<li><p>Analyse des retards</p></li>
+<li><p>Indicateurs de qualité du portefeuille</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="systeme-de-tarification">
+<h2>6. Système de tarification<a class="headerlink" href="#systeme-de-tarification" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#systeme-de-tarification'"><span>#</span></a></h2>
+<p>Le système intègre un moteur de tarification sophistiqué basé sur la formule :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Marge} &amp;= \text{Prix de vente} - \text{Prix d'achat} \\
+\text{Pourcentage marge} &amp;= \frac{\text{Marge}}{\text{Prix d'achat}} \times 100 \\
+\text{Valeur TAF} &amp;= \text{Marge} \times \frac{\text{Pourcentage TAF}}{100} \\
+\text{Montant total} &amp;= \text{Prix d'achat} + \text{Marge} + \text{Valeur TAF}\end{split}\]</div>
+<p><strong>Validations automatiques</strong> :</p>
+<ul class="simple">
+<li><p>Prix d’achat doit être strictement supérieur à 0 (évite les divisions par zéro)</p></li>
+<li><p>Prix de vente doit être supérieur ou égal au prix d’achat</p></li>
+<li><p>Tous les calculs sont effectués avant l’enregistrement (évite les dépendances circulaires)</p></li>
+<li><p>Précision garantie sur tous les montants financiers</p></li>
+</ul>
+<section id="id5">
+<h3>Procédure<a class="headerlink" href="#id5" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Configuration des paramètres</strong></p>
+<ul class="simple">
+<li><p>Définition des pourcentages de marge</p></li>
+<li><p>Configuration des taux TAF (Taxe sur Activités Financières)</p></li>
+<li><p>Paramétrage des frais additionnels</p></li>
+<li><p>Validation automatique de la cohérence des données</p></li>
+</ul>
+</li>
+<li><p><strong>Calcul automatique</strong></p>
+<ul class="simple">
+<li><p>Le système calcule automatiquement le montant total</p></li>
+<li><p>Application des règles de tarification islamique</p></li>
+<li><p>Génération de l’échéancier selon le type d’échéance</p></li>
+<li><p>Vérification de la cohérence des montants</p></li>
+</ul>
+</li>
+<li><p><strong>Types de prêts supportés</strong></p>
+<ul class="simple">
+<li><p><strong>Murabaha</strong> : Vente avec marge (financement islamique)</p></li>
+<li><p><strong>Ijara</strong> : Location-vente (leasing islamique)</p></li>
+<li><p><strong>Musharaka</strong> : Partenariat (participation islamique)</p></li>
+<li><p><strong>Qard</strong> : Prêt sans intérêt (prêt bienveillant)</p></li>
+<li><p><strong>Autres types</strong> : Prêts conventionnels</p></li>
+</ul>
+</li>
+<li><p><strong>Types d’échéances disponibles</strong></p>
+<ul class="simple">
+<li><p><strong>MONTHLY</strong> : Mensuel (30 jours)</p></li>
+<li><p><strong>QUARTERLY</strong> : Trimestriel (90 jours)</p></li>
+<li><p><strong>FOURTH_MONTH</strong> : Quatre mois (120 jours)</p></li>
+<li><p><strong>FIFTH_MONTH</strong> : Cinq mois (150 jours)</p></li>
+<li><p><strong>SEMI_ANNUAL</strong> : Semestriel (180 jours)</p></li>
+<li><p><strong>ANNUAL</strong> : Annuel (360 jours)</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Le calcul de l’échéancier est automatiquement mis à jour lorsque vous modifiez :</p>
+<ul class="simple">
+<li><p>La date du premier remboursement</p></li>
+<li><p>Le délai (nombre de périodes)</p></li>
+<li><p>Le type d’échéance</p></li>
+</ul>
+<p>Cette mise à jour supprime les remboursements non validés et régénère l’échéancier.</p>
+</div>
+</section>
+</section>
+<section id="financement-multi-tranches-facility-tranches">
+<h2>7. Financement multi-tranches (Facility + Tranches)<a class="headerlink" href="#financement-multi-tranches-facility-tranches" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#financement-multi-tranches-facility-tranches'"><span>#</span></a></h2>
+<p>Le module <strong>Prêts</strong> supporte désormais le <strong>financement multi-tranches</strong> (décaissement en plusieurs tranches).</p>
+<section id="concepts">
+<h3>Concepts<a class="headerlink" href="#concepts" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#concepts'"><span>#</span></a></h3>
+<ul class="simple">
+<li><p><strong>Facility (Prêt)</strong> : le contrat principal avec un plafond (<code class="docutils literal notranslate"><span class="pre">facilityAmount</span></code>).</p></li>
+<li><p><strong>Tranche (Drawdown)</strong> : un décaissement individuel rattaché au prêt (<code class="docutils literal notranslate"><span class="pre">LoanDrawdown</span></code>).</p></li>
+<li><p><strong>Montant décaissé</strong> : somme des tranches décaissées (<code class="docutils literal notranslate"><span class="pre">disbursedAmount</span></code>).</p></li>
+</ul>
+</section>
+<section id="statuts-du-pret-facility">
+<h3>Statuts du prêt (Facility)<a class="headerlink" href="#statuts-du-pret-facility" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#statuts-du-pret-facility'"><span>#</span></a></h3>
+<p>Les statuts suivants sont utilisés pour contrôler le workflow :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING</span></code> : en attente</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APPROVED</span></code> / <code class="docutils literal notranslate"><span class="pre">REJECTED</span></code> : décision (validation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AVAILABLE_FOR_DRAWDOWN</span></code> : prêt <strong>ouvert aux tranches</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIALLY_DISBURSED</span></code> : prêt <strong>partiellement décaissé</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FULLY_DISBURSED</span></code> : prêt <strong>totalement décaissé</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ACTIVE</span></code> / <code class="docutils literal notranslate"><span class="pre">IN_PROGRESS</span></code> / <code class="docutils literal notranslate"><span class="pre">COMPLETED</span></code> : servicing et clôture</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>En production, le validateur ne peut approuver/rejeter que via <code class="docutils literal notranslate"><span class="pre">APPROVED</span></code>/<code class="docutils literal notranslate"><span class="pre">REJECTED</span></code>.
+Les statuts techniques (ex: <code class="docutils literal notranslate"><span class="pre">AVAILABLE_FOR_DRAWDOWN</span></code>) se font via des actions dédiées.</p>
+</div>
+</section>
+<section id="workflow-etapes">
+<h3>Workflow (étapes)<a class="headerlink" href="#workflow-etapes" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#workflow-etapes'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Création du prêt</strong> par <code class="docutils literal notranslate"><span class="pre">LOAN_MANAGER</span></code> (facility).</p></li>
+<li><p><strong>Approbation/Rejet</strong> par <code class="docutils literal notranslate"><span class="pre">LOAN_VALIDATOR</span></code>.</p></li>
+<li><p><strong>Ouverture aux tranches</strong> par <code class="docutils literal notranslate"><span class="pre">LOAN_MANAGER</span></code> :</p>
+<ul class="simple">
+<li><p>API : <code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/loan/{id}/open-drawdowns</span></code></p></li>
+<li><p>Résultat : statut <code class="docutils literal notranslate"><span class="pre">AVAILABLE_FOR_DRAWDOWN</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Demande de tranche</strong> par <code class="docutils literal notranslate"><span class="pre">LOAN_MANAGER</span></code> :</p>
+<ul class="simple">
+<li><p>API : <code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/loan-drawdown/loan/{loanId}</span></code></p></li>
+<li><p>Statut tranche : <code class="docutils literal notranslate"><span class="pre">REQUESTED</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Approbation/Rejet tranche</strong> par <code class="docutils literal notranslate"><span class="pre">LOAN_VALIDATOR</span></code> :</p>
+<ul class="simple">
+<li><p>API : <code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/loan-drawdown/{drawdownId}/approve?approved=true|false</span></code></p></li>
+<li><p>Statut tranche : <code class="docutils literal notranslate"><span class="pre">APPROVED</span></code> ou <code class="docutils literal notranslate"><span class="pre">REJECTED</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Décaissement tranche</strong> par <code class="docutils literal notranslate"><span class="pre">LOAN_MANAGER</span></code> :</p>
+<ul class="simple">
+<li><p>API : <code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/loan-drawdown/{drawdownId}/disburse</span></code></p></li>
+<li><p>Création d’une transaction de type <code class="docutils literal notranslate"><span class="pre">DISBURSEMENT</span></code> (compte interne BANK → compte client du prêt)</p></li>
+<li><p>Mise à jour <code class="docutils literal notranslate"><span class="pre">disbursedAmount</span></code> et statut prêt (<code class="docutils literal notranslate"><span class="pre">PARTIALLY_DISBURSED</span></code> / <code class="docutils literal notranslate"><span class="pre">FULLY_DISBURSED</span></code>)</p></li>
+<li><p>Régénération automatique de l’échéancier sur le montant décaissé</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="controles-de-securite-prod">
+<h3>Contrôles de sécurité (prod)<a class="headerlink" href="#controles-de-securite-prod" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#controles-de-securite-prod'"><span>#</span></a></h3>
+<ul class="simple">
+<li><p><strong>Maker-checker</strong> :</p>
+<ul>
+<li><p>un utilisateur ne peut pas approuver sa propre demande de tranche</p></li>
+<li><p>un utilisateur ne peut pas décaisser une tranche qu’il a approuvée</p></li>
+</ul>
+</li>
+<li><p><strong>Anti-doublon</strong> :</p>
+<ul>
+<li><p>une tranche déjà <code class="docutils literal notranslate"><span class="pre">DISBURSED</span></code> ne peut pas être décaissée à nouveau</p></li>
+</ul>
+</li>
+<li><p><strong>Contrôle plafond</strong> :</p>
+<ul>
+<li><p>une tranche ne peut pas dépasser le montant disponible : <code class="docutils literal notranslate"><span class="pre">facilityAmount</span> <span class="pre">-</span> <span class="pre">disbursedAmount</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="simulation-de-financement-dashboard">
+<h2>8. Simulation de financement (Dashboard)<a class="headerlink" href="#simulation-de-financement-dashboard" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#simulation-de-financement-dashboard'"><span>#</span></a></h2>
+<p>Le dashboard propose une section <strong>Simulation</strong> (sans enregistrement en base) pour :</p>
+<ul class="simple">
+<li><p>Calculer <strong>marge</strong>, <strong>TAF</strong> et <strong>montant total</strong></p></li>
+<li><p>Générer un <strong>aperçu d’échéancier</strong> selon : date 1er remboursement, durée, type d’échéance, type de remboursement</p></li>
+</ul>
+<p>Cette simulation sert d’aide à la saisie avant création d’un prêt.</p>
+<section id="demo">
+<h3>Démo<a class="headerlink" href="#demo" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#demo'"><span>#</span></a></h3>
+<ol class="arabic simple">
+<li><p>Le gestionnaire de prêts veut créer un prêt Murabaha de 500 000 FCFA pour le client John Doe.</p></li>
+<li><p>Le validateur de prêts veut approuver une demande de prêt en attente.</p></li>
+<li><p>Le gestionnaire veut confirmer un remboursement de 50 000 FCFA pour le prêt #12345.</p></li>
+<li><p>Le client veut effectuer un remboursement anticipé de son prêt.</p></li>
+</ol>
+</section>
+</section>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../transaction/index.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        Transactions
+      </a>
+</div>
+<div class="ml-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../cashier/index.html">
+        Caissier et Billetage
+        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</div>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] h-full overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#creation-et-gestion-des-prets'" class="reference internal" href="#creation-et-gestion-des-prets">1. Création et gestion des prêts</a><ul>
+<li><a :data-current="activeSection === '#procedure'" class="reference internal" href="#procedure">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#approbation-des-prets'" class="reference internal" href="#approbation-des-prets">2. Approbation des prêts</a><ul>
+<li><a :data-current="activeSection === '#id1'" class="reference internal" href="#id1">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#gestion-des-remboursements'" class="reference internal" href="#gestion-des-remboursements">3. Gestion des remboursements</a><ul>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#remboursement-anticipe'" class="reference internal" href="#remboursement-anticipe">4. Remboursement anticipé</a><ul>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#reports-et-exports'" class="reference internal" href="#reports-et-exports">5. Reports et exports</a><ul>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#systeme-de-tarification'" class="reference internal" href="#systeme-de-tarification">6. Système de tarification</a><ul>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">Procédure</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#financement-multi-tranches-facility-tranches'" class="reference internal" href="#financement-multi-tranches-facility-tranches">7. Financement multi-tranches (Facility + Tranches)</a><ul>
+<li><a :data-current="activeSection === '#concepts'" class="reference internal" href="#concepts">Concepts</a></li>
+<li><a :data-current="activeSection === '#statuts-du-pret-facility'" class="reference internal" href="#statuts-du-pret-facility">Statuts du prêt (Facility)</a></li>
+<li><a :data-current="activeSection === '#workflow-etapes'" class="reference internal" href="#workflow-etapes">Workflow (étapes)</a></li>
+<li><a :data-current="activeSection === '#controles-de-securite-prod'" class="reference internal" href="#controles-de-securite-prod">Contrôles de sécurité (prod)</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#simulation-de-financement-dashboard'" class="reference internal" href="#simulation-de-financement-dashboard">8. Simulation de financement (Dashboard)</a><ul>
+<li><a :data-current="activeSection === '#demo'" class="reference internal" href="#demo">Démo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, THL Technologies Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.1.3</a></p>
+</div>
+</div>
+</footer>
+</div><button :class="{'opacity-0 invisible' : !showScrollTop}" @click="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 p-2 z-10 rounded-sm bg-gray-700 text-xs text-white transition-all duration-1000 hover:bg-gray-950 focus:bg-gray-950" id="scrolltop" x-cloak="">
+<svg aria-hidden="true" class="inline fill-current mb-[2px]" height="14" viewbox="0 96 960 960" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M450 896V370L202 618l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
+</svg>
+  Back to top
+</button>
+<script src="../../_static/documentation_options.js?v=718f2d82"></script>
+<script src="../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/js/target-blank.js?v=4e58104d"></script>
+<script defer="defer" src="../../_static/theme.js?v=e14a7d8a"></script>
+<script src="../../_static/translations.js?v=e6b791cb"></script>
+<script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

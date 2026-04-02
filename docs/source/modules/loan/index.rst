@@ -232,6 +232,87 @@ Procédure
    
    Cette mise à jour supprime les remboursements non validés et régénère l'échéancier.
 
+7. Financement multi-tranches (Facility + Tranches)
+----------------------------------------------------
+
+Le module **Prêts** supporte désormais le **financement multi-tranches** (décaissement en plusieurs tranches).
+
+Concepts
+~~~~~~~~
+
+- **Facility (Prêt)** : le contrat principal avec un plafond (``facilityAmount``).
+- **Tranche (Drawdown)** : un décaissement individuel rattaché au prêt (``LoanDrawdown``).
+- **Montant décaissé** : somme des tranches décaissées (``disbursedAmount``).
+
+Statuts du prêt (Facility)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Les statuts suivants sont utilisés pour contrôler le workflow :
+
+- ``PENDING`` : en attente
+- ``APPROVED`` / ``REJECTED`` : décision (validation)
+- ``AVAILABLE_FOR_DRAWDOWN`` : prêt **ouvert aux tranches**
+- ``PARTIALLY_DISBURSED`` : prêt **partiellement décaissé**
+- ``FULLY_DISBURSED`` : prêt **totalement décaissé**
+- ``ACTIVE`` / ``IN_PROGRESS`` / ``COMPLETED`` : servicing et clôture
+
+.. important::
+   En production, le validateur ne peut approuver/rejeter que via ``APPROVED``/``REJECTED``.
+   Les statuts techniques (ex: ``AVAILABLE_FOR_DRAWDOWN``) se font via des actions dédiées.
+
+Workflow (étapes)
+~~~~~~~~~~~~~~~~~
+
+1. **Création du prêt** par ``LOAN_MANAGER`` (facility).
+2. **Approbation/Rejet** par ``LOAN_VALIDATOR``.
+3. **Ouverture aux tranches** par ``LOAN_MANAGER`` :
+
+   - API : ``PUT /loan/{id}/open-drawdowns``
+   - Résultat : statut ``AVAILABLE_FOR_DRAWDOWN``
+
+4. **Demande de tranche** par ``LOAN_MANAGER`` :
+
+   - API : ``POST /loan-drawdown/loan/{loanId}``
+   - Statut tranche : ``REQUESTED``
+
+5. **Approbation/Rejet tranche** par ``LOAN_VALIDATOR`` :
+
+   - API : ``PUT /loan-drawdown/{drawdownId}/approve?approved=true|false``
+   - Statut tranche : ``APPROVED`` ou ``REJECTED``
+
+6. **Décaissement tranche** par ``LOAN_MANAGER`` :
+
+   - API : ``PUT /loan-drawdown/{drawdownId}/disburse``
+   - Création d'une transaction de type ``DISBURSEMENT`` (compte interne BANK → compte client du prêt)
+   - Mise à jour ``disbursedAmount`` et statut prêt (``PARTIALLY_DISBURSED`` / ``FULLY_DISBURSED``)
+   - Régénération automatique de l'échéancier sur le montant décaissé
+
+Contrôles de sécurité (prod)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- **Maker-checker** :
+
+  - un utilisateur ne peut pas approuver sa propre demande de tranche
+  - un utilisateur ne peut pas décaisser une tranche qu'il a approuvée
+
+- **Anti-doublon** :
+
+  - une tranche déjà ``DISBURSED`` ne peut pas être décaissée à nouveau
+
+- **Contrôle plafond** :
+
+  - une tranche ne peut pas dépasser le montant disponible : ``facilityAmount - disbursedAmount``
+
+8. Simulation de financement (Dashboard)
+----------------------------------------
+
+Le dashboard propose une section **Simulation** (sans enregistrement en base) pour :
+
+- Calculer **marge**, **TAF** et **montant total**
+- Générer un **aperçu d'échéancier** selon : date 1er remboursement, durée, type d'échéance, type de remboursement
+
+Cette simulation sert d'aide à la saisie avant création d'un prêt.
+
 Démo
 ~~~~
 

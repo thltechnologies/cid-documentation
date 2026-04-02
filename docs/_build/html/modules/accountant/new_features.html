@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="fr" x-data="{activeSection: ''}">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#030711" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Nouvelles fonctionnalités | Documentation THL CoreBanking 0.0.1</title>
+<meta content="Nouvelles fonctionnalités | Documentation THL CoreBanking 0.0.1" property="og:title"/>
+<meta content="Nouvelles fonctionnalités | Documentation THL CoreBanking 0.0.1" name="twitter:title"/>
+<link href="../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../../_static/theme.css?v=c0d22bf5" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css?v=d871b14e" rel="stylesheet" type="text/css"/>
+<link href="../../search.html" rel="search" title="Recherche"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" @scroll.window="showScrollTop = pageYOffset &gt; 100" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border bg-background/90 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a><nav class="flex items-center gap-6 text-sm font-medium">
+<a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow">GitHub</a>
+</nav></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 gap-2 sm:gap-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center gap-1">
+<a href="https://github.com/THLTechnologies/CID-CoreBanking" rel="noopener nofollow" title="Visit GitHub">
+<div class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9">
+            fa-brands fa-github
+          </div>
+</a>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="justify-start text-sm md:!hidden bg-background" href="../../index.html"><span class="font-bold text-clip whitespace-nowrap">Documentation THL CoreBanking 0.0.1</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0">
+<div class="overflow-y-auto h-full w-full relative pr-6"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<p class="caption" role="heading"><span class="caption-text">📚 Sommaire</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html#thl-core-banking"><strong>THL Core Banking</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Modules</a></li>
+</ul>
+<div>
+<h3><a href="../../index.html">Table des matières</a></h3>
+<ul>
+<li><a class="reference internal" href="#systeme-de-composants-de-transaction">1. Système de composants de transaction</a></li>
+<li><a class="reference internal" href="#traitement-par-lots-optimise">2. Traitement par lots optimisé</a></li>
+<li><a class="reference internal" href="#generation-du-grand-livre">3. Génération du grand livre</a></li>
+<li><a class="reference internal" href="#reprocessing-des-ecritures">4. Reprocessing des écritures</a></li>
+<li><a class="reference internal" href="#ameliorations-de-performance">5. Améliorations de performance</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#module-comptable-complet">6. Module Comptable Complet<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#fonctionnalites-principales">Fonctionnalités principales</a></li>
+<li><a class="reference internal" href="#architecture-technique">Architecture technique</a></li>
+<li><a class="reference internal" href="#conformite-finance-islamique">Conformité Finance Islamique</a></li>
+<li><a class="reference internal" href="#statistiques">Statistiques</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div aria-label="source link" role="note">
+<h3>Cette page</h3>
+<ul class="this-page-menu">
+<li><a href="../../_sources/modules/accountant/new_features.rst.txt" rel="nofollow">Montrer le code source</a></li>
+</ul>
+</div>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
+<span class="hidden md:inline">Documentation THL CoreBanking 0.0.1</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Nouvelles fonctionnalités</span>
+</nav>
+<div id="content" role="main">
+<section id="nouvelles-fonctionnalites">
+<h1>Nouvelles fonctionnalités<a class="headerlink" href="#nouvelles-fonctionnalites" title="Lien vers cette rubrique"><span>#</span></a></h1>
+<section id="systeme-de-composants-de-transaction">
+<h2>1. Système de composants de transaction<a class="headerlink" href="#systeme-de-composants-de-transaction" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#systeme-de-composants-de-transaction'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Architecture optimisée</strong> : Remplacement des objets Transaction séparés par un système de composants</p></li>
+<li><p><strong>Performance améliorée</strong> : Une seule écriture comptable par transaction avec plusieurs lignes</p></li>
+<li><p><strong>Traçabilité complète</strong> : Tous les composants liés à la transaction principale</p></li>
+<li><p><strong>Flexibilité</strong> : Facile d’ajouter de nouveaux types de composants</p></li>
+</ul>
+<p>Types de composants supportés :
+- Marge (MARGIN)
+- TAF (Taxe sur les Activités Financières)
+- Frais de communication (COMMUNICATION_FEE)
+- Frais de transport (TRANSPORT_FEE)
+- Frais administratifs (ADMINISTRATIVE_FEE)
+- Frais d’assurance (INSURANCE_FEE)
+- Frais d’enregistrement (REGISTRATION_FEE)
+- Frais de notaire (NOTARY_FEE)
+- Frais de dossier (APPLICATION_FEE)
+- Frais commerciaux (COMMERCIAL_FEE)
+- Frais d’expertise (SURVEYOR_FEE)
+- Dépôt de garantie (GUARANTEE_DEPOSIT)
+- Dépôt de bonne foi (GOOD_FAITH_DEPOSIT)
+- Frais mensuels (MONTHLY_FEE)
+- Frais d’ouverture (OPENING_FEE)
+- Frais de visite et évaluation (VISIT_AND_EVALUATION_FEE)</p>
+</section>
+<section id="traitement-par-lots-optimise">
+<h2>2. Traitement par lots optimisé<a class="headerlink" href="#traitement-par-lots-optimise" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#traitement-par-lots-optimise'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Traitement automatique</strong> : Les écritures comptables sont traitées automatiquement par lots</p></li>
+<li><p><strong>Idempotence</strong> : Évite le double traitement des transactions</p></li>
+<li><p><strong>Reprocessing</strong> : Possibilité de reprocesser les écritures existantes</p></li>
+<li><p><strong>Performance</strong> : Traitement par pages de 100 transactions pour optimiser les performances</p></li>
+</ul>
+<p>Fonctionnalités du traitement par lots :
+- Détection automatique des transactions non traitées
+- Création d’écritures comptables optimisées
+- Gestion des composants TAF et marge
+- Logs détaillés pour le suivi des opérations</p>
+</section>
+<section id="generation-du-grand-livre">
+<h2>3. Génération du grand livre<a class="headerlink" href="#generation-du-grand-livre" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#generation-du-grand-livre'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>API REST</strong> : Endpoint <cite>/account/{accountId}/general-ledger</cite></p></li>
+<li><p><strong>Filtrage par période</strong> : Du 01/01/2025 au 31/01/2025</p></li>
+<li><p><strong>Données complètes</strong> : Date, numéro, libellé, débit, crédit</p></li>
+<li><p><strong>Performance</strong> : Requêtes optimisées avec indexation</p></li>
+</ul>
+<p>Exemple d’utilisation :
+- Sélection du compte concerné
+- Définition de la période de consultation
+- Génération automatique du grand livre
+- Export possible des données</p>
+</section>
+<section id="reprocessing-des-ecritures">
+<h2>4. Reprocessing des écritures<a class="headerlink" href="#reprocessing-des-ecritures" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#reprocessing-des-ecritures'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Reprocessing intelligent</strong> : Mise à jour des écritures existantes</p></li>
+<li><p><strong>Gestion des composants</strong> : Ajout automatique des composants TAF et marge</p></li>
+<li><p><strong>Cohérence des données</strong> : Maintien de l’intégrité comptable</p></li>
+<li><p><strong>Logs de suivi</strong> : Traçabilité complète des opérations</p></li>
+</ul>
+<p>Fonctionnalités du reprocessing :
+- Suppression des anciennes écritures
+- Création de nouvelles écritures avec composants
+- Gestion des transactions TAF multiples
+- Marquage des transactions traitées</p>
+</section>
+<section id="ameliorations-de-performance">
+<h2>5. Améliorations de performance<a class="headerlink" href="#ameliorations-de-performance" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#ameliorations-de-performance'"><span>#</span></a></h2>
+<ul class="simple">
+<li><p><strong>Requêtes optimisées</strong> : Réduction du nombre de requêtes base de données</p></li>
+<li><p><strong>Mémoire optimisée</strong> : Un seul objet Transaction avec collection de composants</p></li>
+<li><p><strong>Traitement simplifié</strong> : Accès direct aux composants</p></li>
+<li><p><strong>Audit trail amélioré</strong> : Tous les composants liés à la transaction principale</p></li>
+</ul>
+<p>Avant l’optimisation :
+- 3+ requêtes par transaction (principale + marge + TAF)
+- 3+ écritures comptables séparées
+- Gestion complexe des relations
+- Traçabilité fragmentée</p>
+<p>Après l’optimisation :
+- 1 requête pour la transaction principale + composants
+- 1 écriture comptable avec plusieurs lignes
+- Accès direct aux composants
+- Traçabilité complète et cohérente</p>
+</section>
+<section id="module-comptable-complet">
+<h2>6. Module Comptable Complet<a class="headerlink" href="#module-comptable-complet" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-comptable-complet'"><span>#</span></a></h2>
+<p>Le module comptable complet est une extension majeure qui transforme le système en une solution comptable complète et professionnelle.</p>
+<section id="fonctionnalites-principales">
+<h3>Fonctionnalités principales<a class="headerlink" href="#fonctionnalites-principales" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#fonctionnalites-principales'"><span>#</span></a></h3>
+<dl class="simple">
+<dt><strong>Plan Comptable</strong></dt><dd><ul class="simple">
+<li><p>Structure hiérarchique des comptes (parent/enfant)</p></li>
+<li><p>5 types de comptes : ASSET, LIABILITY, EQUITY, REVENUE, EXPENSE</p></li>
+<li><p>Intégration avec classes comptables existantes</p></li>
+<li><p>Protection des comptes système</p></li>
+<li><p>Recherche et filtrage avancés</p></li>
+</ul>
+</dd>
+<dt><strong>Exercices Comptables</strong></dt><dd><ul class="simple">
+<li><p>Création d’exercices avec dates de début/fin</p></li>
+<li><p>Génération automatique de 12 périodes mensuelles</p></li>
+<li><p>Activation/désactivation d’exercices</p></li>
+<li><p>Clôture avec validation de toutes les périodes</p></li>
+<li><p>Gestion de l’exercice actif</p></li>
+</ul>
+</dd>
+<dt><strong>Grand Livre Général</strong></dt><dd><ul class="simple">
+<li><p>Génération automatique depuis les écritures comptables</p></li>
+<li><p>Consultation par compte, période ou plage de dates</p></li>
+<li><p>Calcul automatique des soldes</p></li>
+<li><p>Export des données (prêt pour Excel/PDF)</p></li>
+</ul>
+</dd>
+<dt><strong>Balance de Vérification</strong></dt><dd><ul class="simple">
+<li><p>Calcul automatique basé sur le grand livre</p></li>
+<li><p>Soldes d’ouverture depuis période précédente</p></li>
+<li><p>Soldes de période (mouvements débit/crédit)</p></li>
+<li><p>Soldes de clôture</p></li>
+<li><p>Validation automatique de l’équilibre (débit = crédit)</p></li>
+</ul>
+</dd>
+<dt><strong>États Financiers</strong></dt><dd><ul class="simple">
+<li><p>Génération automatique du bilan (Balance Sheet)</p></li>
+<li><p>Génération automatique du compte de résultat (Income Statement)</p></li>
+<li><p>Génération automatique du tableau de flux de trésorerie (Cash Flow)</p></li>
+<li><p>Workflow d’approbation et finalisation</p></li>
+<li><p>Visualisation détaillée avec hiérarchie</p></li>
+</ul>
+</dd>
+<dt><strong>Réconciliation Bancaire</strong></dt><dd><ul class="simple">
+<li><p>Création de réconciliations par compte et période</p></li>
+<li><p>Pointage automatique des transactions</p></li>
+<li><p>Pointage manuel pour transactions non correspondantes</p></li>
+<li><p>Calcul automatique des écarts</p></li>
+<li><p>Gestion des dépôts en transit et chèques en circulation</p></li>
+<li><p>Finalisation et validation</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="architecture-technique">
+<h3>Architecture technique<a class="headerlink" href="#architecture-technique" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#architecture-technique'"><span>#</span></a></h3>
+<dl class="simple">
+<dt><strong>Backend (Java/Spring Boot)</strong></dt><dd><ul class="simple">
+<li><p>9 entités JPA pour la persistance</p></li>
+<li><p>7 services métier avec logique complète</p></li>
+<li><p>7 controllers REST avec 50+ endpoints</p></li>
+<li><p>DTOs et mappings pour transformation des données</p></li>
+<li><p>Validation et gestion des erreurs</p></li>
+<li><p>Sécurité avec @PreAuthorize</p></li>
+</ul>
+</dd>
+<dt><strong>Frontend (Angular)</strong></dt><dd><ul class="simple">
+<li><p>6 composants UI avec PrimeNG</p></li>
+<li><p>7 services Angular pour intégration API</p></li>
+<li><p>8 modèles TypeScript avec FormGroups</p></li>
+<li><p>4 enums avec fonctions de traduction</p></li>
+<li><p>Routes configurées avec guards</p></li>
+<li><p>Menu de navigation mis à jour</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="conformite-finance-islamique">
+<h3>Conformité Finance Islamique<a class="headerlink" href="#conformite-finance-islamique" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#conformite-finance-islamique'"><span>#</span></a></h3>
+<p>Le module est conçu pour supporter les spécificités de la finance islamique :</p>
+<ul class="simple">
+<li><p><strong>Séparation des fonds</strong> : Comptes séparés pour fonds islamiques et conventionnels</p></li>
+<li><p><strong>Comptabilisation spécifique</strong> : Support pour Murabaha, Ijara, Musharaka</p></li>
+<li><p><strong>Conformité AAOIFI</strong> : Structure prête pour conformité Accounting and Auditing Organization for Islamic Financial Institutions</p></li>
+<li><p><strong>Traçabilité complète</strong> : Traçabilité de toutes les opérations conformes à la Sharia</p></li>
+</ul>
+</section>
+<section id="statistiques">
+<h3>Statistiques<a class="headerlink" href="#statistiques" title="Lien vers cette rubrique" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#statistiques'"><span>#</span></a></h3>
+<ul class="simple">
+<li><p><strong>Fichiers créés</strong> : ~75 fichiers</p></li>
+<li><p><strong>Lignes de code</strong> : ~7000+ lignes</p></li>
+<li><p><strong>Endpoints API</strong> : 50+ endpoints REST</p></li>
+<li><p><strong>Composants UI</strong> : 6 composants Angular</p></li>
+<li><p><strong>Module complet</strong> : 100% opérationnel</p></li>
+</ul>
+<p>Voir la documentation complète : <a class="reference internal" href="accounting_module.html#accounting-module"><span class="std std-ref">Module Comptable Complet</span></a></p>
+</section>
+</section>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] h-full overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#systeme-de-composants-de-transaction'" class="reference internal" href="#systeme-de-composants-de-transaction">1. Système de composants de transaction</a></li>
+<li><a :data-current="activeSection === '#traitement-par-lots-optimise'" class="reference internal" href="#traitement-par-lots-optimise">2. Traitement par lots optimisé</a></li>
+<li><a :data-current="activeSection === '#generation-du-grand-livre'" class="reference internal" href="#generation-du-grand-livre">3. Génération du grand livre</a></li>
+<li><a :data-current="activeSection === '#reprocessing-des-ecritures'" class="reference internal" href="#reprocessing-des-ecritures">4. Reprocessing des écritures</a></li>
+<li><a :data-current="activeSection === '#ameliorations-de-performance'" class="reference internal" href="#ameliorations-de-performance">5. Améliorations de performance</a></li>
+<li><a :data-current="activeSection === '#module-comptable-complet'" class="reference internal" href="#module-comptable-complet">6. Module Comptable Complet</a><ul>
+<li><a :data-current="activeSection === '#fonctionnalites-principales'" class="reference internal" href="#fonctionnalites-principales">Fonctionnalités principales</a></li>
+<li><a :data-current="activeSection === '#architecture-technique'" class="reference internal" href="#architecture-technique">Architecture technique</a></li>
+<li><a :data-current="activeSection === '#conformite-finance-islamique'" class="reference internal" href="#conformite-finance-islamique">Conformité Finance Islamique</a></li>
+<li><a :data-current="activeSection === '#statistiques'" class="reference internal" href="#statistiques">Statistiques</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, THL Technologies Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.1.3</a></p>
+</div>
+</div>
+</footer>
+</div><button :class="{'opacity-0 invisible' : !showScrollTop}" @click="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 p-2 z-10 rounded-sm bg-gray-700 text-xs text-white transition-all duration-1000 hover:bg-gray-950 focus:bg-gray-950" id="scrolltop" x-cloak="">
+<svg aria-hidden="true" class="inline fill-current mb-[2px]" height="14" viewbox="0 96 960 960" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M450 896V370L202 618l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
+</svg>
+  Back to top
+</button>
+<script src="../../_static/documentation_options.js?v=718f2d82"></script>
+<script src="../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/js/target-blank.js?v=4e58104d"></script>
+<script defer="defer" src="../../_static/theme.js?v=e14a7d8a"></script>
+<script src="../../_static/translations.js?v=e6b791cb"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>
